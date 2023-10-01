@@ -8,6 +8,11 @@ describe("Unit tests for navbar",()=>{
     expect(navbarElement).toBeInTheDocument();
   });
 
+  it('snapshot test to check it renders Navbar component', () => {
+    const { asFragment } = render(<Navbar />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   it('renders the logo', () => {
     render(<Navbar />);
     const logoElement = screen.getByTestId('logo');
@@ -21,28 +26,28 @@ describe("Unit tests for navbar",()=>{
   });
 
   //links check
-  it('check link of home', () => {
+  it('check link of home is correct', () => {
     render(<Navbar />);
     const homeLink = screen.getByText('Home');
     fireEvent.click(homeLink);
     expect(window.location.pathname).toBe('/');
   });
 
-  it('checks link of about', () => {
+  it('checks link of about is correct', () => {
     render(<Navbar />);
     expect(screen.getByText('About')).toHaveAttribute('href', '/about')
   });
-  it('checks link of featured', () => {
+  it('checks link of featured is correct', () => {
     render(<Navbar />);
     expect(screen.getByText('Featured')).toHaveAttribute('href', '/featured')
   });
 
-  it('check link of contact', () => {
+  it('check link of contact is correct', () => {
     render(<Navbar />);
     expect(screen.getByText('Contact')).toHaveAttribute('href', '/contact')
   });
 
-  it('checks link of Post creation page', () => {
+  it('checks link of Post creation page is correct', () => {
     render(<Navbar />);
     expect(screen.getByText('Post')).toHaveAttribute('href', '/createpost')
   });
