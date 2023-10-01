@@ -52,6 +52,7 @@ exports[`Unit tests for navbar snapshot test to check it renders Navbar componen
               <a
                 class="nav-link"
                 href="/"
+                role="link"
               >
                 Home
               </a>
@@ -62,6 +63,7 @@ exports[`Unit tests for navbar snapshot test to check it renders Navbar componen
               <a
                 class="nav-link"
                 href="/featured"
+                role="link"
               >
                 Featured
                 <span
@@ -79,6 +81,7 @@ exports[`Unit tests for navbar snapshot test to check it renders Navbar componen
               <a
                 class="nav-link"
                 href="/about"
+                role="link"
               >
                 About
               </a>
@@ -88,7 +91,8 @@ exports[`Unit tests for navbar snapshot test to check it renders Navbar componen
             >
               <a
                 class="nav-link"
-                href="/contact"
+                href="/contacts"
+                role="link"
               >
                 Contact
               </a>
