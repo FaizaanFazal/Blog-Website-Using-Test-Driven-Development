@@ -243,4 +243,25 @@ export const linksData = [
     }
 ]
 
-export const socialLinks = ["Twitter", "Linkedin" ,"Instagram" ,"Google" ,"Youtube"];
+export const socialLinks = [
+    {
+        title:"Twitter",
+        url:"twitter.com"
+    },
+    {
+        title:"Linkedin",
+        url:"linkedin.com"
+    },
+    {
+        title:"Instagram",
+        url:"instagram.com"
+    },
+    {
+        title:"Google",
+        url:"google.com"
+    },
+    {
+        title:"Youtube",
+        url:"youtube.com"
+    }
+];
