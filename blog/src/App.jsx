@@ -1,11 +1,26 @@
-import Header from "./components/Header/Header";
+import { BrowserRouter,
+  Routes,
+  Route, } from "react-router-dom"
+import Main from "./pages/Main";
+import Blogs from "./pages/Blogs"
+import Createpost from "./pages/Createpost"
+
 
 function App() {
+
   return (
-    <div className="App">
-      <Header/>
-    </div>
-  );
+    <>
+      <BrowserRouter>
+        
+        <Routes>
+          <Route  path='/' element={<Main/>} />
+          <Route  path='/blogs:id' element={<Blogs/>} />
+          <Route  path='/createpost' element={<Createpost/>} />           
+        </Routes>
+      
+      </BrowserRouter>
+    </>
+  )
 }
 
 export default App;

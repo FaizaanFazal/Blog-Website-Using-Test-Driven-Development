@@ -1,9 +1,10 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 export default function Navitem(props) {
   return (
     <li className="nav-item">
-    <a href={props.href} className="nav-link">{props.text}{props.children}</a>
+    <Link to={props.href} className="nav-link">{props.text}{props.children}</Link>
   </li>
   )
 }
