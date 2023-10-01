@@ -1,33 +1,20 @@
 import React from 'react'
+import Navitem from './Navitem'
 
 export default function Menuwrapper() {
   return (
-    <div className={`nb-menu-wrapper flex items-center ${isSideMenuOpen ? "show" : ""}`}>
-    <button type="button" className="nav-hide-btn" onClick={hideSideMenu}>
-      <i className="bi bi-x-square"></i>
-    </button>
+    <div>
     <ul className="nav-menu flex items-center">
-      <li  className="nav-item">
-        <a href="/" className="nav-link">Home</a>
-      </li>
-      <li className="nav-item">
-        <a href="/featured" className="nav-link">
-          Featured
-          <span className="nav-link-icon">
-            <i className="bi bi-chevron-down"></i>
-          </span>
-        </a>
-      </li>
-      <li className="nav-item">
-        <a href="/about" className="nav-link">About</a>
-      </li>
-      <li className="nav-item">
-        <a href="/contact" className="nav-link">Contact</a>
-      </li>
+        <Navitem href="/" text="Home" />
+        <Navitem href="/featured" text="Featured">
+            <span className="nav-link-icon"><i className="bi bi-chevron-down"></i></span>
+        </Navitem>
+        <Navitem href="/about" text="About" />
+        <Navitem href="/contact" text="Contact" />
+        <div className="nav-btns">
+            <a role="listitem" href="/createpost" className="nav-btn btn">Post</a>
+        </div>
     </ul>
-    <div className="nav-btns">
-        <a role="listitem" href="/createpost" className="nav-btn btn">Post</a>
-    </div>
   </div>
   )
 }
