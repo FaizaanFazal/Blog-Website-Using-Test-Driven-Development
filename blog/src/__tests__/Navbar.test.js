@@ -1,16 +1,15 @@
 import { render, screen,fireEvent } from '@testing-library/react';
-import App from '../App';
 import Navbar from '../components/Navbar';
 
 describe("",()=>{
   it('renders the navbar', () => {
-    render(<App />);
+    render(<Navbar />);
     const navbarElement = screen.getByRole('navigation');
     expect(navbarElement).toBeInTheDocument();
   });
 
   it('renders the logo', () => {
-    render(<App />);
+    render(<Navbar />);
     const logoElement = screen.getByTestId('logo');
     expect(logoElement).toBeInTheDocument();
   });
@@ -30,11 +29,11 @@ describe("",()=>{
   });
 
   it('navigates to about page', () => {
-    render(<App />);
+    render(<Navbar />);
     expect(screen.getByText('About')).toHaveAttribute('href', '/about')
   });
   it('navigates to about page', () => {
-    render(<App />);
+    render(<Navbar />);
     expect(screen.getByText('Featured')).toHaveAttribute('href', '/featured')
   });
 
