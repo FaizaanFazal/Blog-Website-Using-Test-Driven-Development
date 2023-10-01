@@ -1,4 +1,4 @@
-import { render, screen,fireEvent, waitFor } from '@testing-library/react';
+import { render, screen} from '@testing-library/react';
 import Navbar from '../components/Navbar/Navbar';
 import { MemoryRouter } from 'react-router-dom';
 

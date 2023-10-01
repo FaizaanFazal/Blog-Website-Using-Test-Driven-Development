@@ -4,14 +4,15 @@ import { BrowserRouter,
 import Main from "./pages/Main";
 import Blogs from "./pages/Blogs"
 import Createpost from "./pages/Createpost"
-
+import Header from './components/Header/Header';
 
 function App() {
 
   return (
     <>
+     
       <BrowserRouter>
-        
+      <Header/>
         <Routes>
           <Route  path='/' element={<Main/>} />
           <Route  path='/blogs:id' element={<Blogs/>} />
