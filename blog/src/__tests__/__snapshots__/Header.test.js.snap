@@ -116,6 +116,81 @@ exports[`Unit tests for Header Snapshot test for rendering navbar in header 1`] 
         </div>
       </div>
     </nav>
+    <div
+      class="container flex-1 w-full flex items-center justify-center"
+      role="header"
+    >
+      <div
+        class="hd-content flex flex-col justify-center items-center text-center"
+      >
+        <h1
+          class="hd-title text-white"
+        >
+          Our Newsroom
+        </h1>
+        <div
+          class="hd-search"
+        >
+          <form>
+            <div
+              class="form-group flex items-stretch bg-white"
+            >
+              <span
+                class="form-gp-icon items-center justify-center"
+              >
+                <i
+                  class="bi bi-search"
+                />
+              </span>
+              <input
+                class="form-gp-input"
+                data-testid="inputSearch"
+                placeholder="Search article"
+                type="text"
+                value=""
+              />
+              <button
+                class="form-gp-btn text-white bg-primary btn"
+                disabled=""
+              >
+                Search
+              </button>
+            </div>
+          </form>
+        </div>
+        <div
+          class="hd-tags text-white flex items-center"
+        >
+          <h3
+            class="hd-tags-title nowrap text-base"
+          >
+            Popular Tags:
+          </h3>
+          <ul
+            class="tags-list flex flex-wrap items-center"
+          >
+            <li
+              class="tags-item text-sm"
+              data-testid="tag"
+            >
+              Design
+            </li>
+            <li
+              class="tags-item text-sm"
+              data-testid="tag"
+            >
+              User Experience
+            </li>
+            <li
+              class="tags-item text-sm"
+              data-testid="tag"
+            >
+              User Interfaces
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </header>
 </DocumentFragment>
 `;
