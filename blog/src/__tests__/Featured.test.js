@@ -2,10 +2,7 @@ import { render, screen} from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Featured from '../components/Featured/Featured';
 
-const isProperImageURL = (url) => {
-    const regex = /^https?:\/\/[^\s]+\.(jpg|jpeg|png|gif|webp|avif)$/;
-    return regex.test(url);
-  };
+import {isProperImageURL} from '../utils/helperfunctions'
 
 describe("Unit tests for Featured component",()=>{
   
