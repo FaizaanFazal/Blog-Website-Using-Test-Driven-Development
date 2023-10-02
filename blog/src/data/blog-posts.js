@@ -7,7 +7,8 @@ export const blogs = [
         author: "Elena Rodriguez",
         authorImage: images.author1,
         date: "15 August",
-        image: images.blogImg1,     
+        image: images.blogImg1,
+        verified:true,     
         content: "Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank."
     },
     {
@@ -17,6 +18,7 @@ export const blogs = [
         authorImage: images.author2,
         date: "18 August",
         image: images.blogImg2,
+        verified:true,
         content: "Carbon monoxide and other hazards can pose serious threats to your family's safety. Learn about essential measures to protect your home and loved ones."
     },
     {
@@ -26,6 +28,7 @@ export const blogs = [
         authorImage: images.author3,
         date: "20 August",
         image: images.blogImg3,
+        verified:true,
         content: "Becoming a mother is a rewarding journey, but it comes with its challenges. Discover valuable insights and advice for new moms as they embrace motherhood."
     },
     {
@@ -35,6 +38,7 @@ export const blogs = [
         authorImage: images.author4,
         date: "22 August",
         image: images.blogImg4,
+        verified:true,
         content: "Artificial Intelligence is reshaping industries. Explore how AI is transforming the future of work and what it means for the job landscape."
     },
     {
@@ -44,6 +48,7 @@ export const blogs = [
         authorImage: images.author5,
         date: "25 August",
         image: images.blogImg5,
+        verified:true,
         content: "Data is the new gold. Delve into the emerging trends in data analytics, privacy concerns, and the potential impact of data on various aspects of society."
     },
     {
@@ -53,6 +58,7 @@ export const blogs = [
         authorImage: images.author6,
         date: "28 August",
         image: images.blogImg6,
+        verified:true,
         content: "Continuous learning is essential in today's fast-paced world. Discover the tools and strategies to foster a habit of lifelong learning for personal and professional growth."
     },
     {
@@ -62,6 +68,7 @@ export const blogs = [
         authorImage: images.author7,
         date: "15 August",
         image: images.blogImg7,
+        verified:true,
         content: "Embark on a journey to breathtaking destinations without breaking the bank.",
     },
     {
@@ -71,6 +78,7 @@ export const blogs = [
         authorImage: images.author8,
         date: "20 September",
         image: images.blogImg8,
+        verified:true,
         content: "Learn how to safeguard your home and loved ones from the dangers of gas leaks.",
     },
     {
@@ -80,6 +88,7 @@ export const blogs = [
         authorImage: images.author9,
         date: "10 October",
         image: images.blogImg9,
+        verified:true,
         content: "Navigating the challenges and joys of being a parent in today's fast-paced world.",
     },
     {
@@ -89,6 +98,7 @@ export const blogs = [
         authorImage: images.author10,
         date: "05 November",
         image: images.blogImg10,
+        verified:true,
         content: "Exploring the potential impact of automation on the job market and society.",
     },
     {
@@ -98,6 +108,7 @@ export const blogs = [
         authorImage: images.author1,
         date: "28 November",
         image: images.blogImg11,
+        verified:true,
         content: "Diving into the world of big data and its transformative role in various industries.",
     },
     {
@@ -107,6 +118,7 @@ export const blogs = [
         authorImage: images.author2,
         date: "15 December",
         image: images.blogImg12,
+        verified:true,
         content: "Adapting to the ever-evolving landscape of education and skill development.",
     },
     {
@@ -116,6 +128,7 @@ export const blogs = [
         authorImage: images.author3,
         date: "10 January",
         image: images.blogImg13,
+        verified:true,
         content: "Achieve a healthier lifestyle by incorporating balanced and nutritious foods into your diet.",
     },
     {
@@ -125,6 +138,7 @@ export const blogs = [
         authorImage: images.author4,
         date: "18 February",
         image: images.blogImg14,
+        verified:true,
         content: "Discover the benefits of mindfulness practices for mental well-being and stress reduction.",
     },
     {
@@ -134,6 +148,7 @@ export const blogs = [
         authorImage: images.author5,
         date: "22 March",
         image: images.blogImg15,
+        verified:true,
         content: "Explore the world from the comfort of your home through virtual travel experiences.",
     },
     {
@@ -143,6 +158,7 @@ export const blogs = [
         authorImage: images.author6,
         date: "15 April",
         image: images.blogImg16,
+        verified:true,
         content: "Examining the role of technology in shaping the future of healthcare delivery.",
     },
     {
@@ -152,6 +168,7 @@ export const blogs = [
         authorImage: images.author7,
         date: "20 May",
         image: images.blogImg17,
+        verified:true,
         content: "Learn how simple lifestyle changes can contribute to a more sustainable and eco-friendly world.",
     },
     {
@@ -161,6 +178,7 @@ export const blogs = [
         authorImage: images.author8,
         date: "10 June",
         image: images.blogImg18,
+        verified:true,
         content: "Insights into how artists can thrive as entrepreneurs while staying true to their creative vision.",
     },
     {
@@ -170,6 +188,7 @@ export const blogs = [
         authorImage: images.author9,
         date: "15 July",
         image: images.blogImg19,
+        verified:true,
         content: "Understanding the importance of digital privacy and tips to protect your online presence.",
     },
     {
@@ -179,6 +198,7 @@ export const blogs = [
         authorImage: images.author10,
         date: "20 August",
         image: images.blogImg20,
+        verified:true,
         content: "Exploring the value of in-person interactions in an increasingly digital world.",
     },
     {
@@ -188,6 +208,7 @@ export const blogs = [
         authorImage: images.author1,
         date: "10 September",
         image: images.blogImg21,
+        verified:true,
         content: "Analyzing the changing trends and impact of social media platforms on society.",
     },
     {
@@ -197,6 +218,7 @@ export const blogs = [
         authorImage: images.author2,
         date: "05 October",
         image: images.blogImg22,
+        verified:true,
         content: "How embracing vulnerability can enhance artistic expression and creativity.",
     },
     {
@@ -206,6 +228,7 @@ export const blogs = [
         authorImage: images.author3,
         date: "15 November",
         image: images.blogImg23,
+        verified:true,
         content: "Exploring the psychological factors that contribute to optimal productivity and focus.",
     },
     {
@@ -215,6 +238,7 @@ export const blogs = [
         authorImage: images.author4,
         date: "20 December",
         image: images.blogImg24,
+        verified:true,
         content: "Embark on a gastronomic journey by sampling diverse cuisines from around the world.",
     }
 ];

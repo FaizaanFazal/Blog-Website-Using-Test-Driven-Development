@@ -71,7 +71,7 @@ exports[`Unit tests for Featured component snapshot test to check Featured compo
                 >
                   <img
                     class="verify-icon"
-                    src="verify_icon_light.svg"
+                    src="verify_icon_filled.svg"
                   />
                   <span
                     class="verify-status text-sm text"
