@@ -22,7 +22,7 @@ describe("Unit tests for Featured component",()=>{
 
   it('Image renders and src is correct', () => {
     render(<MemoryRouter><Featured/></MemoryRouter>);
-    const image = screen.getByRole('img');
+    const image = screen.getByTestId('FeaturedImg');
     expect(image).toBeInTheDocument();
     const imageSrc = image.src;
     expect(isProperImageURL(imageSrc)).toBe(true);
@@ -30,13 +30,13 @@ describe("Unit tests for Featured component",()=>{
 
   it('Image Alternative (alt) is correct', () => {
     render(<MemoryRouter><Featured/></MemoryRouter>);
-    const image = screen.getByAltText('Featured Image');
-    expect(image).toBeInTheDocument();
+    const Featuredimage = screen.getByTestId('FeaturedImg');
+    expect(Featuredimage).toHaveAttribute('alt', 'Featured image')
   });
 
   it('Heading is rendered', () => {
     render(<MemoryRouter><Featured/></MemoryRouter>);
-    const heading = screen.getByText('10 Tips for budget friendly travel');
+    const heading = screen.getByTestId('headingfeatured');
     expect(heading).toBeInTheDocument();
   });
 

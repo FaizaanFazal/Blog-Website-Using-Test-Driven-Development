@@ -2,8 +2,95 @@
 
 exports[`Unit tests for Featured component snapshot test to check Featured component 1`] = `
 <DocumentFragment>
-  <div>
-    Featured
+  <div
+    class="container"
+    role="featured"
+  >
+    <section
+      class="featured-sc bg-white"
+    >
+      <div
+        class="card-grid grid"
+      >
+        <div
+          class="card-grid-img"
+        >
+          <img
+            alt="Featured image"
+            class="object-fit-cover"
+            data-testid="FeaturedImg"
+            src="blogImg1.jpg"
+          />
+        </div>
+        <div
+          class="card-grid-text"
+        >
+          <div>
+            <div
+              class="badge badge-primary"
+            >
+              featured
+            </div>
+            <h2
+              class="title-lg title featured-title"
+              data-testid="headingfeatured"
+            >
+              10 Tips for Budget-Friendly Travel
+            </h2>
+            <p
+              data-testid="featureSummary"
+            >
+              Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank.
+            </p>
+          </div>
+          <div
+            class="card-footer flex justify-between items-center"
+          >
+            <div
+              class="writer-info grid"
+            >
+              <div
+                class="info-avatar"
+              >
+                <img
+                  alt=""
+                  class="object-fit-cover"
+                  src="author1.jpg"
+                />
+              </div>
+              <div
+                class="info-intro"
+              >
+                <p
+                  class="intro-name text-base"
+                >
+                  Elena Rodriguez
+                </p>
+                <div
+                  class="intro-verify flex items-center"
+                >
+                  <img
+                    class="verify-icon"
+                    src="verify_icon_light.svg"
+                  />
+                  <span
+                    class="verify-status text-sm text"
+                  >
+                    Verified writer
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="date-info text text-base"
+              data-testid="featureDate"
+            >
+              15 August
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </DocumentFragment>
 `;
