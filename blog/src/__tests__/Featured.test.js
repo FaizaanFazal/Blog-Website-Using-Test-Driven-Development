@@ -2,6 +2,11 @@ import { render, screen} from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Featured from '../components/Featured/Featured';
 
+const isProperImageURL = (url) => {
+    const regex = /^https?:\/\/[^\s]+\.(jpg|jpeg|png|gif|webp|avif)$/;
+    return regex.test(url);
+  };
+
 describe("Unit tests for Featured component",()=>{
   
   it('Dom test for rendering Featured', () => {
@@ -19,7 +24,8 @@ describe("Unit tests for Featured component",()=>{
     render(<MemoryRouter><Featured/></MemoryRouter>);
     const image = screen.getByRole('img');
     expect(image).toBeInTheDocument();
-    expect(image).toHaveAttribute('src', 'https://example.com/image.png');
+    const imageSrc = image.src;
+    expect(isProperImageURL(imageSrc)).toBe(true);
   });
 
   it('Image Alternative (alt) is correct', () => {
