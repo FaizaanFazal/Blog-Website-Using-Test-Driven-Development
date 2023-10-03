@@ -65,5 +65,13 @@ describe("Unit tests for Featured component",()=>{
     expect(slugLink).toHaveAttribute('href', '/blogs/post1')
   });
 
+  test('isProperImageURL-> returns false for incorrect URL', () => {
+    expect(isProperImageURL('example.com/image')).toBeFalsy();
+  });
+
+  test('isProperImageURL-> returns true for correct URL', () => {
+    expect(isProperImageURL('https://example.com/image.jpg')).toBeTruthy();
+  });
+
   
 })
