@@ -1,7 +1,8 @@
 import images from "../../utils/images";
 import "../../styles/Card.scss";
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Link } from 'react-router-dom';
 
 
 const CardWide = ({ blogItemData }) => {
@@ -22,7 +23,7 @@ const CardWide = ({ blogItemData }) => {
           
             {featured.content.length > MAX_LENGTH ?
             <p className="text-lg text" data-testid='featureSummary'>
-                    {`${featured.content.substring(0, MAX_LENGTH)}...`}<a href="#">Read more</a>
+                    {`${featured.content.substring(0, MAX_LENGTH)}...`}<Link to={`/blogs/${featured.slug}`}>Read more</Link>
             </p>
             :
             <p data-testid='featureSummary'>{featured.content}</p>
