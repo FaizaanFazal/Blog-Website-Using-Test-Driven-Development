@@ -33,7 +33,7 @@ describe("Unit tests for RecentArticle Components",()=>{
   });
 
   it('Card link has right slug', () => {
-    render(<MemoryRouter><Card blogItemData = {small} isCardSm = { true } key = {small.id}/></MemoryRouter>);
+    render(<MemoryRouter><Card blogItemData = {small[0]} isCardSm = { true } key = {small.id}/></MemoryRouter>);
     const slugLink = screen.getByTestId('slugLink');
     expect(slugLink).toHaveAttribute('href', '/blogs/post1')
 

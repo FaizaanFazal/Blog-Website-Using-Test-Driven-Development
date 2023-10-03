@@ -2,8 +2,278 @@
 
 exports[`Unit tests for RecentArticle Components Snapshot test for Recent Article component 1`] = `
 <DocumentFragment>
-  <div>
-    RecentArticles
-  </div>
+  <section
+    class="recent-sc"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="recent-content"
+      >
+        <div
+          class="section-head flex items-end justify-between"
+        >
+          <div
+            class="sc-head-l"
+          >
+            <h4
+              class="title title-lg"
+            >
+              Recent Articles
+            </h4>
+            <p
+              class="text text-base"
+            >
+              Here's what we've been up to recently.
+            </p>
+          </div>
+          <div
+            class="sc-head-r"
+          >
+            <button
+              class="btn btn-o-primary"
+              type="button"
+            >
+              View all
+              <span
+                class="btn-icon"
+              >
+                <i
+                  class="bi bi-arrow-right"
+                />
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="card-list grid-cols grid-cols-3"
+        >
+          <a
+            data-testid="slugLink"
+            href="/blogs/undefined"
+          >
+            <div
+              class="card card-sm"
+              data-testid="artice"
+            >
+              <img
+                alt="Article"
+                class="card-overlay-img object-fit-cover"
+                data-testid="Image"
+                src="blogImg4.jpg"
+              />
+              <div
+                class="card-content"
+              >
+                <div
+                  class="card-body"
+                >
+                  <h3
+                    class="title title-base"
+                  >
+                    Embracing AI in the Workplace
+                  </h3>
+                </div>
+                <div
+                  class="card-footer card-footer-light flex justify-between items-center"
+                >
+                  <div
+                    class="writer-info grid"
+                  >
+                    <div
+                      class="info-avatar"
+                    >
+                      <img
+                        alt=""
+                        class="object-fit-cover"
+                        src="author4.jpg"
+                      />
+                    </div>
+                    <div
+                      class="info-intro"
+                    >
+                      <p
+                        class="intro-name text-base"
+                      >
+                        Alexander West
+                      </p>
+                      <div
+                        class="intro-verify flex items-center"
+                      >
+                        <img
+                          alt="icon"
+                          class="verify-icon"
+                          src="verify_icon_filled.svg"
+                        />
+                        <span
+                          class="verify-status text-sm text"
+                        >
+                          Verified writer
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="date-info text text-base"
+                  >
+                    22 August
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a
+            data-testid="slugLink"
+            href="/blogs/undefined"
+          >
+            <div
+              class="card card-sm"
+              data-testid="artice"
+            >
+              <img
+                alt="Article"
+                class="card-overlay-img object-fit-cover"
+                data-testid="Image"
+                src="blogImg5.jpg"
+              />
+              <div
+                class="card-content"
+              >
+                <div
+                  class="card-body"
+                >
+                  <h3
+                    class="title title-base"
+                  >
+                    The Data Revolution: Trends to Watch
+                  </h3>
+                </div>
+                <div
+                  class="card-footer card-footer-light flex justify-between items-center"
+                >
+                  <div
+                    class="writer-info grid"
+                  >
+                    <div
+                      class="info-avatar"
+                    >
+                      <img
+                        alt=""
+                        class="object-fit-cover"
+                        src="author5.jpg"
+                      />
+                    </div>
+                    <div
+                      class="info-intro"
+                    >
+                      <p
+                        class="intro-name text-base"
+                      >
+                        Isabella Lee
+                      </p>
+                      <div
+                        class="intro-verify flex items-center"
+                      >
+                        <img
+                          alt="icon"
+                          class="verify-icon"
+                          src="verify_icon_filled.svg"
+                        />
+                        <span
+                          class="verify-status text-sm text"
+                        >
+                          Verified writer
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="date-info text text-base"
+                  >
+                    25 August
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a
+            data-testid="slugLink"
+            href="/blogs/undefined"
+          >
+            <div
+              class="card card-sm"
+              data-testid="artice"
+            >
+              <img
+                alt="Article"
+                class="card-overlay-img object-fit-cover"
+                data-testid="Image"
+                src="blogImg6.jpg"
+              />
+              <div
+                class="card-content"
+              >
+                <div
+                  class="card-body"
+                >
+                  <h3
+                    class="title title-base"
+                  >
+                    Lifelong Learning in the Digital Age
+                  </h3>
+                </div>
+                <div
+                  class="card-footer card-footer-light flex justify-between items-center"
+                >
+                  <div
+                    class="writer-info grid"
+                  >
+                    <div
+                      class="info-avatar"
+                    >
+                      <img
+                        alt=""
+                        class="object-fit-cover"
+                        src="author6.jpg"
+                      />
+                    </div>
+                    <div
+                      class="info-intro"
+                    >
+                      <p
+                        class="intro-name text-base"
+                      >
+                        Nathan Clark
+                      </p>
+                      <div
+                        class="intro-verify flex items-center"
+                      >
+                        <img
+                          alt="icon"
+                          class="verify-icon"
+                          src="verify_icon_filled.svg"
+                        />
+                        <span
+                          class="verify-status text-sm text"
+                        >
+                          Verified writer
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="date-info text text-base"
+                  >
+                    28 August
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </DocumentFragment>
 `;
