@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit tests for RecentArticle Components Snapshot test for Recent Article component 1`] = `
+<DocumentFragment>
+  <div>
+    RecentArticles
+  </div>
+</DocumentFragment>
+`;
