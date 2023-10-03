@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const CardWide = ({ blogItemData }) => {
     const MAX_LENGTH = 250;
-    const [featured,setFeatured]=useState(blogItemData[0]);
+    const [featured,setFeatured]=useState(blogItemData);
 
   return (
     <div className="card-grid grid">
