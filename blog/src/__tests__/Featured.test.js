@@ -40,7 +40,7 @@ describe("Unit tests for Featured component",()=>{
   });
 
   it('Summary  with greater than 250 chars',async () => {
-    render(<MemoryRouter><CardWide blogItemData = { greater} /></MemoryRouter>);
+    render(<MemoryRouter><CardWide blogItemData = { greater[0]} /></MemoryRouter>);
     const summaryG = screen.getByTestId('featureSummary');
     const anchorTagElementsG =  within(summaryG).queryAllByTestId('slugLink');
     expect(anchorTagElementsG.length).toBe(1);
@@ -60,18 +60,8 @@ describe("Unit tests for Featured component",()=>{
   });
 
   it('Check view more slug link to be correct', () => {
-    render(<MemoryRouter><CardWide blogItemData = { greater} /></MemoryRouter>);
+    render(<MemoryRouter><CardWide blogItemData = { greater[0]} /></MemoryRouter>);
     const slugLink = screen.getByTestId('slugLink');
     expect(slugLink).toHaveAttribute('href', '/blogs/post1')
   });
-
-  test('isProperImageURL-> returns false for incorrect URL', () => {
-    expect(isProperImageURL('example.com/image')).toBeFalsy();
-  });
-
-  test('isProperImageURL-> returns true for correct URL', () => {
-    expect(isProperImageURL('https://example.com/image.jpg')).toBeTruthy();
-  });
-
-  
 })

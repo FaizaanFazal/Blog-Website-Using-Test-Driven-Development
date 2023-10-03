@@ -5,10 +5,11 @@ import { useState } from "react";
 import { Link } from 'react-router-dom';
 
 
-const CardWide = ({ blogItemData }) => {
+const CardWide = ( {blogItemData} ) => {
     const MAX_LENGTH = 250;
     const [featured,setFeatured]=useState(blogItemData);
-
+    const [summary,setSummary]=useState(blogItemData.content)
+   
   return (
     <div className="card-grid grid">
       <div className="card-grid-img">
@@ -21,7 +22,7 @@ const CardWide = ({ blogItemData }) => {
             { featured.title }
           </h2>
           
-            {featured.content.length > MAX_LENGTH ?
+            {summary?.length > MAX_LENGTH ?
             <p className="text-lg text" data-testid='featureSummary'>
                     {`${featured.content.substring(0, MAX_LENGTH)}...`}<Link data-testid='slugLink' to={`/blogs/${featured.slug}`}>Read more</Link>
             </p>
