@@ -16,7 +16,7 @@ exports[`Unit tests for Featured component snapshot test to check Featured compo
           class="card-grid-img"
         >
           <img
-            alt="Featured image"
+            alt="Featured"
             class="object-fit-cover"
             data-testid="FeaturedImg"
             src="blogImg1.jpg"
@@ -77,6 +77,7 @@ exports[`Unit tests for Featured component snapshot test to check Featured compo
                   class="intro-verify flex items-center"
                 >
                   <img
+                    alt="icon"
                     class="verify-icon"
                     src="verify_icon_filled.svg"
                   />

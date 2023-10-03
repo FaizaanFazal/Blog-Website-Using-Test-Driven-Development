@@ -1,4 +1,4 @@
-import { render, screen,act} from '@testing-library/react';
+import { render, screen, within} from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Featured from '../components/Featured/Featured';
 
@@ -30,7 +30,7 @@ describe("Unit tests for Featured component",()=>{
   it('Image Alternative (alt) is correct', () => {
     render(<MemoryRouter><Featured/></MemoryRouter>);
     const Featuredimage = screen.getByTestId('FeaturedImg');
-    expect(Featuredimage).toHaveAttribute('alt', 'Featured image')
+    expect(Featuredimage).toHaveAttribute('alt', 'Featured')
   });
 
   it('Heading is rendered', () => {
@@ -42,15 +42,15 @@ describe("Unit tests for Featured component",()=>{
   it('Summary  with greater than 250 chars',async () => {
     render(<MemoryRouter><CardWide blogItemData = { greater} /></MemoryRouter>);
     const summaryG = screen.getByTestId('featureSummary');
-    const anchorTagElementsG = summaryG.querySelectorAll('a');
+    const anchorTagElementsG =  within(summaryG).queryAllByTestId('slugLink');
     expect(anchorTagElementsG.length).toBe(1);
   });
 
   it('Summary with less than 250 chars', () => {
     render(<MemoryRouter><CardWide blogItemData = { small} /></MemoryRouter>);
-    const summaryG = screen.getByTestId('featureSummary');
-    const anchorTagElementsG = summaryG.querySelectorAll('a');
-    expect(anchorTagElementsG.length).toBe(0);
+    const summarys = screen.getByTestId('featureSummary');
+    const anchorTagElements = within(summarys).queryAllByTestId('slugLink');
+    expect(anchorTagElements.length).toBe(0);
   });
 
   it('Date is rendered', () => {

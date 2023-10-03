@@ -12,7 +12,7 @@ const CardWide = ({ blogItemData }) => {
   return (
     <div className="card-grid grid">
       <div className="card-grid-img">
-        <img data-testid='FeaturedImg' src = {`${featured.image}`} alt = "Featured image" className="object-fit-cover" />
+        <img data-testid='FeaturedImg' src = {`${featured.image}`} alt = "Featured" className="object-fit-cover" />
       </div>
       <div className="card-grid-text">
         <div>
@@ -39,12 +39,12 @@ const CardWide = ({ blogItemData }) => {
                     <p className="intro-name text-base">{ featured.author }</p>
                     {featured.verified ? 
                       <div className="intro-verify flex items-center">
-                          <img src = { `${images.verify_icon_filled}`} className="verify-icon" />
+                          <img src = { `${images.verify_icon_filled}`} alt="icon" className="verify-icon" />
                           <span className="verify-status text-sm text">Verified writer</span>
                       </div>
                       :
                       <div className="intro-verify flex items-center">
-                          <img src = { `${images.verify_icon_light}`} className="verify-icon" />
+                          <img src = { `${images.verify_icon_light}`} alt="icon" className="verify-icon" />
                           <span className="verify-status text-sm text">Not-Verified writer</span>
                       </div>
                     }
