@@ -23,7 +23,7 @@ const CardWide = ({ blogItemData }) => {
           
             {featured.content.length > MAX_LENGTH ?
             <p className="text-lg text" data-testid='featureSummary'>
-                    {`${featured.content.substring(0, MAX_LENGTH)}...`}<Link to={`/blogs/${featured.slug}`}>Read more</Link>
+                    {`${featured.content.substring(0, MAX_LENGTH)}...`}<Link data-testid='slugLink' to={`/blogs/${featured.slug}`}>Read more</Link>
             </p>
             :
             <p data-testid='featureSummary'>{featured.content}</p>

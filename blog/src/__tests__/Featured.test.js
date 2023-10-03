@@ -53,12 +53,16 @@ describe("Unit tests for Featured component",()=>{
     expect(anchorTagElementsG.length).toBe(0);
   });
 
-  
-
   it('Date is rendered', () => {
     render(<MemoryRouter><Featured/></MemoryRouter>);
     const featureDate = screen.getByTestId('featureDate');
     expect(featureDate).toBeInTheDocument();
+  });
+
+  it('Check view more slug link to be correct', () => {
+    render(<MemoryRouter><CardWide blogItemData = { greater} /></MemoryRouter>);
+    const slugLink = screen.getByTestId('slugLink');
+    expect(slugLink).toHaveAttribute('href', '/blogs/post1')
   });
 
   

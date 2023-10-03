@@ -43,6 +43,7 @@ exports[`Unit tests for Featured component snapshot test to check Featured compo
             >
               Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank.Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your ...
               <a
+                data-testid="slugLink"
                 href="/blogs/post1"
               >
                 Read more
