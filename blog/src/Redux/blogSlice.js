@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {blogs, recentArticles} from '../data/blog-posts'
+import {blogs, featured, recentArticles} from '../data/blog-posts'
 
 
 const blogSlice= createSlice({
     name:'blog',
     initialState:{ 
         blogs: blogs,
-        recentArticles: recentArticles
+        recentArticles: recentArticles,
+        featured: featured
      },
 
     reducers:{

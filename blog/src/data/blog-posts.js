@@ -259,8 +259,9 @@ export const featured=[
         author: "Elena Rodriguez",
         authorImage: images.author1,
         date: "15 August",
-        image: images.blogImg1,     
-        content: "Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank."
+        image: images.blogImg1,
+        slug:"post1",     
+        content: "Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank.Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank.Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank. "
     },
 ];
 
