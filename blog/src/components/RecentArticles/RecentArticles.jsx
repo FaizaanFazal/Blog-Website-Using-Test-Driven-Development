@@ -1,8 +1,11 @@
 import React from 'react'
 import Card from './Card'
-import {blogs} from '../../data/blog-posts'
+import {useSelector} from 'react-redux'
 
 export default function RecentArticles() {
+
+   const recentArticles =useSelector(state=>state.blog.recentArticles);
+
   return (
     <section className="recent-sc">
     <div className="container">
@@ -26,7 +29,7 @@ export default function RecentArticles() {
 
         <div className="card-list grid-cols grid-cols-3">
           {
-            blogs.slice(3, 6).map(blogItem => {
+            recentArticles?.map(blogItem => {
               return (<Card blogItemData = {blogItem} isCardSm = { true } key = {blogItem.id} />)
             })
           }

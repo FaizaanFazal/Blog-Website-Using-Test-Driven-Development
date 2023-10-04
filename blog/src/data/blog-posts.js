@@ -190,6 +190,7 @@ export const recentArticles=[
         authorImage: images.author2,
         date: "18 August",
         image: images.blogImg2,
+        slug:"post2",
         content: "Carbon monoxide and other hazards can pose serious threats to your family's safety. Learn about essential measures to protect your home and loved ones."
     },
     {
@@ -199,6 +200,7 @@ export const recentArticles=[
         authorImage: images.author3,
         date: "20 August",
         image: images.blogImg3,
+        slug:"post3",
         content: "Becoming a mother is a rewarding journey, but it comes with its challenges. Discover valuable insights and advice for new moms as they embrace motherhood."
     },
     {
@@ -208,6 +210,7 @@ export const recentArticles=[
         authorImage: images.author4,
         date: "22 August",
         image: images.blogImg4,
+        slug:"post4",
         content: "Artificial Intelligence is reshaping industries. Explore how AI is transforming the future of work and what it means for the job landscape."
     },
 ];
