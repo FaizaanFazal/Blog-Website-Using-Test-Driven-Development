@@ -3,6 +3,7 @@ import blogReducer from '../Redux/blogSlice'
 
 const rootReducer =  {
   blog: blogReducer
+  
 }
 
 const store = configureStore({

@@ -1,10 +1,9 @@
 import React from 'react'
+import RecentArticles from '../components/RecentArticles/RecentArticles';
 
 
 export default function Main() {
-    return (
-        <div className="App">
-         
-        </div>
+    return (  
+        <RecentArticles/>
       );
 }
