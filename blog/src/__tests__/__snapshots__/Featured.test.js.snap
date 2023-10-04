@@ -79,12 +79,12 @@ exports[`Unit tests for Featured component snapshot test to check Featured compo
                   <img
                     alt="icon"
                     class="verify-icon"
-                    src="verify_icon_filled.svg"
+                    src="verify_icon_light.svg"
                   />
                   <span
                     class="verify-status text-sm text"
                   >
-                    Verified writer
+                    Not-Verified writer
                   </span>
                 </div>
               </div>
