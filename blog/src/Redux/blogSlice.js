@@ -10,12 +10,12 @@ const blogSlice= createSlice({
      },
 
     reducers:{
-        create(state, action) {
-            state.list.push(action.payload)
+        createBlog(state, action) {
+            state.blogs.push(action.payload)
         },
     }
 
 });
 const {actions,reducer}=blogSlice
-export const { create }=actions
+export const { createBlog }=actions
 export default reducer
