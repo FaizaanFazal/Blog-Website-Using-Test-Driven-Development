@@ -5,7 +5,9 @@ import RecentArticles from '../components/RecentArticles/RecentArticles';
 
 export default function Main() {
     return (
+      <>
          <Featured/>
         <RecentArticles/>
+      </>
       );
 }
