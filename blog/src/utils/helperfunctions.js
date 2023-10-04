@@ -13,7 +13,8 @@ export const small = [
         authorImage: images.author1,
         date: "15 August",
         image: images.blogImg1,
-        verified:true,     
+        verified:true,
+        slug:'post1',     
         content: "test Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank."
     }
 ]
