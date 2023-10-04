@@ -2,42 +2,6 @@ import images from "../utils/images";
 
 export const blogs = [
     {
-        id: 1,
-        title: "10 Tips for Budget-Friendly Travel",
-        author: "Elena Rodriguez",
-        authorImage: images.author1,
-        date: "15 August",
-        image: images.blogImg1,     
-        content: "Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank."
-    },
-    {
-        id: 2,
-        title: "The Importance of Home Safety Measures",
-        author: "Jonathan Baker",
-        authorImage: images.author2,
-        date: "18 August",
-        image: images.blogImg2,
-        content: "Carbon monoxide and other hazards can pose serious threats to your family's safety. Learn about essential measures to protect your home and loved ones."
-    },
-    {
-        id: 3,
-        title: "Navigating Parenthood: Tips for New Moms",
-        author: "Sophia Greene",
-        authorImage: images.author3,
-        date: "20 August",
-        image: images.blogImg3,
-        content: "Becoming a mother is a rewarding journey, but it comes with its challenges. Discover valuable insights and advice for new moms as they embrace motherhood."
-    },
-    {
-        id: 4,
-        title: "Embracing AI in the Workplace",
-        author: "Alexander West",
-        authorImage: images.author4,
-        date: "22 August",
-        image: images.blogImg4,
-        content: "Artificial Intelligence is reshaping industries. Explore how AI is transforming the future of work and what it means for the job landscape."
-    },
-    {
         id: 5,
         title: "The Data Revolution: Trends to Watch",
         author: "Isabella Lee",
@@ -217,6 +181,47 @@ export const blogs = [
         image: images.blogImg24,
         content: "Embark on a gastronomic journey by sampling diverse cuisines from around the world.",
     }
+];
+export const recentArticles=[
+    {
+        id: 2,
+        title: "The Importance of Home Safety Measures",
+        author: "Jonathan Baker",
+        authorImage: images.author2,
+        date: "18 August",
+        image: images.blogImg2,
+        content: "Carbon monoxide and other hazards can pose serious threats to your family's safety. Learn about essential measures to protect your home and loved ones."
+    },
+    {
+        id: 3,
+        title: "Navigating Parenthood: Tips for New Moms",
+        author: "Sophia Greene",
+        authorImage: images.author3,
+        date: "20 August",
+        image: images.blogImg3,
+        content: "Becoming a mother is a rewarding journey, but it comes with its challenges. Discover valuable insights and advice for new moms as they embrace motherhood."
+    },
+    {
+        id: 4,
+        title: "Embracing AI in the Workplace",
+        author: "Alexander West",
+        authorImage: images.author4,
+        date: "22 August",
+        image: images.blogImg4,
+        content: "Artificial Intelligence is reshaping industries. Explore how AI is transforming the future of work and what it means for the job landscape."
+    },
+];
+
+export const featured=[
+    {
+        id: 1,
+        title: "10 Tips for Budget-Friendly Travel",
+        author: "Elena Rodriguez",
+        authorImage: images.author1,
+        date: "15 August",
+        image: images.blogImg1,     
+        content: "Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank."
+    },
 ];
 
 
