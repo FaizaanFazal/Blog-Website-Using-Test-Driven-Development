@@ -51,7 +51,155 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
         >
           <a
             data-testid="slugLink"
-            href="/blogs/undefined"
+            href="/blogs/post2"
+          >
+            <div
+              class="card card-sm"
+              data-testid="artice"
+            >
+              <img
+                alt="Article"
+                class="card-overlay-img object-fit-cover"
+                data-testid="Image"
+                src="blogImg2.jpg"
+              />
+              <div
+                class="card-content"
+              >
+                <div
+                  class="card-body"
+                >
+                  <h3
+                    class="title title-base"
+                  >
+                    The Importance of Home Safety Measures
+                  </h3>
+                </div>
+                <div
+                  class="card-footer card-footer-light flex justify-between items-center"
+                >
+                  <div
+                    class="writer-info grid"
+                  >
+                    <div
+                      class="info-avatar"
+                    >
+                      <img
+                        alt=""
+                        class="object-fit-cover"
+                        src="author2.jpg"
+                      />
+                    </div>
+                    <div
+                      class="info-intro"
+                    >
+                      <p
+                        class="intro-name text-base"
+                      >
+                        Jonathan Baker
+                      </p>
+                      <div
+                        class="intro-verify flex items-center"
+                      >
+                        <img
+                          alt="icon"
+                          class="verify-icon"
+                          src="verify_icon_filled.svg"
+                        />
+                        <span
+                          class="verify-status text-sm text"
+                        >
+                          Verified writer
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="date-info text text-base"
+                  >
+                    18 August
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a
+            data-testid="slugLink"
+            href="/blogs/post3"
+          >
+            <div
+              class="card card-sm"
+              data-testid="artice"
+            >
+              <img
+                alt="Article"
+                class="card-overlay-img object-fit-cover"
+                data-testid="Image"
+                src="blogImg3.jpg"
+              />
+              <div
+                class="card-content"
+              >
+                <div
+                  class="card-body"
+                >
+                  <h3
+                    class="title title-base"
+                  >
+                    Navigating Parenthood: Tips for New Moms
+                  </h3>
+                </div>
+                <div
+                  class="card-footer card-footer-light flex justify-between items-center"
+                >
+                  <div
+                    class="writer-info grid"
+                  >
+                    <div
+                      class="info-avatar"
+                    >
+                      <img
+                        alt=""
+                        class="object-fit-cover"
+                        src="author3.jpg"
+                      />
+                    </div>
+                    <div
+                      class="info-intro"
+                    >
+                      <p
+                        class="intro-name text-base"
+                      >
+                        Sophia Greene
+                      </p>
+                      <div
+                        class="intro-verify flex items-center"
+                      >
+                        <img
+                          alt="icon"
+                          class="verify-icon"
+                          src="verify_icon_filled.svg"
+                        />
+                        <span
+                          class="verify-status text-sm text"
+                        >
+                          Verified writer
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="date-info text text-base"
+                  >
+                    20 August
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a
+            data-testid="slugLink"
+            href="/blogs/post4"
           >
             <div
               class="card card-sm"
@@ -118,154 +266,6 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
                     class="date-info text text-base"
                   >
                     22 August
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a
-            data-testid="slugLink"
-            href="/blogs/undefined"
-          >
-            <div
-              class="card card-sm"
-              data-testid="artice"
-            >
-              <img
-                alt="Article"
-                class="card-overlay-img object-fit-cover"
-                data-testid="Image"
-                src="blogImg5.jpg"
-              />
-              <div
-                class="card-content"
-              >
-                <div
-                  class="card-body"
-                >
-                  <h3
-                    class="title title-base"
-                  >
-                    The Data Revolution: Trends to Watch
-                  </h3>
-                </div>
-                <div
-                  class="card-footer card-footer-light flex justify-between items-center"
-                >
-                  <div
-                    class="writer-info grid"
-                  >
-                    <div
-                      class="info-avatar"
-                    >
-                      <img
-                        alt=""
-                        class="object-fit-cover"
-                        src="author5.jpg"
-                      />
-                    </div>
-                    <div
-                      class="info-intro"
-                    >
-                      <p
-                        class="intro-name text-base"
-                      >
-                        Isabella Lee
-                      </p>
-                      <div
-                        class="intro-verify flex items-center"
-                      >
-                        <img
-                          alt="icon"
-                          class="verify-icon"
-                          src="verify_icon_filled.svg"
-                        />
-                        <span
-                          class="verify-status text-sm text"
-                        >
-                          Verified writer
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="date-info text text-base"
-                  >
-                    25 August
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a
-            data-testid="slugLink"
-            href="/blogs/undefined"
-          >
-            <div
-              class="card card-sm"
-              data-testid="artice"
-            >
-              <img
-                alt="Article"
-                class="card-overlay-img object-fit-cover"
-                data-testid="Image"
-                src="blogImg6.jpg"
-              />
-              <div
-                class="card-content"
-              >
-                <div
-                  class="card-body"
-                >
-                  <h3
-                    class="title title-base"
-                  >
-                    Lifelong Learning in the Digital Age
-                  </h3>
-                </div>
-                <div
-                  class="card-footer card-footer-light flex justify-between items-center"
-                >
-                  <div
-                    class="writer-info grid"
-                  >
-                    <div
-                      class="info-avatar"
-                    >
-                      <img
-                        alt=""
-                        class="object-fit-cover"
-                        src="author6.jpg"
-                      />
-                    </div>
-                    <div
-                      class="info-intro"
-                    >
-                      <p
-                        class="intro-name text-base"
-                      >
-                        Nathan Clark
-                      </p>
-                      <div
-                        class="intro-verify flex items-center"
-                      >
-                        <img
-                          alt="icon"
-                          class="verify-icon"
-                          src="verify_icon_filled.svg"
-                        />
-                        <span
-                          class="verify-status text-sm text"
-                        >
-                          Verified writer
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="date-info text text-base"
-                  >
-                    28 August
                   </div>
                 </div>
               </div>

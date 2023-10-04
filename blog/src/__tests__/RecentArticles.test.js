@@ -1,8 +1,9 @@
-import { render, screen} from '@testing-library/react';
+import { screen} from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import RecentArticles from '../components/RecentArticles/RecentArticles';
 import Card from '../components/RecentArticles/Card';
 import images from '../utils/images';
+import { renderWithProviders }  from '../utils/wrappertesting';
 
 const small = [ //will be in utils folder later
     {
@@ -21,38 +22,38 @@ const small = [ //will be in utils folder later
 describe("Unit tests for RecentArticle Components",()=>{
 
   it('Snapshot test for Recent Article component',()=>{
-    const { asFragment } = render(<MemoryRouter><RecentArticles/></MemoryRouter>);
+    const { asFragment } = renderWithProviders(<MemoryRouter><RecentArticles/></MemoryRouter>);
     expect(asFragment()).toMatchSnapshot();
   })
 
   it('Image renders in card component', () => {
-    render(<MemoryRouter><Card/></MemoryRouter>);
+    renderWithProviders(<MemoryRouter><Card/></MemoryRouter>);
     const image = screen.getByTestId('Image');
     expect(image).toBeInTheDocument();
 
   });
 
   it('Card link has right slug', () => {
-    render(<MemoryRouter><Card blogItemData = {small[0]} isCardSm = { true } key = {small.id}/></MemoryRouter>);
+    renderWithProviders(<MemoryRouter><Card blogItemData = {small[0]} isCardSm = { true } key = {small.id}/></MemoryRouter>);
     const slugLink = screen.getByTestId('slugLink');
     expect(slugLink).toHaveAttribute('href', '/blogs/post1')
 
   });
     
   it('Image have ALT', () => {
-   render(<MemoryRouter><Card/></MemoryRouter>);
+    renderWithProviders(<MemoryRouter><Card/></MemoryRouter>);
     const img= screen.getByTestId('Image');
     expect(img).toHaveAttribute('alt', 'Article')
   });
 
   it('Number of Articles should be 3', () => {
-    render(<MemoryRouter><RecentArticles/></MemoryRouter>);
+    renderWithProviders(<MemoryRouter><RecentArticles/></MemoryRouter>);
     const tagElements = screen.getAllByTestId('artice');
     expect(tagElements.length).toBe(3);
   });
 
   it('View All Button',()=>{
-    render(<MemoryRouter><RecentArticles/></MemoryRouter>);
+    renderWithProviders(<MemoryRouter><RecentArticles/></MemoryRouter>);
     const searchbtn = screen.getByText('View all');
     expect(searchbtn).toBeInTheDocument();
   })
