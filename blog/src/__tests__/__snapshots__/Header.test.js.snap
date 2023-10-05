@@ -18,7 +18,7 @@ exports[`Unit tests for Header Snapshot test for rendering navbar in header 1`] 
           <a
             class="nav-brand text-white"
             data-testid="logo"
-            href="#"
+            href="/"
           >
             Blogs 
             <span
@@ -51,6 +51,7 @@ exports[`Unit tests for Header Snapshot test for rendering navbar in header 1`] 
             >
               <li
                 class="nav-item"
+                data-testid="listitem"
               >
                 <a
                   class="nav-link"
@@ -62,6 +63,7 @@ exports[`Unit tests for Header Snapshot test for rendering navbar in header 1`] 
               </li>
               <li
                 class="nav-item"
+                data-testid="listitem"
               >
                 <a
                   class="nav-link"
@@ -80,6 +82,7 @@ exports[`Unit tests for Header Snapshot test for rendering navbar in header 1`] 
               </li>
               <li
                 class="nav-item"
+                data-testid="listitem"
               >
                 <a
                   class="nav-link"
@@ -91,6 +94,7 @@ exports[`Unit tests for Header Snapshot test for rendering navbar in header 1`] 
               </li>
               <li
                 class="nav-item"
+                data-testid="listitem"
               >
                 <a
                   class="nav-link"
@@ -105,8 +109,8 @@ exports[`Unit tests for Header Snapshot test for rendering navbar in header 1`] 
               >
                 <a
                   class="nav-btn btn"
+                  data-testid="listitem"
                   href="/createpost"
-                  role="listitem"
                 >
                   Post
                 </a>
@@ -118,7 +122,7 @@ exports[`Unit tests for Header Snapshot test for rendering navbar in header 1`] 
     </nav>
     <div
       class="container flex-1 w-full flex items-center justify-center"
-      role="header"
+      data-testid="header"
     >
       <div
         class="hd-content flex flex-col justify-center items-center text-center"
@@ -152,6 +156,7 @@ exports[`Unit tests for Header Snapshot test for rendering navbar in header 1`] 
               <button
                 class="form-gp-btn text-white bg-primary btn"
                 disabled=""
+                type="button"
               >
                 Search
               </button>

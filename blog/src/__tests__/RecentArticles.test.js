@@ -24,7 +24,7 @@ describe('Unit tests for RecentArticle Components', () => {
       </MemoryRouter>,
     );
     const slugLink = screen.getByTestId('slugLink');
-    expect(slugLink).toHaveAttribute('href', '/blogs/post1');
+    expect(slugLink).toHaveAttribute('href', '/blogdetails/post1');
   });
 
   it('Image have ALT', () => {

@@ -31,8 +31,9 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
           <div
             class="sc-head-r"
           >
-            <button
+            <a
               class="btn btn-o-primary"
+              href="/blogs/recent"
               type="button"
             >
               View all
@@ -43,7 +44,7 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
                   class="bi bi-arrow-right"
                 />
               </span>
-            </button>
+            </a>
           </div>
         </div>
         <div
@@ -51,7 +52,7 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
         >
           <a
             data-testid="slugLink"
-            href="/blogs/post2"
+            href="/blogdetails/post2"
           >
             <div
               class="card card-sm"
@@ -125,7 +126,7 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
           </a>
           <a
             data-testid="slugLink"
-            href="/blogs/post3"
+            href="/blogdetails/post3"
           >
             <div
               class="card card-sm"
@@ -199,7 +200,7 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
           </a>
           <a
             data-testid="slugLink"
-            href="/blogs/post4"
+            href="/blogdetails/post4"
           >
             <div
               class="card card-sm"

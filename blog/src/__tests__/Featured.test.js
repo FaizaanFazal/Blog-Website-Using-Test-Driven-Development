@@ -60,6 +60,6 @@ describe('Unit tests for Featured component', () => {
   it('Check view more slug link to be correct', () => {
     renderWithProviders(<MemoryRouter><CardWide blogItemData={greater[0]} /></MemoryRouter>);
     const slugLink = screen.getByTestId('slugLink');
-    expect(slugLink).toHaveAttribute('href', '/blogs/post1');
+    expect(slugLink).toHaveAttribute('href', '/blogdetails/post1');
   });
 });
