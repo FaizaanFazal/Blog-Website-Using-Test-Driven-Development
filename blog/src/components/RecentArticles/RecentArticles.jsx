@@ -18,12 +18,12 @@ export default function RecentArticles() {
             </p>
           </div>
           <div className="sc-head-r">
-            <button type="button" className="btn btn-o-primary">
+            <Link type="button" className="btn btn-o-primary" to={`/blogs/recent`} >
               View all
               <span className="btn-icon">
                 <i className="bi bi-arrow-right"></i>
               </span>
-            </button>
+            </Link>
           </div>
         </div>
 

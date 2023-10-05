@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Card = ({ blogItemData, showContent, isCardSm }) => {
   return (
-    <Link to={`/blogs/${blogItemData?.slug}`} data-testid='slugLink'>
+    <Link to={`/blogdetails/${blogItemData?.slug}`} data-testid='slugLink'>
       <div data-testid='artice' className={`card ${isCardSm ? "card-sm" : ""}`}>
         <img data-testid='Image' src={`${blogItemData?.image}`} alt="Article" className="card-overlay-img object-fit-cover" />
         <div className="card-content">
