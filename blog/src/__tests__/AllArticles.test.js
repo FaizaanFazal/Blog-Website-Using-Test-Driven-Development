@@ -1,9 +1,8 @@
 import { screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import AllArticles from '../components/AllArticles/AllArticles';
-import Card from '../components/RecentArticles/Card';
 import { renderWithProviders } from '../utils/wrappertesting';
-import { small } from '../utils/helperfunctions';
+
 
 describe('Unit tests for AllArticles Components', () => {
   it('Snapshot test for All Article component', () => {
