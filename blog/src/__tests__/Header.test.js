@@ -10,7 +10,7 @@ describe('Unit tests for Header', () => {
 
   it('Dom test for-> renders the navbar', () => {
     render(<MemoryRouter><Header /></MemoryRouter>);
-    const navbarElement = screen.getByRole('header');
+    const navbarElement = screen.getByTestId('header');
     expect(navbarElement).toBeInTheDocument();
   });
 

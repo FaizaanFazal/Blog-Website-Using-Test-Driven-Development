@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 export default function HeaderSearch() {
   const [inputValue, setInputValue] = useState('');
@@ -9,21 +9,22 @@ export default function HeaderSearch() {
 
   return (
     <div className="hd-search">
-    <form>
-      <div className="form-group flex items-stretch bg-white">
-        <span className="form-gp-icon items-center justify-center">
-          <i className="bi bi-search"></i>
-        </span>
-        <input type="text" 
-        value={inputValue} 
-        className="form-gp-input" 
-        placeholder="Search article" 
-        onChange={handleInput}
-        data-testid="inputSearch"
-        />
-       <button disabled={!inputValue} className="form-gp-btn text-white bg-primary btn" onClick={()=>{alert('todo')}}>Search</button>
-      </div>
-    </form>
-  </div>
-  )
+      <form>
+        <div className="form-group flex items-stretch bg-white">
+          <span className="form-gp-icon items-center justify-center">
+            <i className="bi bi-search" />
+          </span>
+          <input
+            type="text"
+            value={inputValue}
+            className="form-gp-input"
+            placeholder="Search article"
+            onChange={handleInput}
+            data-testid="inputSearch"
+          />
+          <button type="button" disabled={!inputValue} className="form-gp-btn text-white bg-primary btn" onClick={() => { alert('todo'); }}>Search</button>
+        </div>
+      </form>
+    </div>
+  );
 }

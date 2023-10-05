@@ -22,7 +22,7 @@ describe('Unit tests for navbar', () => {
 
   it('checks lengths of list/menu items', () => {
     render(<MemoryRouter><Navbar /></MemoryRouter>);
-    const linksElement = screen.getAllByRole('listitem');
+    const linksElement = screen.getAllByTestId('listitem');
     expect(linksElement.length).toBe(5); // home,featured,about,contact,createpost
   });
 

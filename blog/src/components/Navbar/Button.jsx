@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 export default function Button(props) {
+  const { className, onClick, children } = props;
   return (
-    <button type="button" className={props.className} onClick={props.onClick}>
-        {props.children}
+    <button type="button" className={className} onClick={onClick}>
+      {children}
     </button>
-  )
+  );
 }
