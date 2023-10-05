@@ -8,7 +8,7 @@ import CardWide from '../components/Featured/CardWide';
 describe('Unit tests for Featured component', () => {
   it('Dom test for rendering Featured', () => {
     renderWithProviders(<MemoryRouter><Featured /></MemoryRouter>);
-    const featureElement = screen.getByRole('featured');
+    const featureElement = screen.getByTestId('featured');
     expect(featureElement).toBeInTheDocument();
   });
 

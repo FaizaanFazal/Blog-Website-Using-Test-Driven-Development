@@ -1,7 +1,7 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import images from '../../utils/images';
 import '../../styles/Card.scss';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 const CardWide = ({ blogItemData }) => {
   const MAX_LENGTH = 250;
@@ -58,7 +58,3 @@ const CardWide = ({ blogItemData }) => {
 };
 
 export default CardWide;
-
-CardWide.propTypes = {
-  blogItemData: PropTypes.object.isRequired,
-};
