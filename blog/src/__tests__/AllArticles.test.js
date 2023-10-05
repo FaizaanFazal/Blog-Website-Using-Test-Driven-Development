@@ -20,7 +20,8 @@ describe('Unit tests for AllArticles Components', () => {
     expect(searchbtn).toBeInTheDocument();
   });
 // we are using same card component of recentArticle in allArticles
-// Below unit tests of Card component are already in recentArticles.test.js that will be separated later when i merge it into dev branch
+// Below unit tests of Card component are already in recentArticles.test.js 
+// that will be separated later when i merge it into dev branch
 //   'Image renders in card component'
 //   'Card link has right slug'
 //   'Image has ALT'

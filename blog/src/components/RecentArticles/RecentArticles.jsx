@@ -12,6 +12,7 @@ export default function RecentArticles() {
         <div className="recent-content">
           <div className="section-head flex items-end justify-between">
             <div className="sc-head-l">
+
               <h4 className="title title-lg">Recent Articles</h4>
               <p className="text text-base">
                 Here&apos;s what we&apos;ve been up to recently.
