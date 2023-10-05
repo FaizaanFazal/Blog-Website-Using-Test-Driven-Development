@@ -8,6 +8,7 @@ export default function Main() {
       <>
          <Featured/>
         <RecentArticles/>
+        <br/>
       </>
       );
 }
