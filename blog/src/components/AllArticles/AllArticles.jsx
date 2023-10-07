@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Card from '../RecentArticles/Card';
+import Card from '../Card/Card';
 
 export default function AllArticles() {
   const allArticles = useSelector((state) => state.blog.blogs);
