@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] = `
+<DocumentFragment>
+  <div>
+    Footer
+  </div>
+</DocumentFragment>
+`;
