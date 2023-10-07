@@ -25,4 +25,10 @@ describe('Unit tests for Footer Component', () => {
     const otherLinks = screen.getAllByTestId('otherLinks');
     expect(otherLinks.length).toBe(18);
   });
+
+  it('renders copyright statement', () => {
+    render(<MemoryRouter><Footer /></MemoryRouter>);
+    const copyright = screen.getByTestId('copyright');
+    expect(copyright).toBeInTheDocument();
+  });
 });
