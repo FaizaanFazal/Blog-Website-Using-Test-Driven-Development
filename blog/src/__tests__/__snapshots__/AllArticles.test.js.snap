@@ -1,0 +1,442 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit tests for AllArticles Components Snapshot test for All Article component 1`] = `
+<DocumentFragment>
+  <section
+    class="all-sc"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="popular-content"
+      >
+        <div
+          class="section-head flex items-end justify-between"
+        >
+          <div
+            class="sc-head-l"
+          >
+            <h4
+              class="title title-lg"
+            >
+              All Articles
+            </h4>
+            <p
+              class="text text-base"
+            >
+              We share common trends, strategies ideas, opinions, short & long stories from the team behind company.
+            </p>
+          </div>
+          <div
+            class="sc-head-r"
+          >
+            <a
+              class="btn btn-o-primary"
+              href="/blogs/all"
+              type="button"
+            >
+              View all
+              <span
+                class="btn-icon"
+              >
+                <i
+                  class="bi bi-arrow-right"
+                />
+              </span>
+            </a>
+          </div>
+        </div>
+        <div
+          class="card-list grid-cols grid-cols-2"
+        >
+          <a
+            data-testid="slugLink"
+            href="/blogdetails/post12"
+          >
+            <div
+              class="card "
+              data-testid="artice"
+            >
+              <img
+                alt="Article"
+                class="card-overlay-img object-fit-cover"
+                data-testid="Image"
+                src="blogImg12.jpg"
+              />
+              <div
+                class="card-content"
+              >
+                <div
+                  class="card-body"
+                >
+                  <h3
+                    class="title title-base"
+                  >
+                    Lifelong Learning: Navigating Education in the Digital Age
+                  </h3>
+                  <p
+                    class="text text-lg"
+                  >
+                    Adapting to the ever-evolving landscape of education and skill development.
+                  </p>
+                </div>
+                <div
+                  class="card-footer card-footer-light flex justify-between items-center"
+                >
+                  <div
+                    class="writer-info grid"
+                  >
+                    <div
+                      class="info-avatar"
+                    >
+                      <img
+                        alt=""
+                        class="object-fit-cover"
+                        src="author2.jpg"
+                      />
+                    </div>
+                    <div
+                      class="info-intro"
+                    >
+                      <p
+                        class="intro-name text-base"
+                      >
+                        Sophia Carter
+                      </p>
+                      <div
+                        class="intro-verify flex items-center"
+                      >
+                        <img
+                          alt="icon"
+                          class="verify-icon"
+                          src="verify_icon_filled.svg"
+                        />
+                        <span
+                          class="verify-status text-sm text"
+                        >
+                          Verified writer
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="date-info text text-base"
+                  >
+                    15 December
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a
+            data-testid="slugLink"
+            href="/blogdetails/post13"
+          >
+            <div
+              class="card "
+              data-testid="artice"
+            >
+              <img
+                alt="Article"
+                class="card-overlay-img object-fit-cover"
+                data-testid="Image"
+                src="blogImg13.jpg"
+              />
+              <div
+                class="card-content"
+              >
+                <div
+                  class="card-body"
+                >
+                  <h3
+                    class="title title-base"
+                  >
+                    Healthy Eating: Tips for a Balanced Diet
+                  </h3>
+                  <p
+                    class="text text-lg"
+                  >
+                    Achieve a healthier lifestyle by incorporating balanced and nutritious foods into your diet.
+                  </p>
+                </div>
+                <div
+                  class="card-footer card-footer-light flex justify-between items-center"
+                >
+                  <div
+                    class="writer-info grid"
+                  >
+                    <div
+                      class="info-avatar"
+                    >
+                      <img
+                        alt=""
+                        class="object-fit-cover"
+                        src="author3.jpg"
+                      />
+                    </div>
+                    <div
+                      class="info-intro"
+                    >
+                      <p
+                        class="intro-name text-base"
+                      >
+                        Emily Wilson
+                      </p>
+                      <div
+                        class="intro-verify flex items-center"
+                      >
+                        <img
+                          alt="icon"
+                          class="verify-icon"
+                          src="verify_icon_filled.svg"
+                        />
+                        <span
+                          class="verify-status text-sm text"
+                        >
+                          Verified writer
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="date-info text text-base"
+                  >
+                    10 January
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div
+          class="card-list grid-cols grid-cols-3"
+        >
+          <a
+            data-testid="slugLink"
+            href="/blogdetails/post14"
+          >
+            <div
+              class="card card-sm"
+              data-testid="artice"
+            >
+              <img
+                alt="Article"
+                class="card-overlay-img object-fit-cover"
+                data-testid="Image"
+                src="blogImg14.jpg"
+              />
+              <div
+                class="card-content"
+              >
+                <div
+                  class="card-body"
+                >
+                  <h3
+                    class="title title-base"
+                  >
+                    The Art of Mindfulness: Cultivating Inner Peace
+                  </h3>
+                </div>
+                <div
+                  class="card-footer card-footer-light flex justify-between items-center"
+                >
+                  <div
+                    class="writer-info grid"
+                  >
+                    <div
+                      class="info-avatar"
+                    >
+                      <img
+                        alt=""
+                        class="object-fit-cover"
+                        src="author4.jpg"
+                      />
+                    </div>
+                    <div
+                      class="info-intro"
+                    >
+                      <p
+                        class="intro-name text-base"
+                      >
+                        Michael Harris
+                      </p>
+                      <div
+                        class="intro-verify flex items-center"
+                      >
+                        <img
+                          alt="icon"
+                          class="verify-icon"
+                          src="verify_icon_filled.svg"
+                        />
+                        <span
+                          class="verify-status text-sm text"
+                        >
+                          Verified writer
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="date-info text text-base"
+                  >
+                    18 February
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a
+            data-testid="slugLink"
+            href="/blogdetails/post15"
+          >
+            <div
+              class="card card-sm"
+              data-testid="artice"
+            >
+              <img
+                alt="Article"
+                class="card-overlay-img object-fit-cover"
+                data-testid="Image"
+                src="blogImg15.jpg"
+              />
+              <div
+                class="card-content"
+              >
+                <div
+                  class="card-body"
+                >
+                  <h3
+                    class="title title-base"
+                  >
+                    Redefining Travel: Virtual Adventures Around the Globe
+                  </h3>
+                </div>
+                <div
+                  class="card-footer card-footer-light flex justify-between items-center"
+                >
+                  <div
+                    class="writer-info grid"
+                  >
+                    <div
+                      class="info-avatar"
+                    >
+                      <img
+                        alt=""
+                        class="object-fit-cover"
+                        src="author5.jpg"
+                      />
+                    </div>
+                    <div
+                      class="info-intro"
+                    >
+                      <p
+                        class="intro-name text-base"
+                      >
+                        Olivia Turner
+                      </p>
+                      <div
+                        class="intro-verify flex items-center"
+                      >
+                        <img
+                          alt="icon"
+                          class="verify-icon"
+                          src="verify_icon_filled.svg"
+                        />
+                        <span
+                          class="verify-status text-sm text"
+                        >
+                          Verified writer
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="date-info text text-base"
+                  >
+                    22 March
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a
+            data-testid="slugLink"
+            href="/blogdetails/post16"
+          >
+            <div
+              class="card card-sm"
+              data-testid="artice"
+            >
+              <img
+                alt="Article"
+                class="card-overlay-img object-fit-cover"
+                data-testid="Image"
+                src="blogImg16.jpg"
+              />
+              <div
+                class="card-content"
+              >
+                <div
+                  class="card-body"
+                >
+                  <h3
+                    class="title title-base"
+                  >
+                    The Future of Healthcare: Telemedicine and Beyond
+                  </h3>
+                </div>
+                <div
+                  class="card-footer card-footer-light flex justify-between items-center"
+                >
+                  <div
+                    class="writer-info grid"
+                  >
+                    <div
+                      class="info-avatar"
+                    >
+                      <img
+                        alt=""
+                        class="object-fit-cover"
+                        src="author6.jpg"
+                      />
+                    </div>
+                    <div
+                      class="info-intro"
+                    >
+                      <p
+                        class="intro-name text-base"
+                      >
+                        Ethan Mitchell
+                      </p>
+                      <div
+                        class="intro-verify flex items-center"
+                      >
+                        <img
+                          alt="icon"
+                          class="verify-icon"
+                          src="verify_icon_filled.svg"
+                        />
+                        <span
+                          class="verify-status text-sm text"
+                        >
+                          Verified writer
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="date-info text text-base"
+                  >
+                    15 April
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
