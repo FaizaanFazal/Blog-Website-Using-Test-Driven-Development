@@ -20,7 +20,7 @@
       "react/react-in-jsx-scope": "off",
       "import/no-unresolved": "off",
       "no-shadow": "off",
-      "linebreak-style": ["error", "windows"],
+      "linebreak-style": ["error", "unix"],
       "react/prop-types": "off",
       "max-len": "off"
     },
