@@ -16,7 +16,7 @@ jobs:
           node-version: "18.x"
       - name: Setup ESLint
         run: |
-          npm install --save-dev eslint@7.23.0 eslint-config-airbnb@18.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x eslint-plugin-jsx-a11y@6.x eslint-plugin-react@7.x eslint-plugin-react-hooks@4.x @babel/core@7.23.0 @babel/eslint-parser@7.22.15 @babel/plugin-syntax-jsx@7.x @babel/preset-react@7.x
+          npm install --save-dev eslint@7.23.0 eslint-config-airbnb@18.2.1 eslint-config-airbnb-base@14.2.1 eslint-plugin-import@2.28.1 eslint-plugin-jsx-a11y@6.7.1 eslint-plugin-react@7.33.1 eslint-plugin-react-hooks@4.6.0 @babel/core@7.23.0 @babel/eslint-parser@7.22.15 @babel/plugin-syntax-jsx@7.22.5 @babel/preset-react@7.22.15
           [ -f .eslintrc.json ] 
       - name: ESLint Report
         run: npx eslint "**/*.{js,jsx}"
