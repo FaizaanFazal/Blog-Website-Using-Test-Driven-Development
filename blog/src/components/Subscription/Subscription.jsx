@@ -6,7 +6,7 @@ export default function Subscription() {
   return (
     <>
       <div className="newsletter-curve">
-        <img src={`${images.newsletter_wave}`} />
+        <img src={`${images.newsletter_wave}`} alt="border" />
       </div>
 
       <section className="newsletter-sc bg-blue-dark text-white">
@@ -23,7 +23,7 @@ export default function Subscription() {
               <div className="newsletter-info">
                 <div className="newsletter-info-wrapper bg-white">
                   <div className="info-img">
-                    <img data-testid="Image" src = { `${images.newsletter}`} className="object-fit-cover" />
+                    <img data-testid="Image" src={`${images.newsletter}`} alt="newsletter" className="object-fit-cover" />
                   </div>
                   <div className="info-text">
                     <h4 className="text-xxl text title">
