@@ -4,7 +4,6 @@ import { MemoryRouter } from 'react-router-dom';
 import RecentArticles from '../components/RecentArticles/RecentArticles';
 import { renderWithProviders } from '../utils/wrappertesting';
 
-
 describe('Unit tests for RecentArticle Components', () => {
   it('Snapshot test for Recent Article component', () => {
     const { asFragment } = renderWithProviders(<MemoryRouter><RecentArticles /></MemoryRouter>);
