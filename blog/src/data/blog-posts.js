@@ -272,23 +272,121 @@ export const linksData = [
   {
     id: 'read-links',
     title: 'Read Our',
-    links: ['Journals', 'Articles', 'Biograpahy', 'Old records', 'Audio version'],
+    links:[
+      {
+        id:"read1",
+        name:'Journal',
+        url:'/example.com'
+      },
+      {
+        id:"read2",
+        name:'Articles',
+        url:'/example.com'
+      },
+      {
+        id:"read3",
+        name:'Biograpahy',
+        url:'/example.com'
+      },
+      {
+        id:"read4",
+        name:'Old records',
+        url:'/example.com'
+      },
+      {
+        id:"read5",
+        name:'Audio version',
+        url:'/example.com'
+      },
+
+  ]
   },
+
   {
     id: 'products-links',
     title: 'Products',
-    links: ['Reading collection', 'Library', 'Broadcast', 'Podcast', 'Book Series'],
+    links:[
+      {
+        id:"products1",
+        name:'Reading collection',
+        url:'/example.com'
+      },
+      {
+        id:"products2",
+        name:'Library',
+        url:'/example.com'
+      },
+      {
+        id:"products3",
+        name:'Broadcast',
+        url:'/example.com'
+      },
+      {
+        id:"products4",
+        name:'Book Series',
+        url:'/example.com'
+      },
+      {
+        id:"products5",
+        name:'Podcast',
+        url:'/example.com'
+      },
+
+  ]
   },
 
   {
     id: 'quick-links',
     title: 'Quick Links',
-    links: ['Blogs', 'Featured', 'Latest', 'Illustrations', 'Latest'],
+    links:[
+      {
+        id:"quick1",
+        name:'Blogs',
+        url:'/example.com'
+      },
+      {
+        id:"quick2",
+        name:'Featured',
+        url:'/example.com'
+      },
+      {
+        id:"quick3",
+        name:'Latest',
+        url:'/example.com'
+      },
+      {
+        id:"quick4",
+        name:'Illustrations',
+        url:'/example.com'
+      },
+      {
+        id:"quick5",
+        name:'Latest',
+        url:'/example.com'
+      },
+  ]
   },
   {
     id: 'more-links',
     title: 'More',
     links: ['License', 'About Us', 'Our policy'],
+    links:[
+      {
+        id:"more1",
+        name:'License',
+        url:'/example.com'
+      },
+      {
+        id:"more2",
+        name:'About Us',
+        url:'/example.com'
+      },
+      {
+        id:"more3",
+        name:'Our policy',
+        url:'/example.com'
+      },
+  ]
   },
 ];
 

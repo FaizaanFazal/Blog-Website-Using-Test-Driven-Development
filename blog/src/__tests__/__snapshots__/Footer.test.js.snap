@@ -2,8 +2,337 @@
 
 exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] = `
 <DocumentFragment>
-  <div>
-    Footer
-  </div>
+  <footer
+    class="footer bg-blue-dark"
+    data-testid="footer"
+    title="footer"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="ftr-list"
+      >
+        <div
+          class="ftr-item"
+        >
+          <a
+            class="ftr-brand text-white"
+            href="#"
+          >
+            heya 
+            <span
+              class="ftr-brand-dot bg-white"
+            />
+          </a>
+          <p
+            class="text text-base"
+          >
+            Build a modern and creative website with crealand
+          </p>
+          <ul
+            class="social-links text-white flex flex-wrap text-gray text-base"
+          >
+            <li>
+              <a
+                data-testid="social"
+                href="#"
+              >
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a
+                data-testid="social"
+                href="#"
+              >
+                Linkedin
+              </a>
+            </li>
+            <li>
+              <a
+                data-testid="social"
+                href="#"
+              >
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a
+                data-testid="social"
+                href="#"
+              >
+                Google
+              </a>
+            </li>
+            <li>
+              <a
+                data-testid="social"
+                href="#"
+              >
+                YouTube
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="ftr-item"
+        >
+          <h4
+            class="ftr-item-title text-lg"
+          >
+            Read Our
+          </h4>
+          <ul
+            class="ftr-nav-links"
+          >
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="#"
+              >
+                Journals
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="#"
+              >
+                Articles
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="#"
+              >
+                Biograpahy
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="#"
+              >
+                Old records
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="#"
+              >
+                Audio version
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="ftr-item"
+        >
+          <h4
+            class="ftr-item-title text-lg"
+          >
+            Products
+          </h4>
+          <ul
+            class="ftr-nav-links"
+          >
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="#"
+              >
+                Reading collection
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="#"
+              >
+                Library
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="#"
+              >
+                Broadcast
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="#"
+              >
+                Podcast
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="#"
+              >
+                Book Series
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="ftr-item"
+        >
+          <h4
+            class="ftr-item-title text-lg"
+          >
+            Quick Links
+          </h4>
+          <ul
+            class="ftr-nav-links"
+          >
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="#"
+              >
+                Blogs
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="#"
+              >
+                Featured
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="#"
+              >
+                Latest
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="#"
+              >
+                Illustrations
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="#"
+              >
+                Latest
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="ftr-item"
+        >
+          <h4
+            class="ftr-item-title text-lg"
+          >
+            More
+          </h4>
+          <ul
+            class="ftr-nav-links"
+          >
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="#"
+              >
+                License
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="#"
+              >
+                About Us
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="#"
+              >
+                Our policy
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="ftr-text text-center text-gray text-base"
+        data-testid="copyright"
+      >
+        Copyright © 2023. Crafted with love.
+      </div>
+    </div>
+  </footer>
 </DocumentFragment>
 `;

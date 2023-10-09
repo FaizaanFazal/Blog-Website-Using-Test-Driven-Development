@@ -22,7 +22,7 @@ describe('Unit tests for Footer Component', () => {
 
   it('Number of Socail links 5', () => {
     render(<MemoryRouter><Footer /></MemoryRouter>);
-    const tagElements = screen.getAllByTestId('scoial');
+    const tagElements = screen.getAllByTestId('social');
     expect(tagElements.length).toBeGreaterThan(0);
   });
 
@@ -35,6 +35,6 @@ describe('Unit tests for Footer Component', () => {
   it('renders copyright statement', () => {
     render(<MemoryRouter><Footer /></MemoryRouter>);
     const copyright = screen.getByTestId('copyright');
-    expect(copyright.length).toBeGreaterThan(0);
+    expect(copyright.textContent.length).toBeGreaterThan(0);
   });
 });
