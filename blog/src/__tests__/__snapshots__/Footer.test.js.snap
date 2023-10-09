@@ -18,9 +18,9 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
         >
           <a
             class="ftr-brand text-white"
-            href="#"
+            href="/"
           >
-            heya 
+            Blogs 
             <span
               class="ftr-brand-dot bg-white"
             />
@@ -36,7 +36,7 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
             <li>
               <a
                 data-testid="social"
-                href="#"
+                href="https://github.com/jsx-eslint"
               >
                 Twitter
               </a>
@@ -44,7 +44,7 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
             <li>
               <a
                 data-testid="social"
-                href="#"
+                href="https://github.com/jsx-eslint"
               >
                 Linkedin
               </a>
@@ -52,7 +52,7 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
             <li>
               <a
                 data-testid="social"
-                href="#"
+                href="https://github.com/jsx-eslint"
               >
                 Instagram
               </a>
@@ -60,7 +60,7 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
             <li>
               <a
                 data-testid="social"
-                href="#"
+                href="https://github.com/jsx-eslint"
               >
                 Google
               </a>
@@ -68,7 +68,7 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
             <li>
               <a
                 data-testid="social"
-                href="#"
+                href="https://github.com/jsx-eslint"
               >
                 YouTube
               </a>
@@ -92,9 +92,9 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
               <a
                 class="ftr-nav-link text-base"
                 data-testid="otherLinks"
-                href="#"
+                href="/example.com"
               >
-                Journals
+                Journal
               </a>
             </li>
             <li
@@ -103,7 +103,7 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
               <a
                 class="ftr-nav-link text-base"
                 data-testid="otherLinks"
-                href="#"
+                href="/example.com"
               >
                 Articles
               </a>
@@ -114,7 +114,7 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
               <a
                 class="ftr-nav-link text-base"
                 data-testid="otherLinks"
-                href="#"
+                href="/example.com"
               >
                 Biograpahy
               </a>
@@ -125,7 +125,7 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
               <a
                 class="ftr-nav-link text-base"
                 data-testid="otherLinks"
-                href="#"
+                href="/example.com"
               >
                 Old records
               </a>
@@ -136,7 +136,7 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
               <a
                 class="ftr-nav-link text-base"
                 data-testid="otherLinks"
-                href="#"
+                href="/example.com"
               >
                 Audio version
               </a>
@@ -160,7 +160,7 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
               <a
                 class="ftr-nav-link text-base"
                 data-testid="otherLinks"
-                href="#"
+                href="/example.com"
               >
                 Reading collection
               </a>
@@ -171,7 +171,7 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
               <a
                 class="ftr-nav-link text-base"
                 data-testid="otherLinks"
-                href="#"
+                href="/example.com"
               >
                 Library
               </a>
@@ -182,7 +182,7 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
               <a
                 class="ftr-nav-link text-base"
                 data-testid="otherLinks"
-                href="#"
+                href="/example.com"
               >
                 Broadcast
               </a>
@@ -193,9 +193,9 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
               <a
                 class="ftr-nav-link text-base"
                 data-testid="otherLinks"
-                href="#"
+                href="/example.com"
               >
-                Podcast
+                Book Series
               </a>
             </li>
             <li
@@ -204,9 +204,9 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
               <a
                 class="ftr-nav-link text-base"
                 data-testid="otherLinks"
-                href="#"
+                href="/example.com"
               >
-                Book Series
+                Podcast
               </a>
             </li>
           </ul>
@@ -228,7 +228,7 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
               <a
                 class="ftr-nav-link text-base"
                 data-testid="otherLinks"
-                href="#"
+                href="/example.com"
               >
                 Blogs
               </a>
@@ -239,7 +239,7 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
               <a
                 class="ftr-nav-link text-base"
                 data-testid="otherLinks"
-                href="#"
+                href="/example.com"
               >
                 Featured
               </a>
@@ -250,7 +250,7 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
               <a
                 class="ftr-nav-link text-base"
                 data-testid="otherLinks"
-                href="#"
+                href="/example.com"
               >
                 Latest
               </a>
@@ -261,7 +261,7 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
               <a
                 class="ftr-nav-link text-base"
                 data-testid="otherLinks"
-                href="#"
+                href="/example.com"
               >
                 Illustrations
               </a>
@@ -272,7 +272,7 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
               <a
                 class="ftr-nav-link text-base"
                 data-testid="otherLinks"
-                href="#"
+                href="/example.com"
               >
                 Latest
               </a>
@@ -296,7 +296,7 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
               <a
                 class="ftr-nav-link text-base"
                 data-testid="otherLinks"
-                href="#"
+                href="/example.com"
               >
                 License
               </a>
@@ -307,7 +307,7 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
               <a
                 class="ftr-nav-link text-base"
                 data-testid="otherLinks"
-                href="#"
+                href="/example.com"
               >
                 About Us
               </a>
@@ -318,7 +318,7 @@ exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] 
               <a
                 class="ftr-nav-link text-base"
                 data-testid="otherLinks"
-                href="#"
+                href="/example.com"
               >
                 Our policy
               </a>
