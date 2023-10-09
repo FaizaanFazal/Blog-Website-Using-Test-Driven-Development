@@ -31,8 +31,9 @@ jobs:
       - name: Setup Stylelint
         run: |
           npm install --save-dev stylelint@15.x stylelint-config-standard@34.x stylelint-config-standard-scss@11.x --legacy-peer-deps
-          [ -f .stylelintrc.json ] npx stylelint "**/*.scss*"
-      
+          [ -f .stylelintrc.json ] 
+      - name: Stylelint Report
+        run: npx stylelint "**/*.scss*"
   nodechecker:
     name: node_modules checker
     runs-on: ubuntu-22.04
