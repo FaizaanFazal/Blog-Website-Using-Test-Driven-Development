@@ -7,7 +7,7 @@ import Subscription from '../components/Subscription/Subscription';
 describe('Unit tests for Subscription Component', () => {
 
     it('snapshot test to check it renders Subscription component', () => {
-        const { asFragment } = render(<MemoryRouter><Subscription /></MemoryRouter>);
+        const { asFragment } = renderWithProviders(<MemoryRouter><Subscription /></MemoryRouter>);
         expect(asFragment()).toMatchSnapshot();
     });
 
