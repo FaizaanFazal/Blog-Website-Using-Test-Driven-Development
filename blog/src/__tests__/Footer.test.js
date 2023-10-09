@@ -14,11 +14,11 @@ describe('Unit tests for Footer Component', () => {
     expect(navbarElement).toBeInTheDocument();
   });
 
-  it('Semantic tag name is footer',()=>{
+  it('Semantic tag name is footer', () => {
     render(<MemoryRouter><Footer /></MemoryRouter>);
-    const footerElement = screen.getByTitle('footer')
+    const footerElement = screen.getByTitle('footer');
     expect(footerElement).not.toBeNull();
-  })
+  });
 
   it('Number of Socail links 5', () => {
     render(<MemoryRouter><Footer /></MemoryRouter>);
