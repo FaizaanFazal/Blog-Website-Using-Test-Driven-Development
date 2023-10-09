@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit tests for Subscription Component snapshot test to check it renders Subscription component 1`] = `
+<DocumentFragment>
+  <div>
+    Subscription
+  </div>
+</DocumentFragment>
+`;
