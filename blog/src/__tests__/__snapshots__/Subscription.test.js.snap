@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit tests for Subscription Component snapshot test to check it renders Subscription component 1`] = `
+<DocumentFragment>
+  <div
+    class="newsletter-curve"
+  >
+    <img
+      src="newsletter_wave.svg"
+    />
+  </div>
+  <section
+    class="newsletter-sc bg-blue-dark text-white"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="newsletter-content grid-cols grid-cols-2 items-center"
+      >
+        <div
+          class="newsletter-l"
+        >
+          <h3
+            class="title title-lg"
+          >
+            Get our stories delivered from us to your inbox weekly.
+          </h3>
+          <form
+            class="newsletter-form"
+            data-testid="form"
+          >
+            <div
+              class="form-group flex items-stretch"
+            >
+              <input
+                class="form-input"
+                data-testid="email"
+                placeholder="Your Email"
+                type="email"
+                value=""
+              />
+              <button
+                class="btn btn-primary nowrap"
+                data-testid="subscribebtn"
+                type="submit"
+              >
+                Get Started
+              </button>
+            </div>
+            <p
+              class="text text-base text-gray"
+            >
+              Get a response tomorrow if you submit by 9pm today. If we received after 9pm will get a response the following data.
+            </p>
+          </form>
+        </div>
+        <div
+          class="newsletter-r"
+        >
+          <div
+            class="newsletter-info"
+          >
+            <div
+              class="newsletter-info-wrapper bg-white"
+            >
+              <div
+                class="info-img"
+              >
+                <img
+                  class="object-fit-cover"
+                  data-testid="Image"
+                  src="newsletter.png"
+                />
+              </div>
+              <div
+                class="info-text"
+              >
+                <h4
+                  class="text-xxl text title"
+                >
+                  The best articles every week
+                </h4>
+                <p
+                  class="text text-lg"
+                >
+                  Our insurnace plans offers are priced the same everywheres else.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
