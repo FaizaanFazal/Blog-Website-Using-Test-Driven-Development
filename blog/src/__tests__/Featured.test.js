@@ -26,9 +26,9 @@ describe('Unit tests for Featured component', () => {
   });
 
   it('Image Alternative (alt) is correct', () => {
-    renderWithProviders(<MemoryRouter><Featured /></MemoryRouter>);
+    renderWithProviders(<MemoryRouter><CardWide blogItemData={greater[0]} /></MemoryRouter>);
     const Featuredimage = screen.getByTestId('FeaturedImg');
-    expect(Featuredimage).toHaveAttribute('alt', 'Featured');
+    expect(Featuredimage).toHaveAttribute('alt', '10 Tips for Budget-Friendly Travel Blog Header Image');
   });
 
   it('Heading is rendered', () => {
@@ -45,7 +45,7 @@ describe('Unit tests for Featured component', () => {
   });
 
   it('Summary with less than 250 chars', () => {
-    renderWithProviders(<MemoryRouter><CardWide blogItemData={small} /></MemoryRouter>);
+    renderWithProviders(<MemoryRouter><CardWide blogItemData={small[0]} /></MemoryRouter>);
     const summarys = screen.getByTestId('featureSummary');
     const anchorTagElements = within(summarys).queryAllByTestId('slugLink');
     expect(anchorTagElements.length).toBe(0);

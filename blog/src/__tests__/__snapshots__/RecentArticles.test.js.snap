@@ -59,7 +59,7 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
               data-testid="artice"
             >
               <img
-                alt="Article"
+                alt="10 Tips for Budget-Friendly Travel Blog Header Image"
                 class="card-overlay-img object-fit-cover"
                 data-testid="Image"
                 src="blogImg2.jpg"
@@ -86,7 +86,7 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
                       class="info-avatar"
                     >
                       <img
-                        alt=""
+                        alt=" Jonathan"
                         class="object-fit-cover"
                         src="author2.jpg"
                       />
@@ -133,7 +133,7 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
               data-testid="artice"
             >
               <img
-                alt="Article"
+                alt="10 Tips for Budget-Friendly Travel Blog Header Image"
                 class="card-overlay-img object-fit-cover"
                 data-testid="Image"
                 src="blogImg3.jpg"
@@ -160,7 +160,7 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
                       class="info-avatar"
                     >
                       <img
-                        alt=""
+                        alt=" Sophia"
                         class="object-fit-cover"
                         src="author3.jpg"
                       />
@@ -207,7 +207,7 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
               data-testid="artice"
             >
               <img
-                alt="Article"
+                alt="Embracing AI in the Workplace"
                 class="card-overlay-img object-fit-cover"
                 data-testid="Image"
                 src="blogImg4.jpg"
@@ -234,7 +234,7 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
                       class="info-avatar"
                     >
                       <img
-                        alt=""
+                        alt=" Alexander"
                         class="object-fit-cover"
                         src="author4.jpg"
                       />

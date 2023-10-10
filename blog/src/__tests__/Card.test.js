@@ -23,8 +23,8 @@ describe('Unit tests for RecentArticle Components', () => {
   });
 
   it('Image have ALT', () => {
-    renderWithProviders(<MemoryRouter><Card /></MemoryRouter>);
+    renderWithProviders(<MemoryRouter><Card blogItemData={small[0]} isCardSm key={small.id} /></MemoryRouter>);
     const img = screen.getByTestId('Image');
-    expect(img).toHaveAttribute('alt', 'Article');
+    expect(img).toHaveAttribute('alt', '10 Tips for Budget-Friendly Travel Blog Header Image');
   });
 });
