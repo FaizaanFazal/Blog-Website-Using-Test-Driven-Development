@@ -6,6 +6,7 @@ exports[`Unit tests for Subscription Component snapshot test to check it renders
     class="newsletter-curve"
   >
     <img
+      alt="border"
       src="newsletter_wave.svg"
     />
   </div>
@@ -51,7 +52,7 @@ exports[`Unit tests for Subscription Component snapshot test to check it renders
             <p
               class="text text-base text-gray"
             >
-              Get a response tomorrow if you submit by 9pm today. If we received after 9pm will get a response the following data.
+              Get a response tomorrow if you submit by 9pm today. If we received after 9pm will get a response the following date.
             </p>
           </form>
         </div>
@@ -68,6 +69,7 @@ exports[`Unit tests for Subscription Component snapshot test to check it renders
                 class="info-img"
               >
                 <img
+                  alt="newsletter"
                   class="object-fit-cover"
                   data-testid="Image"
                   src="newsletter.png"

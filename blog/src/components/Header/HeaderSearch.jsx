@@ -22,7 +22,7 @@ export default function HeaderSearch() {
             onChange={handleInput}
             data-testid="inputSearch"
           />
-          <button type="button" disabled={!inputValue} className="form-gp-btn text-white bg-primary btn" onClick={() => { alert('todo'); }}>Search</button>
+          <button type="button" disabled={!inputValue} className="form-gp-btn text-white bg-primary btn">Search</button>
         </div>
       </form>
     </div>
