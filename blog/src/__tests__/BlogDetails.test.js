@@ -26,7 +26,7 @@ describe('Unit tests for BlogDetails Components', () => {
   it('Image have ALT', () => {
     renderWithProviders(<MemoryRouter><BlogDetails blogDetails={greater[0]} key={greater.id} /></MemoryRouter>);
     const img = screen.getByTestId('Image');
-    expect(img).toHaveAttribute('alt', 'Article');
+    expect(img).toHaveAttribute('alt', greater[0].image.alt);
   });
 
   it('Correct title is rendered as Heading', () => {

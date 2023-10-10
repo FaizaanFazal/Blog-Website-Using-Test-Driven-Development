@@ -28,7 +28,7 @@ describe('Unit tests for Featured component', () => {
   it('Image Alternative (alt) is correct', () => {
     renderWithProviders(<MemoryRouter><CardWide blogItemData={greater[0]} /></MemoryRouter>);
     const Featuredimage = screen.getByTestId('FeaturedImg');
-    expect(Featuredimage).toHaveAttribute('alt', '10 Tips for Budget-Friendly Travel Blog Header Image');
+    expect(Featuredimage).toHaveAttribute('alt', greater[0].image.alt);
   });
 
   it('Heading is rendered', () => {
