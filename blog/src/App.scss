@@ -413,11 +413,52 @@ h6 {
 .nowrap {
   white-space: nowrap;
 }
+.cover-grid{
+  grid-template-columns: repeat(1, 1fr);
+
+  .cover-grid-text {
+    padding: 32px;
+
+    @include breakpoint-down(lg) {
+      padding: 24px;
+    }
+  }
+
+  .cover-grid-img {
+    @include breakpoint-up(lg) {
+      height: 550px;
+    } 
+    @include breakpoint-down(lg) {
+      height: 350px;
+    }
+
+    @include breakpoint-down(sm) {
+      height: 280px;
+    }
+
+    @include breakpoint-down(xs) {
+      height: 200px;
+    }
+  }
+
+
+  @include breakpoint-down(lg) {
+    height: auto;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 .object-fit-cover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 5px;
+}
+.discriptiontext{
+  text-indent: 4em;
+}
+.discriptiontext::first-letter {
+  font-size: 2.5em;
 }
 
 // buttons
