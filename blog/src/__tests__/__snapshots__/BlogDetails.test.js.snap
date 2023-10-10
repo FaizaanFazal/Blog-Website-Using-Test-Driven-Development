@@ -2,38 +2,75 @@
 
 exports[`Unit tests for BlogDetails Components Snapshot test for BlogDetails component 1`] = `
 <DocumentFragment>
-  <div>
-    BlogDetails
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-  </div>
+  <section
+    data-testid="details"
+  >
+    <div
+      class="container"
+    >
+      <h4
+        class="title title-lg"
+        data-testid="titleHeading"
+      />
+      <div
+        class="card-footer flex flex justify-between items-center"
+      >
+        <div
+          class="writer-info grid"
+        >
+          <div
+            class="info-avatar"
+          >
+            <img
+              class="object-fit-cover"
+            />
+          </div>
+          <div
+            class="info-intro"
+          >
+            <p
+              class="intro-name text-base"
+            />
+            <div
+              class="intro-verify flex items-center"
+            >
+              <img
+                alt="icon"
+                class="verify-icon"
+                src="verify_icon_light.svg"
+              />
+              <span
+                class="verify-status text-sm text"
+              >
+                Not-Verified writer
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="date-info text text-base"
+          data-testid="detailsdate"
+        />
+      </div>
+      <div
+        class="cover-grid grid mt-3 mb-2 "
+      >
+        <div
+          class="cover-grid-img"
+        >
+          <img
+            class="object-fit-cover"
+            data-testid="Image"
+          />
+        </div>
+      </div>
+      <div>
+        <p
+          class="text-lg text-black mt-3 px-1 discriptiontext mb-5 new-line"
+          data-testid="discription"
+        />
+      </div>
+    </div>
+  </section>
 </DocumentFragment>
 `;
