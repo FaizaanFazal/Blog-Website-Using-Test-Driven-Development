@@ -32,12 +32,12 @@ describe('Unit tests for BlogDetails Components', () => {
   it('Correct title is rendered as Heading', () => {
     renderWithProviders(<MemoryRouter><BlogDetails blogDetails={greater[0]} key={greater.id} /></MemoryRouter>);
     const titleheading = screen.getByTestId('titleHeading');
-    expect(titleheading).toBe('10 Tips for Budget-Friendly Travel');
+    expect(titleheading).toBe(greater[0].title);
   });
 
   it('Discription is rendered', () => {
     renderWithProviders(<MemoryRouter><BlogDetails blogDetails={greater[0]} key={greater.id} /></MemoryRouter>);
-    const discription = screen.getByTestId('titleHeading');
-    expect(discription.textContent.length).toBeGreaterThan(0);
+    const discription = screen.getByTestId('discription');
+    expect(discription).toBe(greater[0].content);
   });
 });
