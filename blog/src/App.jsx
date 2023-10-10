@@ -7,6 +7,7 @@ import Main from './pages/Main';
 import Blogs from './pages/Blogs';
 import Createpost from './pages/Createpost';
 import Header from './components/Header/Header';
+import BlogDetails from './components/BlogDetails/BlogDetails';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/blogs/:slug" element={<Blogs />} />
-          <Route path="/blogdetails/:slug" element={<Blogs />} />
+          <Route path="/blogdetails/:slug" element={<BlogDetails />} />
           <Route path="/createpost" element={<Createpost />} />
         </Routes>
 
