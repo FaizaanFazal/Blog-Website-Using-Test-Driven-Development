@@ -1,9 +1,8 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
-import { renderWithProviders } from '../utils/wrappertesting';
-import BlogDetails from '../components/BlogDetails/BlogDetails';
+import { renderWithBoth, renderWithProviders } from '../utils/wrappertesting';
+import BlogDetails from '../pages/Blogdetails';
 import { greater } from '../utils/helperfunctions';
 
 describe('Unit tests for BlogDetails Components', () => {
@@ -13,41 +12,42 @@ describe('Unit tests for BlogDetails Components', () => {
   });
 
   it('Dom test for rendering BlogDetails', () => {
-    renderWithProviders(<BlogDetails />, {route: '/blogdetails/post1'});
+    renderWithProviders(<BlogDetails />, { route: '/blogdetails/post1' });
     const detailseElement = screen.getByTestId('details');
     expect(detailseElement).toBeInTheDocument();
   });
 
   it('Image renders in BlogDetails component', () => {
-    const history = createMemoryHistory()
-    history.push('/post1')
+    const history = createMemoryHistory();
+    history.push('/post1');
     renderWithProviders(<BlogDetails />);
     const image = screen.getByTestId('Image');
     expect(image).toBeInTheDocument();
   });
 
   it('Image have ALT', () => {
-    const history = createMemoryHistory()
-    history.push('post1')
+    const history = createMemoryHistory();
+    history.push('post1');
     renderWithProviders(<BlogDetails />);
     const img = screen.getByTestId('Image');
     expect(img).toHaveAttribute('alt', greater[0].image.alt);
   });
 
   it('Correct title is rendered as Heading', () => {
-    renderWithProviders(<BlogDetails path="/blogdetails/?slug=post1" />, {
-      route: '/blogdetails/?slug=post1',
-    })
+    const history = createMemoryHistory({
+      initialEntries: ['/blogdetails/post1'],
+      state: { slug: 'post1' },
+    });
+    /// / trying Router+provider
+    renderWithBoth(<BlogDetails history={history} />);
     const titleheading = screen.getByTestId('titleHeading');
-    expect(titleheading).toBe(greater[0].title);
+    expect(titleheading.textContent).toBe(greater[0].title);
   });
 
   it('Discription is rendered', () => {
-    const history = createMemoryHistory()
-    history.push('/post1')
-    renderWithProviders(<BlogDetails />, {
-      initialEntries: ["/blogdetails/?slug?=post1"],
-    });
+    const history = createMemoryHistory();
+    history.push({ slug: 'post1' });
+    renderWithProviders(<BlogDetails history={history} />);
     const discription = screen.getByTestId('discription');
     expect(discription.textContent).toBe(greater[0].content);
   });

@@ -2,6 +2,7 @@ import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import PropTypes from 'prop-types';
 import { MemoryRouter } from 'react-router-dom';
+import { renderWithRouter } from './renderWithRouter';
 import reduxStore from '../Redux/store';
 import '@testing-library/jest-dom';
 
@@ -9,11 +10,12 @@ export * from '@testing-library/react';
 
 const AllTheProviders = ({ children }) => (
   <Provider store={reduxStore}>
-    <MemoryRouter>{children}</MemoryRouter>
+    <MemoryRouter initialEntries={['/']}>{children}</MemoryRouter>
   </Provider>
 );
 
 export const renderWithProviders = (ui, options) => render(ui, { wrapper: AllTheProviders, ...options });
+export const renderWithBoth = (ui, options) => renderWithRouter(ui, { wrapper: AllTheProviders, ...options });
 
 // export function renderWithProviders(
 //   ui,

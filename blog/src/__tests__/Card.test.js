@@ -13,8 +13,8 @@ describe('Unit tests for RecentArticle Components', () => {
 
   it('Card link has right slug', () => {
     renderWithProviders(
-      
-        <Card blogItemData={small[0]} isCardSm key={small.id} />
+
+      <Card blogItemData={small[0]} isCardSm key={small.id} />
       ,
     );
     const slugLink = screen.getByTestId('slugLink');

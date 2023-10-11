@@ -3,11 +3,15 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import images from '../../utils/images';
 import '../../styles/Card.scss';
-
+import { useLocation } from "react-router-dom";
 
 export default function BlogDetails() {
-  const params = useParams();
-  const { slug } = params;
+  const location = useLocation();
+  const id = new URLSearchParams(location.search).get("slug");
+  const slug = location.state?.slug;
+  console.log("slugss",id)
+  // const params = useParams();
+  // const { slug } = params;
   const blogs = useSelector((state) => state.blog.blogs);
   const blogdetail = blogs.filter((blog) => blog.slug === slug)[0];
 
@@ -49,7 +53,7 @@ export default function BlogDetails() {
 
         <div>
 
-          <p data-testid='discription' className="text-lg text-black mt-3 px-1 discriptiontext mb-5 new-line">
+          <p data-testid="discription" className="text-lg text-black mt-3 px-1 discriptiontext mb-5 new-line">
             {blogdetail?.content}
           </p>
         </div>
