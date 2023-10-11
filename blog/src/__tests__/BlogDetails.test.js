@@ -35,11 +35,9 @@ describe('Unit tests for BlogDetails Components', () => {
   });
 
   it('Correct title is rendered as Heading', () => {
-    renderWithProviders(<BlogDetails path="/blogdetails/post1" />, {
-      // and pass the parameter value on the route config
-      route: '/blogdetails/post1',
+    renderWithProviders(<BlogDetails path="/blogdetails/?slug=post1" />, {
+      route: '/blogdetails/?slug=post1',
     })
-    // renderWithProviders(<MemoryRouter><BlogDetails /></MemoryRouter>);
     const titleheading = screen.getByTestId('titleHeading');
     expect(titleheading).toBe(greater[0].title);
   });
@@ -47,7 +45,9 @@ describe('Unit tests for BlogDetails Components', () => {
   it('Discription is rendered', () => {
     const history = createMemoryHistory()
     history.push('/post1')
-    renderWithProviders(<BlogDetails />);
+    renderWithProviders(<BlogDetails />, {
+      initialEntries: ["/blogdetails/?slug?=post1"],
+    });
     const discription = screen.getByTestId('discription');
     expect(discription.textContent).toBe(greater[0].content);
   });

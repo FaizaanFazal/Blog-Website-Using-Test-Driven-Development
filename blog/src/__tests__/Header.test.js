@@ -1,5 +1,5 @@
 import { render, fireEvent, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom'
 import Header from '../components/Header/Header';
 
 describe('Unit tests for Header', () => {
