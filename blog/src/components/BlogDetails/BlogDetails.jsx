@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import images from '../../utils/images';
 import '../../styles/Card.scss';
-import { useLocation } from "react-router-dom";
 
 export default function BlogDetails() {
   const location = useLocation();
-  const id = new URLSearchParams(location.search).get("slug");
-  const slug = location.state?.slug;
-  console.log("slugss",id)
+  // const id = new URLSearchParams(location.search).get('slug');
   // const params = useParams();
   // const { slug } = params;
   const blogs = useSelector((state) => state.blog.blogs);
-  const blogdetail = blogs.filter((blog) => blog.slug === slug)[0];
+
+  const [blogdetail, setBlogdetail] = useState({});
+  useEffect(() => {
+    const slug = location.pathname.split('/')[location.pathname.split('/').length - 1];
+    const blog = blogs.filter((blog) => blog.slug === slug)[0];
+    setBlogdetail(blog);
+  }, [location, blogs]);
 
   return (
     <section data-testid="details">
@@ -22,7 +25,7 @@ export default function BlogDetails() {
         <div className="card-footer flex flex justify-between items-center">
           <div className="writer-info grid">
             <div className="info-avatar">
-              <img src={blogdetail?.authorImage.src} alt={blogdetail?.authorImage.alt} className="object-fit-cover" />
+              <img src={blogdetail?.authorImage?.src} alt={blogdetail?.authorImage?.alt} className="object-fit-cover" />
             </div>
             <div className="info-intro">
               <p className="intro-name text-base">{blogdetail?.author}</p>
@@ -47,7 +50,7 @@ export default function BlogDetails() {
 
         <div className="cover-grid grid mt-3 mb-2 ">
           <div className="cover-grid-img">
-            <img data-testid="Image" src={blogdetail?.image.src} alt={blogdetail?.image.alt} className="object-fit-cover" />
+            <img data-testid="Image" src={blogdetail?.image?.src} alt={blogdetail?.image?.alt} className="object-fit-cover" />
           </div>
         </div>
 

@@ -8,14 +8,13 @@ import '@testing-library/jest-dom';
 
 export * from '@testing-library/react';
 
-const AllTheProviders = ({ children }) => (
+const AllTheProviders = ({ children, route = '/' }) => (
   <Provider store={reduxStore}>
-    <MemoryRouter initialEntries={['/']}>{children}</MemoryRouter>
+    <MemoryRouter initialEntries={[route]}>{children}</MemoryRouter>
   </Provider>
 );
 
-export const renderWithProviders = (ui, options) => render(ui, { wrapper: AllTheProviders, ...options });
-export const renderWithBoth = (ui, options) => renderWithRouter(ui, { wrapper: AllTheProviders, ...options });
+export const renderWithProviders = (ui, options) => render(<AllTheProviders route={options?.route ? options.route : '/'}>{ui}</AllTheProviders>, options);
 
 // export function renderWithProviders(
 //   ui,
