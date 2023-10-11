@@ -5,21 +5,17 @@ import { renderWithProviders } from '../utils/wrappertesting';
 import BlogDetails from '../components/BlogDetails/BlogDetails';
 import {createMemoryHistory} from 'history'
 import { greater } from '../utils/helperfunctions';
-import { renderWithRouterWrapper } from '../utils/renderwithrouter';
+import { renderWithRouter } from '../utils/renderwithrouter';
 
 describe('Unit tests for BlogDetails Components', () => {
   it('Snapshot test for BlogDetails component', () => {
-    const history = createMemoryHistory()
-    history.push('/post1')
-    const { asFragment } = renderWithProviders(<MemoryRouter><BlogDetails /></MemoryRouter>);
+    
+    const { asFragment } = renderWithProviders(renderWithRouter(<BlogDetails />, {route: '/blogdetails/post1'}))
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('Dom test for rendering BlogDetails', () => {
-    const history = createMemoryHistory()
-    history.push('/post1')
-    renderWithProviders(<MemoryRouter><BlogDetails /></MemoryRouter>);
-    screen.debug();
+    renderWithRouter(renderWithProviders(<MemoryRouter><BlogDetails /></MemoryRouter>, {route: '/blogdetails/post1'}))
     const detailseElement = screen.getByTestId('details');
     expect(detailseElement).toBeInTheDocument();
   });
@@ -55,6 +51,6 @@ describe('Unit tests for BlogDetails Components', () => {
     history.push('/post1')
     renderWithProviders(<MemoryRouter><BlogDetails /></MemoryRouter>);
     const discription = screen.getByTestId('discription');
-    expect(discription).toBe(greater[0].content);
+    expect(discription.textContent).toBe(greater[0].content);
   });
 });

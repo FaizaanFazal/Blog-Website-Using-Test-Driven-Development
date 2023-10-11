@@ -1,22 +1,13 @@
-import React from 'react'
 import {render} from '@testing-library/react'
-import {
-  createHistory,
-  createMemorySource,
-  LocationProvider,
-} from '@reach/router'
+import * as userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom'
+import {MemoryRouter} from 'react-router-dom'
 
-// render function with Router wrapper from @reach/router
-export function renderWithRouterWrapper(
-  ui,
-  {route = '/', history = createHistory(createMemorySource(route))} = {},
-) {
+export const renderWithRouter = (ui, {route = '/'} = {}) => {
+  window.history.pushState({}, 'Test page', route)
+
   return {
-    ...render(
-      <LocationProvider history={history}>
-        <Router>{ui}</Router>
-      </LocationProvider>,
-    ),
-    history,
+    user: userEvent.setup,
+    ...render(ui, {wrapper: MemoryRouter}),
   }
 }
