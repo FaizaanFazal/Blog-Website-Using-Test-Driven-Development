@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit tests for CreatePost component snapshot test to check CreatePost component 1`] = `
+<DocumentFragment>
+  <div>
+    CreatePost
+  </div>
+</DocumentFragment>
+`;
