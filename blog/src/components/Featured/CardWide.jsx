@@ -2,16 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import images from '../../utils/images';
 import '../../styles/Card.scss';
-import { useNavigate } from "react-router-dom";
 
 const CardWide = ({ blogItemData }) => {
-  const navigate = useNavigate();
   const MAX_LENGTH = 250;
-
-  const handleClick = () => {
-    console.log("go")
-    navigate(`blogdetails/${blogItemData.slug}`,{state:{slug:blogItemData.slug}});
-  }
 
   return (
     <div className="card-grid grid">
@@ -29,7 +22,7 @@ const CardWide = ({ blogItemData }) => {
             ? (
               <p className="text-lg text" data-testid="featureSummary">
                 {`${blogItemData.content.substring(0, MAX_LENGTH)}...`}
-                <button type='button' data-testid="slugLink" onClick={handleClick}>Read more</button>
+                <Link data-testid="slugLink" to={`blogdetails/${blogItemData.slug}`}>Read more</Link>
               </p>
             )
             : <p data-testid="featureSummary">{blogItemData.content}</p>}

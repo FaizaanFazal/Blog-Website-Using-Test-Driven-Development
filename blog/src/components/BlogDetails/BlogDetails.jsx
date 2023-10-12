@@ -19,7 +19,7 @@ export default function BlogDetails() {
   }, [location, blogs]);
 
   return (
-    <section data-testid="details">
+    <section data-testid="details" className="mb-5">
       <div className="container">
         <h4 data-testid="titleHeading" className="title title-lg">{blogdetail?.title}</h4>
         <div className="card-footer flex flex justify-between items-center">
@@ -61,7 +61,7 @@ export default function BlogDetails() {
           </p>
         </div>
       </div>
-
+      <br />
     </section>
   );
 }

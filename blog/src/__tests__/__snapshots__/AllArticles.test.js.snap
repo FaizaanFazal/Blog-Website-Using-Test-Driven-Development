@@ -52,10 +52,246 @@ exports[`Unit tests for AllArticles Components Snapshot test for All Article com
         >
           <a
             data-testid="slugLink"
-            href="/blogdetails/post11"
+            href="/blogdetails/post8"
           >
             <div
               class="card "
+              data-testid="artice"
+            >
+              <img
+                alt="10 Tips for Budget-Friendly Travel Blog Header Image"
+                class="card-overlay-img object-fit-cover"
+                data-testid="Image"
+                src="blogImg8.jpg"
+              />
+              <div
+                class="card-content"
+              >
+                <div
+                  class="card-body"
+                >
+                  <h3
+                    class="title title-base"
+                  >
+                    Home Safety: Detecting and Preventing Gas Leaks
+                  </h3>
+                  <p
+                    class="text text-lg"
+                  >
+                    Learn how to safeguard your home and loved ones from the dangers of gas leaks.
+                  </p>
+                </div>
+                <div
+                  class="card-footer card-footer-light flex justify-between items-center"
+                >
+                  <div
+                    class="writer-info grid"
+                  >
+                    <div
+                      class="info-avatar"
+                    >
+                      <img
+                        alt=" Nathan"
+                        class="object-fit-cover"
+                        src="author1.jpg"
+                      />
+                    </div>
+                    <div
+                      class="info-intro"
+                    >
+                      <p
+                        class="intro-name text-base"
+                      >
+                        Eleanor Stevens
+                      </p>
+                      <div
+                        class="intro-verify flex items-center"
+                      >
+                        <img
+                          alt="icon"
+                          class="verify-icon"
+                          src="verify_icon_filled.svg"
+                        />
+                        <span
+                          class="verify-status text-sm text"
+                        >
+                          Verified writer
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="date-info text text-base"
+                  >
+                    20 September
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a
+            data-testid="slugLink"
+            href="/blogdetails/post9"
+          >
+            <div
+              class="card "
+              data-testid="artice"
+            >
+              <img
+                alt="The Balancing Act of Modern Parenthood"
+                class="card-overlay-img object-fit-cover"
+                data-testid="Image"
+                src="blogImg9.jpg"
+              />
+              <div
+                class="card-content"
+              >
+                <div
+                  class="card-body"
+                >
+                  <h3
+                    class="title title-base"
+                  >
+                    The Balancing Act of Modern Parenthood
+                  </h3>
+                  <p
+                    class="text text-lg"
+                  >
+                    Navigating the challenges and joys of being a parent in today's fast-paced world.
+                  </p>
+                </div>
+                <div
+                  class="card-footer card-footer-light flex justify-between items-center"
+                >
+                  <div
+                    class="writer-info grid"
+                  >
+                    <div
+                      class="info-avatar"
+                    >
+                      <img
+                        alt=" Marcus"
+                        class="object-fit-cover"
+                        src="author9.jpg"
+                      />
+                    </div>
+                    <div
+                      class="info-intro"
+                    >
+                      <p
+                        class="intro-name text-base"
+                      >
+                        Marcus Robinson
+                      </p>
+                      <div
+                        class="intro-verify flex items-center"
+                      >
+                        <img
+                          alt="icon"
+                          class="verify-icon"
+                          src="verify_icon_filled.svg"
+                        />
+                        <span
+                          class="verify-status text-sm text"
+                        >
+                          Verified writer
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="date-info text text-base"
+                  >
+                    10 October
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div
+          class="card-list grid-cols grid-cols-3"
+        >
+          <a
+            data-testid="slugLink"
+            href="/blogdetails/post10"
+          >
+            <div
+              class="card card-sm"
+              data-testid="artice"
+            >
+              <img
+                alt="10 Tips for Budget-Friendly Travel Blog Header Image"
+                class="card-overlay-img object-fit-cover"
+                data-testid="Image"
+                src="blogImg10.jpg"
+              />
+              <div
+                class="card-content"
+              >
+                <div
+                  class="card-body"
+                >
+                  <h3
+                    class="title title-base"
+                  >
+                    Embracing Automation: Shaping the Future of Employment
+                  </h3>
+                </div>
+                <div
+                  class="card-footer card-footer-light flex justify-between items-center"
+                >
+                  <div
+                    class="writer-info grid"
+                  >
+                    <div
+                      class="info-avatar"
+                    >
+                      <img
+                        alt=" Isabella"
+                        class="object-fit-cover"
+                        src="author10.jpg"
+                      />
+                    </div>
+                    <div
+                      class="info-intro"
+                    >
+                      <p
+                        class="intro-name text-base"
+                      >
+                        Isabella Carter
+                      </p>
+                      <div
+                        class="intro-verify flex items-center"
+                      >
+                        <img
+                          alt="icon"
+                          class="verify-icon"
+                          src="verify_icon_filled.svg"
+                        />
+                        <span
+                          class="verify-status text-sm text"
+                        >
+                          Verified writer
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="date-info text text-base"
+                  >
+                    05 November
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a
+            data-testid="slugLink"
+            href="/blogdetails/post11"
+          >
+            <div
+              class="card card-sm"
               data-testid="artice"
             >
               <img
@@ -75,11 +311,6 @@ exports[`Unit tests for AllArticles Components Snapshot test for All Article com
                   >
                     Unleashing the Power of Big Data Analytics
                   </h3>
-                  <p
-                    class="text text-lg"
-                  >
-                    Diving into the world of big data and its transformative role in various industries.
-                  </p>
                 </div>
                 <div
                   class="card-footer card-footer-light flex justify-between items-center"
@@ -134,7 +365,7 @@ exports[`Unit tests for AllArticles Components Snapshot test for All Article com
             href="/blogdetails/post12"
           >
             <div
-              class="card "
+              class="card card-sm"
               data-testid="artice"
             >
               <img
@@ -154,11 +385,6 @@ exports[`Unit tests for AllArticles Components Snapshot test for All Article com
                   >
                     Lifelong Learning: Navigating Education in the Digital Age
                   </h3>
-                  <p
-                    class="text text-lg"
-                  >
-                    Adapting to the ever-evolving landscape of education and skill development.
-                  </p>
                 </div>
                 <div
                   class="card-footer card-footer-light flex justify-between items-center"
@@ -203,232 +429,6 @@ exports[`Unit tests for AllArticles Components Snapshot test for All Article com
                     class="date-info text text-base"
                   >
                     15 December
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div
-          class="card-list grid-cols grid-cols-3"
-        >
-          <a
-            data-testid="slugLink"
-            href="/blogdetails/post13"
-          >
-            <div
-              class="card card-sm"
-              data-testid="artice"
-            >
-              <img
-                alt="10 Tips for Budget-Friendly Travel Blog Header Image"
-                class="card-overlay-img object-fit-cover"
-                data-testid="Image"
-                src="blogImg13.jpg"
-              />
-              <div
-                class="card-content"
-              >
-                <div
-                  class="card-body"
-                >
-                  <h3
-                    class="title title-base"
-                  >
-                    Healthy Eating: Tips for a Balanced Diet
-                  </h3>
-                </div>
-                <div
-                  class="card-footer card-footer-light flex justify-between items-center"
-                >
-                  <div
-                    class="writer-info grid"
-                  >
-                    <div
-                      class="info-avatar"
-                    >
-                      <img
-                        alt=" Emily"
-                        class="object-fit-cover"
-                        src="author3.jpg"
-                      />
-                    </div>
-                    <div
-                      class="info-intro"
-                    >
-                      <p
-                        class="intro-name text-base"
-                      >
-                        Emily Wilson
-                      </p>
-                      <div
-                        class="intro-verify flex items-center"
-                      >
-                        <img
-                          alt="icon"
-                          class="verify-icon"
-                          src="verify_icon_filled.svg"
-                        />
-                        <span
-                          class="verify-status text-sm text"
-                        >
-                          Verified writer
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="date-info text text-base"
-                  >
-                    10 January
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a
-            data-testid="slugLink"
-            href="/blogdetails/post14"
-          >
-            <div
-              class="card card-sm"
-              data-testid="artice"
-            >
-              <img
-                alt="10 Tips for Budget-Friendly Travel Blog Header Image"
-                class="card-overlay-img object-fit-cover"
-                data-testid="Image"
-                src="blogImg14.jpg"
-              />
-              <div
-                class="card-content"
-              >
-                <div
-                  class="card-body"
-                >
-                  <h3
-                    class="title title-base"
-                  >
-                    The Art of Mindfulness: Cultivating Inner Peace
-                  </h3>
-                </div>
-                <div
-                  class="card-footer card-footer-light flex justify-between items-center"
-                >
-                  <div
-                    class="writer-info grid"
-                  >
-                    <div
-                      class="info-avatar"
-                    >
-                      <img
-                        alt=" Michael"
-                        class="object-fit-cover"
-                        src="author4.jpg"
-                      />
-                    </div>
-                    <div
-                      class="info-intro"
-                    >
-                      <p
-                        class="intro-name text-base"
-                      >
-                        Michael Harris
-                      </p>
-                      <div
-                        class="intro-verify flex items-center"
-                      >
-                        <img
-                          alt="icon"
-                          class="verify-icon"
-                          src="verify_icon_filled.svg"
-                        />
-                        <span
-                          class="verify-status text-sm text"
-                        >
-                          Verified writer
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="date-info text text-base"
-                  >
-                    18 February
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a
-            data-testid="slugLink"
-            href="/blogdetails/post15"
-          >
-            <div
-              class="card card-sm"
-              data-testid="artice"
-            >
-              <img
-                alt="10 Tips for Budget-Friendly Travel Blog Header Image"
-                class="card-overlay-img object-fit-cover"
-                data-testid="Image"
-                src="blogImg15.jpg"
-              />
-              <div
-                class="card-content"
-              >
-                <div
-                  class="card-body"
-                >
-                  <h3
-                    class="title title-base"
-                  >
-                    Redefining Travel: Virtual Adventures Around the Globe
-                  </h3>
-                </div>
-                <div
-                  class="card-footer card-footer-light flex justify-between items-center"
-                >
-                  <div
-                    class="writer-info grid"
-                  >
-                    <div
-                      class="info-avatar"
-                    >
-                      <img
-                        alt="Olivia"
-                        class="object-fit-cover"
-                        src="author5.jpg"
-                      />
-                    </div>
-                    <div
-                      class="info-intro"
-                    >
-                      <p
-                        class="intro-name text-base"
-                      >
-                        Olivia Turner
-                      </p>
-                      <div
-                        class="intro-verify flex items-center"
-                      >
-                        <img
-                          alt="icon"
-                          class="verify-icon"
-                          src="verify_icon_filled.svg"
-                        />
-                        <span
-                          class="verify-status text-sm text"
-                        >
-                          Verified writer
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="date-info text text-base"
-                  >
-                    22 March
                   </div>
                 </div>
               </div>
