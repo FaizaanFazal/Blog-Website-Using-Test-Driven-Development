@@ -9,7 +9,7 @@ const CardWide = ({ blogItemData }) => {
   return (
     <div className="card-grid grid">
       <div className="card-grid-img">
-        <img data-testid="FeaturedImg" src={`${blogItemData.image}`} alt="Featured" className="object-fit-cover" />
+        <img data-testid="FeaturedImg" src={`${blogItemData.image.src}`} alt={`${blogItemData.image.alt}`} className="object-fit-cover" />
       </div>
       <div className="card-grid-text">
         <div>
@@ -22,7 +22,7 @@ const CardWide = ({ blogItemData }) => {
             ? (
               <p className="text-lg text" data-testid="featureSummary">
                 {`${blogItemData.content.substring(0, MAX_LENGTH)}...`}
-                <Link data-testid="slugLink" to={`/blogdetails/${blogItemData.slug}`}>Read more</Link>
+                <Link data-testid="slugLink" to={`blogdetails/${blogItemData.slug}`}>Read more</Link>
               </p>
             )
             : <p data-testid="featureSummary">{blogItemData.content}</p>}
@@ -31,7 +31,7 @@ const CardWide = ({ blogItemData }) => {
         <div className="card-footer flex justify-between items-center">
           <div className="writer-info grid">
             <div className="info-avatar">
-              <img src={`${blogItemData.authorImage}`} alt="" className="object-fit-cover" />
+              <img src={`${blogItemData.authorImage.src}`} alt={`${blogItemData.authorImage.alt}`} className="object-fit-cover" />
             </div>
             <div className="info-intro">
               <p className="intro-name text-base">{ blogItemData.author }</p>
