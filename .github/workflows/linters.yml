@@ -51,11 +51,12 @@ jobs:
         with:
           node-version: "18.x"
       - name: Go to blog/
-        run: cd blog/
+        run: 
+          cd blog/ 
+          npm ci
       - name: Setup
         run: |
-          npm install --package-lock-only
-          npm ci
+          npm ci 
       - name: Test
         run: |
           npm run test
