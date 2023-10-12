@@ -53,10 +53,9 @@ jobs:
       - name: Go to blog/
         run: 
           cd blog/ 
-          npm ci
       - name: Setup
         run: |
-          npm ci 
+          npm install 
       - name: Test
         run: |
           npm run test
