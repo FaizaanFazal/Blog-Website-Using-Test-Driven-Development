@@ -1,5 +1,9 @@
+// eslint-disable jsx-a11y/label-has-associated-control
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 import '../../styles/Card.scss';
+import 'react-toastify/dist/ReactToastify.css';
+import { isProperImageURL } from '../../utils/helperfunctions';
 
 export default function CreatePost() {
   const [title, setTitle] = useState('');
@@ -7,13 +11,46 @@ export default function CreatePost() {
   const [content, setContent] = useState('');
   const [slug, setSlug] = useState('');
 
+  const validateAll = () => {
+    if (!title || title.length < 8) {
+      toast.error('title incorrect: min length 8', { position: toast.POSITION.TOP_RIGHT, duration: 5000 });
+      return false;
+    }
+    const c = isProperImageURL(imgUrl);
+    if (!imgUrl || imgUrl.length < 8 || c === false) {
+      toast.error('Image Url incorrect', { position: toast.POSITION.TOP_RIGHT, duration: 5000 });
+      return false;
+    }
+    if (!content || content.length < 100) {
+      toast.error('content incorrect: min length 100', { position: toast.POSITION.TOP_RIGHT, duration: 5000 });
+      return false;
+    }
+    if (!slug || slug.length < 5) {
+      toast.error('slug incorrect: min length 8', { position: toast.POSITION.TOP_RIGHT, duration: 5000 });
+      return false;
+    }
+    return true;
+  };
+
   const handlesubmit = (e) => {
     e.preventDefault();
-    // todo
+    const all = validateAll();
+    if (all === false) {
+      return false;
+    }
+    alert('validations working fine');
+    return true;
+  };
+  const areFieldfilled = () => {
+    if (!title || !imgUrl || !content || !slug) {
+      return false;
+    }
+    return true;
   };
 
   return (
     <section data-testid="createpost">
+      <ToastContainer />
       <div className="container mb-5">
         <h4 className='"title title-lg"'>Write a Post</h4>
         <form className="text-black">
@@ -26,6 +63,7 @@ export default function CreatePost() {
               placeholder="Title..."
               value={title}
               onChange={(e) => (setTitle(e.target.value))}
+
             />
           </div>
 
@@ -47,6 +85,7 @@ export default function CreatePost() {
               placeholder="Image Upload"
               value={imgUrl}
               onChange={(e) => (setImgUrl(e.target.value))}
+
             />
             <small className="text-danger">* if image is not displayed after url insertion then check your url!! </small>
           </div>
@@ -61,6 +100,7 @@ export default function CreatePost() {
               placeholder="Content...."
               value={content}
               onChange={(e) => (setContent(e.target.value))}
+
             />
           </div>
 
@@ -81,8 +121,9 @@ export default function CreatePost() {
             <button
               data-testid="submitbtn"
               type="submit"
-              className="btn btn-primary"
+              className="btn btn-primary rounded-pill"
               onClick={handlesubmit}
+              disabled={!areFieldfilled()}
             >
               Submit
             </button>

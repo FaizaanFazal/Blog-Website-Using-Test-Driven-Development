@@ -6,6 +6,9 @@ exports[`Unit tests for CreatePost component snapshot test to check CreatePost c
     data-testid="createpost"
   >
     <div
+      class="Toastify"
+    />
+    <div
       class="container mb-5"
     >
       <h4
@@ -19,16 +22,12 @@ exports[`Unit tests for CreatePost component snapshot test to check CreatePost c
         <div
           class="form-group"
         >
-          <label
-            for="title"
-          >
+          <label>
             Title
           </label>
           <input
-            aria-describedby="title"
             class="form-control"
             data-testid="inputtitle"
-            id="title"
             placeholder="Title..."
             type="text"
             value=""
@@ -64,13 +63,12 @@ exports[`Unit tests for CreatePost component snapshot test to check CreatePost c
           >
             Content
           </label>
-          <input
+          <textarea
             class="form-control"
             data-testid="inputcontent"
             id="Content"
             placeholder="Content...."
-            type="text-area"
-            value=""
+            rows="3"
           />
         </div>
         <div
@@ -94,8 +92,9 @@ exports[`Unit tests for CreatePost component snapshot test to check CreatePost c
           class="text-center"
         >
           <button
-            class="btn btn-primary"
+            class="btn btn-primary rounded-pill"
             data-testid="submitbtn"
+            disabled=""
             type="submit"
           >
             Submit
