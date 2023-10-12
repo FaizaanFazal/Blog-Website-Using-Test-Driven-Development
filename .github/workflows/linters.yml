@@ -8,18 +8,18 @@ env:
 jobs:
   eslint:
     name: ESLint
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
         with:
-          node-version: "18.x"
+          node-version: "12.x"
       - name: Setup ESLint
         run: |
-          npm install --save-dev eslint@7.x eslint-config-airbnb@18.x eslint-plugin-import@2.x eslint-plugin-jsx-a11y@6.x eslint-plugin-react@7.x eslint-plugin-react-hooks@4.x @babel/core@7.x @babel/eslint-parser@7.x @babel/plugin-syntax-jsx@7.x @babel/preset-react@7.x --legacy-peer-deps
-          [ -f .eslintrc.json ] 
+          npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x
+          [ -f .eslintrc.json ]
       - name: ESLint Report
-        run: npx eslint "**/*.{js,jsx}"
+        run: npx eslint .
   stylelint:
     name: Stylelint
     runs-on: ubuntu-22.04
