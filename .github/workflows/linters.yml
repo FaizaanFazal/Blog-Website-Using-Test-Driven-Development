@@ -50,9 +50,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "18.x"
-      - name: Go to blog/
-        run: 
-          cd blog/ 
       - name: Setup
         run: |
           npm ci
