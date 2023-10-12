@@ -8,6 +8,7 @@ import Blogs from './pages/Blogs';
 import Createpost from './pages/Createpost';
 import Header from './components/Header/Header';
 import Blogdetails from './pages/Blogdetails';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path="/blogdetails/:slug" element={<Blogdetails />} />
           <Route path="/createpost" element={<Createpost />} />
         </Routes>
-
+        <Footer />
       </BrowserRouter>
     </>
   );

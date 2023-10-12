@@ -2,7 +2,6 @@ import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import PropTypes from 'prop-types';
 import { MemoryRouter } from 'react-router-dom';
-import { renderWithRouter } from './renderWithRouter';
 import reduxStore from '../Redux/store';
 import '@testing-library/jest-dom';
 

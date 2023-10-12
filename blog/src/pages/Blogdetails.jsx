@@ -6,7 +6,6 @@ export default function Blogdetails() {
   return (
     <>
       <BlogDetails />
-      <Footer />
     </>
   );
 }

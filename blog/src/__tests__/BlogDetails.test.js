@@ -1,5 +1,5 @@
 import React from 'react';
-import { prettyDOM, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 import { renderWithProviders } from '../utils/wrappertesting';
 import BlogDetails from '../pages/Blogdetails';
