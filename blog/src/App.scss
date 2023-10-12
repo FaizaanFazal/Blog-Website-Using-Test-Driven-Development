@@ -413,6 +413,7 @@ h6 {
 .nowrap {
   white-space: nowrap;
 }
+
 .cover-grid{
   grid-template-columns: repeat(1, 1fr);
 
@@ -428,6 +429,7 @@ h6 {
     @include breakpoint-up(lg) {
       height: 550px;
     } 
+
     @include breakpoint-down(lg) {
       height: 350px;
     }
@@ -458,9 +460,11 @@ h6 {
   object-fit: cover;
   border-radius: 5px;
 }
+
 .discriptiontext{
   text-indent: 4em;
 }
+
 .discriptiontext::first-letter {
   font-size: 2.5em;
 }
