@@ -35,11 +35,14 @@ describe('Unit tests for CreatePost component', () => {
     expect(Submitbtn).toBeInTheDocument();
   });
 
-  it('Image renders and src is correct', () => {
+  it('Image renders after inserting url and src is correct', () => {
     renderWithProviders(<CreatePost />);
     const imgInput = screen.getByTestId('imgInput');
     expect(imgInput).toBeInTheDocument();
-    const imageSrc = imgInput.src;
+    fireEvent.change(imgInput,{ target:{value:'https://picsum.photos/id/866/4704/3136'}})
+    const img = screen.getByTestId('Image');
+    expect(img).toBeInTheDocument();
+    const imageSrc = img.src;
     expect(isProperImageURL(imageSrc)).toBe(true);
   });
 

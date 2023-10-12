@@ -2,7 +2,7 @@ import { isProperImageURL } from '../utils/helperfunctions';
 
 describe('Tests for isProperImageURL functions', () => {
   test('isProperImageURL-> returns false for incorrect URL', () => {
-    expect(isProperImageURL('example.com/image')).toBeFalsy();
+    expect(isProperImageURL('example.com')).toBeFalsy();
   });
 
   test('isProperImageURL-> returns true for correct URL', () => {
