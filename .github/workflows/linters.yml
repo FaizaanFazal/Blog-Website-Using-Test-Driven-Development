@@ -54,7 +54,7 @@ jobs:
         run: cd blog/
       - name: Setup
         run: |
-          npm ci
+          npm@5 ci
       - name: Test
         run: |
           npm run test
