@@ -54,7 +54,8 @@ jobs:
         run: cd blog/
       - name: Setup
         run: |
-          npm@5 ci
+          -npm install --package-lock-only
+          -npm ci
       - name: Test
         run: |
           npm run test
