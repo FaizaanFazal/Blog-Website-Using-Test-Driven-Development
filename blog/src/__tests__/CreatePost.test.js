@@ -39,7 +39,7 @@ describe('Unit tests for CreatePost component', () => {
     renderWithProviders(<CreatePost />);
     const imgInput = screen.getByTestId('imgInput');
     expect(imgInput).toBeInTheDocument();
-    fireEvent.change(imgInput,{ target:{value:'https://picsum.photos/id/866/4704/3136'}})
+    fireEvent.change(imgInput, { target: { value: 'https://picsum.photos/id/866/4704/3136' } });
     const img = screen.getByTestId('Image');
     expect(img).toBeInTheDocument();
     const imageSrc = img.src;

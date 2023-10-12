@@ -5,7 +5,6 @@ import {
 } from 'react-router-dom';
 import Main from './pages/Main';
 import Blogs from './pages/Blogs';
-import Createpost from './pages/Createpost';
 import Header from './components/Header/Header';
 import Blogdetails from './pages/Blogdetails';
 import Footer from './components/Footer/Footer';

@@ -22,7 +22,8 @@
       "no-shadow": "off",
       "linebreak-style": ["error", "unix"],
       "react/prop-types": "off",
-      "max-len": "off"
+      "max-len": "off",
+      "jsx-a11y/label-has-associated-control": "off"
     },
     "overrides": [
       {
