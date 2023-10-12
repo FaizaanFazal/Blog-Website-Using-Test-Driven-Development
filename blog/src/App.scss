@@ -870,3 +870,16 @@ form {
 .page-wrapper {
   overflow: hidden;
 }
+
+.customing{
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  @include breakpoint-down(md) {
+    height: 400px;
+  }
+  @include breakpoint-down(sm) {
+    height: 300px;
+  }
+
+}
