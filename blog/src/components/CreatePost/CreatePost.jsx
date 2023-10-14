@@ -10,6 +10,28 @@ export default function CreatePost() {
   const [imgUrl, setImgUrl] = useState('');
   const [content, setContent] = useState('');
   const [slug, setSlug] = useState('');
+  const [errorTitle, setErrorTitle] = useState('');
+  const [errorImgurl, setErrorImgurl] = useState('');
+  const [errorContent, setErrorContent] = useState('');
+  const [errorSlug, setErrorSlug] = useState('');
+
+  const titleValidation = (e) => {
+    const { value } = e.target;
+    if (value.length < 8) { setErrorTitle('* Required at least 8 characters.'); } else { setErrorTitle(null); }
+  };
+  const imgurlValidation = (e) => {
+    const { value } = e.target;
+    if (value.length < 8) { setErrorImgurl('* Required at least 8 characters.'); }
+    if (isProperImageURL(value) === false) { setErrorImgurl('* Incorrect URL format'); } else { setErrorImgurl(null); }
+  };
+  const contentValidation = (e) => {
+    const { value } = e.target;
+    if (value.length < 100) { setErrorContent('* Required at least 100 characters.'); } else { setErrorContent(null); }
+  };
+  const slugValidation = (e) => {
+    const { value } = e.target;
+    if (value.length < 5) { setErrorSlug('* Required at least 5 characters.'); } else { setErrorSlug(null); }
+  };
 
   const validateAll = () => {
     if (!title || title.length < 8) {
@@ -63,8 +85,9 @@ export default function CreatePost() {
               placeholder="Title..."
               value={title}
               onChange={(e) => (setTitle(e.target.value))}
-
+              onBlur={titleValidation}
             />
+            {errorTitle && <small style={{ color: 'red' }}>{errorTitle}</small>}
           </div>
 
           {imgUrl.length > 0
@@ -76,45 +99,52 @@ export default function CreatePost() {
             : null}
 
           <div className="form-group">
-            <label htmlFor="img">Image Url</label>
+            <label>Image Url</label>
             <input
               type="url"
               data-testid="imgInput"
               className="form-control"
-              id="img"
               placeholder="Image Upload"
               value={imgUrl}
               onChange={(e) => (setImgUrl(e.target.value))}
-
+              onBlur={imgurlValidation}
             />
-            <small className="text-danger">* if image is not displayed after url insertion then check your url!! </small>
+            {errorImgurl && (
+            <small style={{ color: 'red' }}>
+              {errorImgurl}
+              {' '}
+              <br />
+            </small>
+            )}
+            <small className="text-warning">*Note if image is not displayed after url insertion then check your url!! </small>
           </div>
 
           <div className="form-group">
-            <label htmlFor="Content">Content</label>
+            <label>Content</label>
             <textarea
               rows={3}
               data-testid="inputcontent"
               className="form-control"
-              id="Content"
               placeholder="Content...."
               value={content}
               onChange={(e) => (setContent(e.target.value))}
-
+              onBlur={contentValidation}
             />
+            {errorContent && <small style={{ color: 'red' }}>{errorContent}</small>}
           </div>
 
           <div className="form-group">
-            <label htmlFor="slug">Slug</label>
+            <label>Slug</label>
             <input
               type="text"
               data-testid="inputslug"
               className="form-control col-sm-6"
-              id="slug"
               placeholder="Slug must be unique for post"
               value={slug}
               onChange={(e) => (setSlug(e.target.value))}
+              onBlur={slugValidation}
             />
+            {errorSlug && <small style={{ color: 'red' }}>{errorSlug}</small>}
           </div>
 
           <div className="text-center">
