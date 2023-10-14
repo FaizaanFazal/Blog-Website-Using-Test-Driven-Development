@@ -10,25 +10,32 @@ export default function CreatePost() {
   const [imgUrl, setImgUrl] = useState('');
   const [content, setContent] = useState('');
   const [slug, setSlug] = useState('');
+  const [imgdisplay, setImgdisplay] = useState(false);
   const [errorTitle, setErrorTitle] = useState('');
   const [errorImgurl, setErrorImgurl] = useState('');
   const [errorContent, setErrorContent] = useState('');
   const [errorSlug, setErrorSlug] = useState('');
 
   const titleValidation = (e) => {
+    setTitle(e.target.value);
     const { value } = e.target;
     if (value.length < 8) { setErrorTitle('* Required at least 8 characters.'); } else { setErrorTitle(null); }
   };
   const imgurlValidation = (e) => {
     const { value } = e.target;
+    const check = isProperImageURL(value);
+    setImgUrl(value);
     if (value.length < 8) { setErrorImgurl('* Required at least 8 characters.'); }
-    if (isProperImageURL(value) === false) { setErrorImgurl('* Incorrect URL format'); } else { setErrorImgurl(null); }
+    if (check === false) { setErrorImgurl('* Incorrect URL format example:(https://google.com)'); } else { setErrorImgurl(null); }
+    if (check === true)setImgdisplay(true);
   };
   const contentValidation = (e) => {
+    setContent(e.target.value);
     const { value } = e.target;
     if (value.length < 100) { setErrorContent('* Required at least 100 characters.'); } else { setErrorContent(null); }
   };
   const slugValidation = (e) => {
+    setSlug(e.target.value);
     const { value } = e.target;
     if (value.length < 5) { setErrorSlug('* Required at least 5 characters.'); } else { setErrorSlug(null); }
   };
@@ -48,7 +55,7 @@ export default function CreatePost() {
       return false;
     }
     if (!slug || slug.length < 5) {
-      toast.error('slug incorrect: min length 8', { position: toast.POSITION.TOP_RIGHT, duration: 5000 });
+      toast.error('slug incorrect: min length 5', { position: toast.POSITION.TOP_RIGHT, duration: 5000 });
       return false;
     }
     return true;
@@ -84,13 +91,12 @@ export default function CreatePost() {
               className="form-control"
               placeholder="Title..."
               value={title}
-              onChange={(e) => (setTitle(e.target.value))}
-              onBlur={titleValidation}
+              onChange={titleValidation}
             />
             {errorTitle && <small style={{ color: 'red' }}>{errorTitle}</small>}
           </div>
 
-          {imgUrl.length > 0
+          {imgdisplay === true
             ? (
               <div className="customing">
                 <img data-testid="Image" src={imgUrl} alt={title} className="object-fit-cover" />
@@ -106,8 +112,7 @@ export default function CreatePost() {
               className="form-control"
               placeholder="Image Upload"
               value={imgUrl}
-              onChange={(e) => (setImgUrl(e.target.value))}
-              onBlur={imgurlValidation}
+              onChange={imgurlValidation}
             />
             {errorImgurl && (
             <small style={{ color: 'red' }}>
@@ -127,8 +132,7 @@ export default function CreatePost() {
               className="form-control"
               placeholder="Content...."
               value={content}
-              onChange={(e) => (setContent(e.target.value))}
-              onBlur={contentValidation}
+              onChange={contentValidation}
             />
             {errorContent && <small style={{ color: 'red' }}>{errorContent}</small>}
           </div>
@@ -141,8 +145,7 @@ export default function CreatePost() {
               className="form-control col-sm-6"
               placeholder="Slug must be unique for post"
               value={slug}
-              onChange={(e) => (setSlug(e.target.value))}
-              onBlur={slugValidation}
+              onChange={slugValidation}
             />
             {errorSlug && <small style={{ color: 'red' }}>{errorSlug}</small>}
           </div>
