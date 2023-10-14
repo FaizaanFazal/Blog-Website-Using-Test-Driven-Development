@@ -28,6 +28,7 @@ export default function CreatePost() {
     if (value.length < 8) { setErrorImgurl('* Required at least 8 characters.'); }
     if (check === false) { setErrorImgurl('* Incorrect URL format example:(https://google.com)'); } else { setErrorImgurl(null); }
     if (check === true)setImgdisplay(true);
+    else { setImgdisplay(false); }
   };
   const contentValidation = (e) => {
     setContent(e.target.value);
@@ -93,16 +94,15 @@ export default function CreatePost() {
               value={title}
               onChange={titleValidation}
             />
-            {errorTitle && <small style={{ color: 'red' }}>{errorTitle}</small>}
+            {errorTitle && <small data-testid="errorTitle" style={{ color: 'red' }}>{errorTitle}</small>}
           </div>
 
           {imgdisplay === true
-            ? (
-              <div className="customing">
+              && (
+              <div className="customing" data-testid="ImageCont">
                 <img data-testid="Image" src={imgUrl} alt={title} className="object-fit-cover" />
               </div>
-            )
-            : null}
+              )}
 
           <div className="form-group">
             <label>Image Url</label>
@@ -134,7 +134,7 @@ export default function CreatePost() {
               value={content}
               onChange={contentValidation}
             />
-            {errorContent && <small style={{ color: 'red' }}>{errorContent}</small>}
+            {errorContent && <small data-testid="errorContent" style={{ color: 'red' }}>{errorContent}</small>}
           </div>
 
           <div className="form-group">
@@ -147,7 +147,7 @@ export default function CreatePost() {
               value={slug}
               onChange={slugValidation}
             />
-            {errorSlug && <small style={{ color: 'red' }}>{errorSlug}</small>}
+            {errorSlug && <small data-testid="errorSlug" style={{ color: 'red' }}>{errorSlug}</small>}
           </div>
 
           <div className="text-center">
