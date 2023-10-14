@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit tests for Login Components Snapshot test for Login component 1`] = `
+<DocumentFragment>
+  <div>
+    Login
+  </div>
+</DocumentFragment>
+`;
