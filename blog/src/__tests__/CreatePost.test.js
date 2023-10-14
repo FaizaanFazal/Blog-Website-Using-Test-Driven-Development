@@ -1,7 +1,7 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { fireEvent, screen ,flushPromises, waitFor } from '@testing-library/react';
 import { renderWithProviders } from '../utils/wrappertesting';
 import CreatePost from '../components/CreatePost/CreatePost';
-import { greater, isProperImageURL } from '../utils/helperfunctions';
+import { Notfoundimgsrc, greater, isProperImageURL } from '../utils/helperfunctions';
 
 describe('Unit tests for CreatePost component', () => {
   it('Dom test for rendering CreatePost', () => {
@@ -35,17 +35,18 @@ describe('Unit tests for CreatePost component', () => {
     expect(Submitbtn).toBeInTheDocument();
   });
 
-  it('Image displays/hides after changing url and src is correct', () => {
+  it('Image displays/hides after changing url and src is correct', async () => {
     renderWithProviders(<CreatePost />);
     const imgInput = screen.getByTestId('imgInput');
-    expect(imgInput).toBeInTheDocument();
-    fireEvent.change(imgInput, { target: { value: 'https://picsum.photos/id/866/4704/3136' } });
+    fireEvent.change(imgInput, { target: { value: 'https://picsum.photos/id/866/4704/3132' } });
     const img = screen.getByTestId('Image');
-    expect(img).toBeInTheDocument();
     const imageSrc = img.src;
     expect(isProperImageURL(imageSrc)).toBe(true);
-    fireEvent.change(imgInput, { target: { value: 'picsum.photos/id/866/4704/3136' } });
-    expect(img).not.toBeInTheDocument(); // image should not appear if url is incorrect
+    expect(img).toBeInTheDocument();        //on above url image is displayed
+    fireEvent.change(imgInput, { target: { value: '' } });
+    const errorImg = screen.getByTestId('errorImg');
+    expect(errorImg).toBeInTheDocument();  //error msg is diplayed
+    
   });
 
   it('Updates input value on change in slug', () => {

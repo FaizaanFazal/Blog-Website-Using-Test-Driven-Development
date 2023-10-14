@@ -1,16 +1,17 @@
 // eslint-disable jsx-a11y/label-has-associated-control
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import '../../styles/Card.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import { isProperImageURL } from '../../utils/helperfunctions';
+import images from '../../utils/images';
 
 export default function CreatePost() {
   const [title, setTitle] = useState('');
   const [imgUrl, setImgUrl] = useState('');
   const [content, setContent] = useState('');
   const [slug, setSlug] = useState('');
-  const [imgdisplay, setImgdisplay] = useState(false);
+  const [imgdisplay, setImgdisplay] = useState({src:'',status:false});
   const [errorTitle, setErrorTitle] = useState('');
   const [errorImgurl, setErrorImgurl] = useState('');
   const [errorContent, setErrorContent] = useState('');
@@ -21,14 +22,35 @@ export default function CreatePost() {
     const { value } = e.target;
     if (value.length < 8) { setErrorTitle('* Required at least 8 characters.'); } else { setErrorTitle(null); }
   };
+  const fetchImage = async () => {
+    try {
+      const response = await fetch(imgUrl,{
+        headers: {
+          Accept: "image/*",
+        },
+      });
+      console.log(response.headers.get("Content-Type"))
+      console.log(response.status )
+      if (response.headers.get("Content-Type").startsWith("image/jpeg")) {
+        setImgdisplay(true)
+      } else {
+        setImgdisplay(false)
+      }
+    } catch (error) {
+      console.log(error)
+      setImgdisplay(false)
+    }
+  };
+
   const imgurlValidation = (e) => {
     const { value } = e.target;
     const check = isProperImageURL(value);
     setImgUrl(value);
+    // if( check===true){fetchImage() }
     if (value.length < 8) { setErrorImgurl('* Required at least 8 characters.'); }
     if (check === false) { setErrorImgurl('* Incorrect URL format example:(https://google.com)'); } else { setErrorImgurl(null); }
-    if (check === true)setImgdisplay(true);
-    else { setImgdisplay(false); }
+    if (check === true){setImgdisplay({src: value,status: true,});}
+    else { setImgdisplay({src: '',status: false,}); }
   };
   const contentValidation = (e) => {
     setContent(e.target.value);
@@ -78,6 +100,7 @@ export default function CreatePost() {
     return true;
   };
 
+
   return (
     <section data-testid="createpost">
       <ToastContainer />
@@ -97,10 +120,17 @@ export default function CreatePost() {
             {errorTitle && <small data-testid="errorTitle" style={{ color: 'red' }}>{errorTitle}</small>}
           </div>
 
-          {imgdisplay === true
+          {imgdisplay.status === true
               && (
               <div className="customing" data-testid="ImageCont">
-                <img data-testid="Image" src={imgUrl} alt={title} className="object-fit-cover" />
+                <img data-testid="Image" src={imgdisplay.src || null} 
+                alt={title} 
+                className="object-fit-cover"
+                onError={({ currentTarget }) => {
+    currentTarget.onerror = null; // prevents looping
+    currentTarget.src="https://media.istockphoto.com/id/1456566772/photo/page-not-found-404-design-404-error-web-page-concept-on-a-computer-screen-3d-illustration.jpg?s=1024x1024&w=is&k=20&c=5gcQ1JbTHMqwEpw13pzVxpR8ajQ1gsrxuLOmd4CMtro=";
+  }}
+                  />
               </div>
               )}
 
@@ -115,7 +145,7 @@ export default function CreatePost() {
               onChange={imgurlValidation}
             />
             {errorImgurl && (
-            <small style={{ color: 'red' }}>
+            <small data-testid="errorImg" style={{ color: 'red' }}>
               {errorImgurl}
               {' '}
               <br />
