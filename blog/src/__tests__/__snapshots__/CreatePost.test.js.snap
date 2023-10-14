@@ -36,37 +36,31 @@ exports[`Unit tests for CreatePost component snapshot test to check CreatePost c
         <div
           class="form-group"
         >
-          <label
-            for="img"
-          >
+          <label>
             Image Url
           </label>
           <input
             class="form-control"
             data-testid="imgInput"
-            id="img"
             placeholder="Image Upload"
             type="url"
             value=""
           />
           <small
-            class="text-danger"
+            class="text-warning"
           >
-            * if image is not displayed after url insertion then check your url!! 
+            *Note if image is not displayed after url insertion then check your url!! 
           </small>
         </div>
         <div
           class="form-group"
         >
-          <label
-            for="Content"
-          >
+          <label>
             Content
           </label>
           <textarea
             class="form-control"
             data-testid="inputcontent"
-            id="Content"
             placeholder="Content...."
             rows="3"
           />
@@ -74,15 +68,12 @@ exports[`Unit tests for CreatePost component snapshot test to check CreatePost c
         <div
           class="form-group"
         >
-          <label
-            for="slug"
-          >
+          <label>
             Slug
           </label>
           <input
             class="form-control col-sm-6"
             data-testid="inputslug"
-            id="slug"
             placeholder="Slug must be unique for post"
             type="text"
             value=""
