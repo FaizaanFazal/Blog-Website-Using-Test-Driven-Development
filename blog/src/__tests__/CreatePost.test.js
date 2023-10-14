@@ -1,7 +1,7 @@
-import { fireEvent, screen ,flushPromises, waitFor } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import { renderWithProviders } from '../utils/wrappertesting';
 import CreatePost from '../components/CreatePost/CreatePost';
-import { Notfoundimgsrc, greater, isProperImageURL } from '../utils/helperfunctions';
+import { greater, isProperImageURL } from '../utils/helperfunctions';
 
 describe('Unit tests for CreatePost component', () => {
   it('Dom test for rendering CreatePost', () => {
@@ -42,11 +42,10 @@ describe('Unit tests for CreatePost component', () => {
     const img = screen.getByTestId('Image');
     const imageSrc = img.src;
     expect(isProperImageURL(imageSrc)).toBe(true);
-    expect(img).toBeInTheDocument();        //on above url image is displayed
+    expect(img).toBeInTheDocument(); // on above url image is displayed
     fireEvent.change(imgInput, { target: { value: '' } });
     const errorImg = screen.getByTestId('errorImg');
-    expect(errorImg).toBeInTheDocument();  //error msg is diplayed
-    
+    expect(errorImg).toBeInTheDocument(); // error msg is diplayed
   });
 
   it('Updates input value on change in slug', () => {
