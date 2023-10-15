@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import case_img from '../assets/images/case_img.png';
 import featured_img from '../assets/images/featured_img.png';
 import hd_base from '../assets/images/hd_base.png';
