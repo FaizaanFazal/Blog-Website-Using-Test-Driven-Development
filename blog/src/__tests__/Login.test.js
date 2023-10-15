@@ -39,11 +39,18 @@ describe('Unit tests for Login Components', () => {
   it('Validations Checking on Email', () => {
     renderWithProviders(<Login />);
     const inputEmail = screen.getByTestId('inputEmail');
-    fireEvent.change(inputEmail, { target: { value: 'faizaan' } }); // no email format should raise error
+    fireEvent.change(inputEmail, { target: { value: 'faizaan@gmailcom' } }); // wrong email format should raise error
     const errorEmail = screen.getByTestId('errorEmail');
     expect(errorEmail).toBeInTheDocument();
     fireEvent.change(inputEmail, { target: { value: 'faizaan@gmail.com' } }); // error should not be there
     expect(errorEmail).not.toBeInTheDocument();
+    fireEvent.keyDown(inputEmail, 'Backspace');
+    fireEvent.keyUp(inputEmail, 'Backspace'); // removes last character
+    fireEvent.keyDown(inputEmail, 'Backspace');
+    fireEvent.keyUp(inputEmail, 'Backspace'); // removes last character
+    fireEvent.keyDown(inputEmail, 'Backspace');
+    fireEvent.keyUp(inputEmail, 'Backspace'); // removes last character
+    expect(errorEmail).toBeInTheDocument();
   });
 
   it('Validations Checking on Password', () => {
@@ -54,5 +61,8 @@ describe('Unit tests for Login Components', () => {
     expect(errorPass).toBeInTheDocument();
     fireEvent.change(inputPass, { target: { value: 'qwer1234' } }); // min 8 chars error should not be there
     expect(errorPass).not.toBeInTheDocument();
+    fireEvent.keyDown(inputPass, 'Backspace');
+    fireEvent.keyUp(inputPass, 'Backspace'); // remove last character  min chars become 7
+    expect(errorPass).toBeInTheDocument();
   });
 });
