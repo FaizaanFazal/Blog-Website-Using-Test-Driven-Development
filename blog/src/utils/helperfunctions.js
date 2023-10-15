@@ -1,7 +1,8 @@
 import images from './images';
 
 export const isProperImageURL = (url) => {
-  const regex = /^https?:\/\/[^\s]+\.(jpg|jpeg|png|gif|webp|avif)$/;
+  /* eslint-disable-next-line no-useless-escape */
+  const regex = /^(https?|ftp):\/\/(([a-z\d]([a-z\d-]*[a-z\d])?\.)+[a-z]{2,}|localhost)(\/[-a-z\d%_.~+]*)*(\?[;&a-z\d%_.~+=-]*)?(\#[-a-z\d_]*)?$/i;
   return regex.test(url);
 };
 
