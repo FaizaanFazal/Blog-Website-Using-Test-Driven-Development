@@ -37,6 +37,7 @@ exports[`Unit tests for Login Components Snapshot test for Login component 1`] =
               data-testid="inputEmail"
               placeholder="Title..."
               type="email"
+              value=""
             />
           </div>
           <div
@@ -50,6 +51,7 @@ exports[`Unit tests for Login Components Snapshot test for Login component 1`] =
               data-testid="inputPass"
               placeholder="Password..."
               type="password"
+              value=""
             />
           </div>
           <div

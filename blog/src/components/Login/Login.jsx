@@ -66,9 +66,10 @@ export default function Login() {
               <label>Email</label>
               <input
                 type="email"
+                value={email}
                 data-testid="inputEmail"
                 className="form-control"
-                placeholder="Title..."
+                placeholder="Email..."
                 onChange={emailValidation}
               />
               {errorEmail && <small data-testid="errorEmail" style={{ color: 'red' }}>{errorEmail}</small>}
@@ -78,6 +79,7 @@ export default function Login() {
               <label>Password</label>
               <input
                 type="password"
+                value={pass}
                 data-testid="inputPass"
                 className="form-control"
                 placeholder="Password..."

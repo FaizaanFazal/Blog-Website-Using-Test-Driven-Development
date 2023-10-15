@@ -1,8 +1,9 @@
 import React from 'react';
-import { fireEvent, screen } from '@testing-library/react';
+import { fireEvent, screen,userEvent } from '@testing-library/react';
 import { renderWithProviders } from '../utils/wrappertesting';
 import Login from '../components/Login/Login';
 import { backspace } from '../utils/helperfunctions';
+import { debug } from 'console';
 
 describe('Unit tests for Login Components', () => {
   it('Snapshot test for Login component', () => {
@@ -51,7 +52,9 @@ describe('Unit tests for Login Components', () => {
     fireEvent.keyUp(inputEmail, 'Backspace'); // removes last character
     fireEvent.keyDown(inputEmail, 'Backspace');
     fireEvent.keyUp(inputEmail, 'Backspace'); // removes last character
+    screen.debug()
     expect(errorEmail).toBeInTheDocument();
+    
   });
 
   it('Validations Checking on Password', () => {
@@ -64,6 +67,7 @@ describe('Unit tests for Login Components', () => {
     expect(errorPass).not.toBeInTheDocument();
 
     backspace(inputPass);
+    userEvent.keyboard('{Escape}');
     // remove last character  min chars become 7
     expect(errorPass).toBeInTheDocument();
   });
