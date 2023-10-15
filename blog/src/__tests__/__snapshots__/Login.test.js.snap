@@ -35,7 +35,7 @@ exports[`Unit tests for Login Components Snapshot test for Login component 1`] =
             <input
               class="form-control"
               data-testid="inputEmail"
-              placeholder="Title..."
+              placeholder="Email..."
               type="email"
               value=""
             />

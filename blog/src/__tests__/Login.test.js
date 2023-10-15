@@ -52,7 +52,7 @@ describe('Unit tests for Login Components', () => {
     fireEvent.keyUp(inputEmail, 'Backspace'); // removes last character
     fireEvent.keyDown(inputEmail, 'Backspace');
     fireEvent.keyUp(inputEmail, 'Backspace'); // removes last character
-    screen.debug()
+    console.log(inputEmail.value)
     expect(errorEmail).toBeInTheDocument();
     
   });
