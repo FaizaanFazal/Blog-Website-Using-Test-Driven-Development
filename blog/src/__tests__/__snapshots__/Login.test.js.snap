@@ -2,8 +2,33 @@
 
 exports[`Unit tests for Login Components Snapshot test for Login component 1`] = `
 <DocumentFragment>
-  <div>
-    Login
-  </div>
+  <section>
+    <div
+      class="container"
+    >
+      <div
+        class="BoxAuth bg-white"
+      >
+        <div
+          class="heading"
+        >
+          <h4
+            class="title title-box text-center"
+          >
+            Login
+          </h4>
+        </div>
+        <div>
+          email
+        </div>
+        <div>
+          email
+        </div>
+        <div>
+          email
+        </div>
+      </div>
+    </div>
+  </section>
 </DocumentFragment>
 `;

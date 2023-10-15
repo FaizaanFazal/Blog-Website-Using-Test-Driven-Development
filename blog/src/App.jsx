@@ -9,6 +9,7 @@ import Header from './components/Header/Header';
 import Blogdetails from './pages/Blogdetails';
 import Footer from './components/Footer/Footer';
 import CreatePost from './components/CreatePost/CreatePost';
+import Login from './components/Login/Login';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/blogs/:slug" element={<Blogs />} />
           <Route path="/blogdetails/:slug" element={<Blogdetails />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/createpost" element={<CreatePost />} />
         </Routes>
         <Footer />
