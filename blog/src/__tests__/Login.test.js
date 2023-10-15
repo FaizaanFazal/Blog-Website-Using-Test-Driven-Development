@@ -35,4 +35,24 @@ describe('Unit tests for Login Components', () => {
     const loginbtn = screen.getByTestId('loginbtn');
     expect(loginbtn).toBeInTheDocument();
   });
+
+  it('Validations Checking on Email', () => {
+    renderWithProviders(<Login />);
+    const inputEmail = screen.getByTestId('inputEmail');
+    fireEvent.change(inputEmail, { target: { value: 'faizaan' } }); // no email format should raise error
+    const errorEmail = screen.getByTestId('errorEmail');
+    expect(errorEmail).toBeInTheDocument();
+    fireEvent.change(inputEmail, { target: { value: 'faizaan@gmail.com' } }); // error should not be there
+    expect(errorEmail).not.toBeInTheDocument();
+  });
+
+  it('Validations Checking on Password', () => {
+    renderWithProviders(<Login />);
+    const inputPass = screen.getByTestId('inputPass');
+    fireEvent.change(inputPass, { target: { value: 'qwe123' } }); // less than 8 character error shoul be in document
+    const errorPass = screen.getByTestId('errorPass');
+    expect(errorPass).toBeInTheDocument();
+    fireEvent.change(inputPass, { target: { value: 'qwer1234' } }); // min 8 chars error should not be there
+    expect(errorPass).not.toBeInTheDocument();
+  });
 });
