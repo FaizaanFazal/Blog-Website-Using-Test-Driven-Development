@@ -1,9 +1,8 @@
 import React from 'react';
-import { fireEvent, screen,userEvent } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import { renderWithProviders } from '../utils/wrappertesting';
 import Login from '../components/Login/Login';
 import { backspace } from '../utils/helperfunctions';
-import { debug } from 'console';
 
 describe('Unit tests for Login Components', () => {
   it('Snapshot test for Login component', () => {
@@ -46,15 +45,9 @@ describe('Unit tests for Login Components', () => {
     expect(errorEmail).toBeInTheDocument();
     fireEvent.change(inputEmail, { target: { value: 'faizaan@gmail.com' } }); // error should not be there
     expect(errorEmail).not.toBeInTheDocument();
-    fireEvent.keyDown(inputEmail, 'Backspace');
-    fireEvent.keyUp(inputEmail, 'Backspace'); // removes last character
-    fireEvent.keyDown(inputEmail, 'Backspace');
-    fireEvent.keyUp(inputEmail, 'Backspace'); // removes last character
-    fireEvent.keyDown(inputEmail, 'Backspace');
-    fireEvent.keyUp(inputEmail, 'Backspace'); // removes last character
-    console.log(inputEmail.value)
-    expect(errorEmail).toBeInTheDocument();
-    
+    backspace(inputEmail); // remove m
+    backspace(inputEmail); // remove 0
+    expect(screen.getByTestId('errorEmail')).toBeInTheDocument();
   });
 
   it('Validations Checking on Password', () => {
@@ -65,10 +58,7 @@ describe('Unit tests for Login Components', () => {
     expect(errorPass).toBeInTheDocument();
     fireEvent.change(inputPass, { target: { value: 'Qwer@124' } }); // conditions satified should not be there
     expect(errorPass).not.toBeInTheDocument();
-
-    backspace(inputPass);
-    userEvent.keyboard('{Escape}');
-    // remove last character  min chars become 7
-    expect(errorPass).toBeInTheDocument();
+    backspace(inputPass); // remove last character  min chars become 7
+    expect(screen.getByTestId('errorPass')).toBeInTheDocument();
   });
 });
