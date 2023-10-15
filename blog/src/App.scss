@@ -885,3 +885,33 @@ form {
   }
 
 }
+
+.box-auth{
+  max-width: 600px;
+  border: 1px solid #e5eaf4;
+  color: $color-blue-dark;
+  box-shadow: 0 10px 35px 0 rgb(0 0 0 / 32.4%);
+  overflow: hidden;
+  border-radius: 16px;
+  margin: -200px auto 48px;
+  position: relative;
+
+  .heading{
+    padding: 13px;
+    background-color: $color-blue-dark;
+  }
+
+  .title-box {
+    color: $color-white
+  }
+
+  .text-darkblue{
+    color: $color-blue;
+    font-weight: 900;
+  }
+
+  a{
+    color: $color-blue;
+    font-weight: 300;
+  }
+}

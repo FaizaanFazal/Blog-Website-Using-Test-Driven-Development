@@ -4,6 +4,7 @@
 .ftr-brand {
   font-size: 24px;
   font-weight: bold;
+  color: $color-white;
 
   &-dot {
     width: 6px;
@@ -11,6 +12,9 @@
     display: inline-block;
     border-radius: 100%;
     margin-left: 2px;
+    color:$color-white ;
+    background-color: $color-white;
+   
   }
 }
 
@@ -161,6 +165,7 @@
     .nav-brand {
       &-dot {
         background-color: $color-blue;
+        color: $color-blue ;
       }
     }
 

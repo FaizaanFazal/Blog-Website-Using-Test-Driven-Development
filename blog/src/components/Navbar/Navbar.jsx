@@ -25,10 +25,10 @@ const Navbar = () => {
     <nav role="navigation" className={`navbar flex items-center ${scrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container w-full flex justify-between">
         <div className="brand-and-toggler flex items-center justify-between">
-          <Link data-testid="logo" to="/" className="nav-brand text-white">
+          <Link data-testid="logo" to="/" className="nav-brand">
             Blogs
             {' '}
-            <span className="nav-brand-dot bg-white" />
+            <span className="nav-brand-dot" />
           </Link>
           <Button className="nav-show-btn text-white" onClick={showSideMenu}><i className="bi bi-list" /></Button>
         </div>

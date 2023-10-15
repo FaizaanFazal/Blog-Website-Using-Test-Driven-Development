@@ -36,9 +36,9 @@ describe('Unit tests for navbar', () => {
     render(<MemoryRouter><Navbar /></MemoryRouter>);
     expect(screen.getByText('About')).toHaveAttribute('href', '/about');
   });
-  it('checks link of featured is correct', () => {
+  it('checks link of login is correct', () => {
     render(<MemoryRouter><Navbar /></MemoryRouter>);
-    expect(screen.getByText('Featured')).toHaveAttribute('href', '/featured');
+    expect(screen.getByText('Login')).toHaveAttribute('href', '/login');
   });
 
   it('check link of contact is correct', async () => {

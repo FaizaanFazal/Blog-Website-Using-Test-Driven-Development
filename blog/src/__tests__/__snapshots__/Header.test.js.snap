@@ -16,13 +16,13 @@ exports[`Unit tests for Header Snapshot test for rendering navbar in header 1`] 
           class="brand-and-toggler flex items-center justify-between"
         >
           <a
-            class="nav-brand text-white"
+            class="nav-brand"
             data-testid="logo"
             href="/"
           >
             Blogs 
             <span
-              class="nav-brand-dot bg-white"
+              class="nav-brand-dot"
             />
           </a>
           <button
@@ -67,25 +67,6 @@ exports[`Unit tests for Header Snapshot test for rendering navbar in header 1`] 
               >
                 <a
                   class="nav-link"
-                  href="/featured"
-                  role="link"
-                >
-                  Featured
-                  <span
-                    class="nav-link-icon"
-                  >
-                    <i
-                      class="bi bi-chevron-down"
-                    />
-                  </span>
-                </a>
-              </li>
-              <li
-                class="nav-item"
-                data-testid="listitem"
-              >
-                <a
-                  class="nav-link"
                   href="/about"
                   role="link"
                 >
@@ -104,6 +85,17 @@ exports[`Unit tests for Header Snapshot test for rendering navbar in header 1`] 
                   Contact
                 </a>
               </li>
+              <div
+                class="nav-btns"
+              >
+                <a
+                  class="nav-btn btn"
+                  data-testid="listitem"
+                  href="/login"
+                >
+                  Login
+                </a>
+              </div>
               <div
                 class="nav-btns"
               >
