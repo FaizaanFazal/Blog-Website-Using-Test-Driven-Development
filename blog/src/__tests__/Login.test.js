@@ -2,6 +2,7 @@ import React from 'react';
 import { fireEvent, screen } from '@testing-library/react';
 import { renderWithProviders } from '../utils/wrappertesting';
 import Login from '../components/Login/Login';
+import { backspace } from '../utils/helperfunctions';
 
 describe('Unit tests for Login Components', () => {
   it('Snapshot test for Login component', () => {
@@ -17,14 +18,14 @@ describe('Unit tests for Login Components', () => {
 
   it('Email input changes on input', () => {
     renderWithProviders(<Login />);
-    const emailid = screen.getByTestId('emailid');
+    const emailid = screen.getByTestId('inputEmail');
     fireEvent.change(emailid, { target: { value: 'test@gmail.com' } });
     expect(emailid.value).toBe('test@gmail.com');
   });
 
   it('Password input changes on input and has type password', () => {
     renderWithProviders(<Login />);
-    const pass = screen.getByTestId('pass');
+    const pass = screen.getByTestId('inputPass');
     fireEvent.change(pass, { target: { value: 'qwe123' } });
     expect(pass.value).toBe('qwe123');
     expect(pass.type).toBe('password');
@@ -56,13 +57,14 @@ describe('Unit tests for Login Components', () => {
   it('Validations Checking on Password', () => {
     renderWithProviders(<Login />);
     const inputPass = screen.getByTestId('inputPass');
-    fireEvent.change(inputPass, { target: { value: 'qwe123' } }); // less than 8 character error shoul be in document
+    fireEvent.change(inputPass, { target: { value: 'qwe123' } }); // less than 8 character, no special/capital letter error shoul be in document
     const errorPass = screen.getByTestId('errorPass');
     expect(errorPass).toBeInTheDocument();
-    fireEvent.change(inputPass, { target: { value: 'qwer1234' } }); // min 8 chars error should not be there
+    fireEvent.change(inputPass, { target: { value: 'Qwer@124' } }); // conditions satified should not be there
     expect(errorPass).not.toBeInTheDocument();
-    fireEvent.keyDown(inputPass, 'Backspace');
-    fireEvent.keyUp(inputPass, 'Backspace'); // remove last character  min chars become 7
+
+    backspace(inputPass);
+    // remove last character  min chars become 7
     expect(errorPass).toBeInTheDocument();
   });
 });

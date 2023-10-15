@@ -1,3 +1,4 @@
+import { fireEvent } from '@testing-library/react';
 import images from './images';
 
 export const isProperImageURL = (url) => {
@@ -5,6 +6,45 @@ export const isProperImageURL = (url) => {
   const regex = /^(https?|ftp):\/\/(([a-z\d]([a-z\d-]*[a-z\d])?\.)+[a-z]{2,}|localhost)(\/[-a-z\d%_.~+]*)*(\?[;&a-z\d%_.~+=-]*)?(\#[-a-z\d_]*)?$/i;
   return regex.test(url);
 };
+export const isProperEmail = (email) => {
+  const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return emailRegex.test(email);
+};
+export const isProperPass = (pass) => {
+  const passregex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+  return passregex.test(pass);
+};
+export function backspace(element) {
+  let actuallyTyped = element.value;
+
+  const backspaceKey = {
+    key: 'Backspace',
+    code: 8,
+    inputType: 'deleteContentBackward',
+  };
+
+  const sharedEventConfig = {
+    key: backspaceKey.key,
+    charCode: backspaceKey.code,
+    keyCode: backspaceKey.code,
+    which: backspaceKey.code,
+    modifier: backspaceKey.modifier,
+  };
+  const downEvent = fireEvent.keyDown(element, sharedEventConfig);
+
+  if (downEvent) {
+    actuallyTyped = actuallyTyped.slice(0, -1);
+
+    fireEvent.input(element, {
+      target: { value: actuallyTyped },
+      inputType: backspaceKey.inputType,
+      bubbles: true,
+      cancelable: true,
+    });
+  }
+
+  fireEvent.keyUp(element, sharedEventConfig);
+}
 
 export const small = [
   {

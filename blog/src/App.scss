@@ -886,7 +886,7 @@ form {
 
 }
 
-.BoxAuth{
+.box-auth{
   max-width: 600px;
   border: 1px solid #e5eaf4;
   color: $color-blue-dark;
@@ -900,13 +900,16 @@ form {
     padding: 13px;
     background-color: $color-blue-dark;
   }
+
   .title-box {
     color: $color-white
   }
+
   .text-darkblue{
     color: $color-blue;
     font-weight: 900;
   }
+
   a{
     color: $color-blue;
     font-weight: 300;

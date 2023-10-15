@@ -2,12 +2,17 @@
 
 exports[`Unit tests for Login Components Snapshot test for Login component 1`] = `
 <DocumentFragment>
-  <section>
+  <section
+    data-testid="loginForm"
+  >
+    <div
+      class="Toastify"
+    />
     <div
       class="container"
     >
       <div
-        class="BoxAuth bg-white"
+        class="box-auth bg-white"
       >
         <div
           class="heading"
@@ -18,15 +23,66 @@ exports[`Unit tests for Login Components Snapshot test for Login component 1`] =
             Login
           </h4>
         </div>
-        <div>
-          email
-        </div>
-        <div>
-          email
-        </div>
-        <div>
-          email
-        </div>
+        <form
+          class="text-darkblue p-3"
+        >
+          <div
+            class="form-group"
+          >
+            <label>
+              Email
+            </label>
+            <input
+              class="form-control"
+              data-testid="inputEmail"
+              placeholder="Title..."
+              type="email"
+            />
+          </div>
+          <div
+            class="form-group"
+          >
+            <label>
+              Password
+            </label>
+            <input
+              class="form-control"
+              data-testid="inputPass"
+              placeholder="Password..."
+              type="password"
+            />
+          </div>
+          <div
+            class="text-center"
+          >
+            <button
+              class="btn btn-primary rounded-pill"
+              data-testid="loginbtn"
+              disabled=""
+              type="submit"
+            >
+              Login
+            </button>
+          </div>
+          <div
+            class="d-flex justify-content-between"
+          >
+            <small>
+              <a
+                href="/forgetpass"
+              >
+                Forget password?
+              </a>
+            </small>
+            <small>
+              <a
+                href="/signup"
+              >
+                create an account!
+              </a>
+            </small>
+          </div>
+        </form>
       </div>
     </div>
   </section>
