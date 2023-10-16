@@ -626,6 +626,7 @@ h6 {
       .intro-name,
       .date-info {
         color: $color-white;
+        
       }
     }
   }
@@ -883,7 +884,14 @@ form {
   @include breakpoint-down(sm) {
     height: 300px;
   }
+}
 
+.smallimg{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .box-auth{

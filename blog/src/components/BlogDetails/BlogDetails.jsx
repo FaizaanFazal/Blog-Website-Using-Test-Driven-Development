@@ -22,7 +22,7 @@ export default function BlogDetails() {
     <section data-testid="details" className="mb-5">
       <div className="container">
         <h4 data-testid="titleHeading" className="title title-lg">{blogdetail?.title}</h4>
-        <div className="card-footer flex flex justify-between items-center">
+        <div className="card-footer  flex justify-between items-center">
           <div className="writer-info grid">
             <div className="info-avatar">
               <img src={blogdetail?.authorImage?.src} alt={blogdetail?.authorImage?.alt} className="object-fit-cover" />
