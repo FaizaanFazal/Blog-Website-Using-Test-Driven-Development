@@ -15,7 +15,7 @@ export const isProperEmail = (email) => {
   return emailRegex.test(email);
 };
 export const isProperPass = (pass) => {
-  const passregex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+  const passregex = /^(?=.*[A-Z]).(?=.*[0-9]).(?=.*[^a-zA-Z0-9]).{8,}$/;
   return passregex.test(pass);
 };
 export function backspace(element) {
