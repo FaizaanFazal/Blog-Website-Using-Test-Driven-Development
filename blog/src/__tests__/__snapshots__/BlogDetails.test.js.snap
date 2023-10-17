@@ -16,7 +16,7 @@ exports[`Unit tests for BlogDetails Components Snapshot test for BlogDetails com
         10 Tips for Budget-Friendly Travel
       </h4>
       <div
-        class="card-footer flex flex justify-between items-center"
+        class="card-footer  flex justify-between items-center"
       >
         <div
           class="writer-info grid"

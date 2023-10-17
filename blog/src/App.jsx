@@ -10,6 +10,7 @@ import Blogdetails from './pages/Blogdetails';
 import Footer from './components/Footer/Footer';
 import CreatePost from './components/CreatePost/CreatePost';
 import Login from './components/Login/Login';
+import SignUp from './components/SignUp/SignUp';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/blogs/:slug" element={<Blogs />} />
           <Route path="/blogdetails/:slug" element={<Blogdetails />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/createpost" element={<CreatePost />} />
         </Routes>
         <Footer />
