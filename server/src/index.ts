@@ -1,9 +1,9 @@
-import moduleAlias from 'module-alias';
-moduleAlias.addAlias('@', __dirname);
-moduleAlias();
+// import moduleAlias from 'module-alias';
+// moduleAlias.addAlias('@', __dirname);
+// moduleAlias();
 
 import express, { Express, Request, Response } from "express";
-import {add} from '@/utils/helper';
+import {add} from '@/helper';
 
 const result = add(1, 2);
 console.log(result)
@@ -12,7 +12,7 @@ const port =8000;
  const app: Express=express();
 
  app.get("/",(req:Request, res:Response)=>{
-    res.send("Hello express running +type script");
+    res.send("Hello express running +type script... kachao");
  })
 
 app.listen(port,()=>{
