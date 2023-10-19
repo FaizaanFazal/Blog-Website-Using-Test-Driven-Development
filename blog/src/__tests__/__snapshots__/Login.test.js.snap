@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit tests for Login Components Snapshot test for Login component 1`] = `
+<DocumentFragment>
+  <section
+    data-testid="loginForm"
+  >
+    <div
+      class="Toastify"
+    />
+    <div
+      class="container"
+    >
+      <div
+        class="box-auth bg-white"
+      >
+        <div
+          class="heading"
+        >
+          <h4
+            class="title title-box text-center"
+          >
+            Login
+          </h4>
+        </div>
+        <form
+          class="text-darkblue p-3"
+        >
+          <div
+            class="form-group"
+          >
+            <label>
+              Email
+            </label>
+            <input
+              class="form-control"
+              data-testid="inputEmail"
+              placeholder="Email..."
+              type="email"
+              value=""
+            />
+          </div>
+          <div
+            class="form-group"
+          >
+            <label>
+              Password
+            </label>
+            <input
+              class="form-control"
+              data-testid="inputPass"
+              placeholder="Password..."
+              type="password"
+              value=""
+            />
+          </div>
+          <div
+            class="text-center"
+          >
+            <button
+              class="btn btn-primary rounded-pill"
+              data-testid="loginbtn"
+              disabled=""
+              type="submit"
+            >
+              Login
+            </button>
+          </div>
+          <div
+            class="d-flex justify-content-between"
+          >
+            <small>
+              <a
+                href="/forgetpass"
+              >
+                Forget password?
+              </a>
+            </small>
+            <small>
+              <a
+                href="/signup"
+              >
+                create an account!
+              </a>
+            </small>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;

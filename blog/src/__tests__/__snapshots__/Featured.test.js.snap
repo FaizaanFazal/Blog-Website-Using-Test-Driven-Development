@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit tests for Featured component snapshot test to check Featured component 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-testid="featured"
+  >
+    <section
+      class="featured-sc bg-white"
+    >
+      <div
+        class="card-grid grid"
+      >
+        <div
+          class="card-grid-img"
+        >
+          <img
+            alt="10 Tips for Budget-Friendly Travel Blog Header Image"
+            class="object-fit-cover"
+            data-testid="FeaturedImg"
+            src="blogImg1.jpg"
+          />
+        </div>
+        <div
+          class="card-grid-text"
+        >
+          <div>
+            <div
+              class="badge badge-primary"
+            >
+              featured
+            </div>
+            <h2
+              class="title-lg title featured-title"
+              data-testid="headingfeatured"
+            >
+              10 Tips for Budget-Friendly Travel
+            </h2>
+            <p
+              class="text-lg text"
+              data-testid="featureSummary"
+            >
+              Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank.Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your ...
+              <a
+                data-testid="slugLink"
+                href="/blogdetails/post1"
+              >
+                Read more
+              </a>
+            </p>
+          </div>
+          <div
+            class="card-footer flex justify-between items-center"
+          >
+            <div
+              class="writer-info grid"
+            >
+              <div
+                class="info-avatar"
+              >
+                <img
+                  alt=" Elena"
+                  class="object-fit-cover"
+                  src="author1.jpg"
+                />
+              </div>
+              <div
+                class="info-intro"
+              >
+                <p
+                  class="intro-name text-base"
+                >
+                  Elena Rodriguez
+                </p>
+                <div
+                  class="intro-verify flex items-center"
+                >
+                  <img
+                    alt="icon"
+                    class="verify-icon"
+                    src="verify_icon_light.svg"
+                  />
+                  <span
+                    class="verify-status text-sm text"
+                  >
+                    Not-Verified writer
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="date-info text text-base"
+              data-testid="featureDate"
+            >
+              15 August
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</DocumentFragment>
+`;

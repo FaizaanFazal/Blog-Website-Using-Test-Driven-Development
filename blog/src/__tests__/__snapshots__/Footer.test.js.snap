@@ -1,0 +1,338 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit tests for Footer Component Snapshot test for rendering footer 1`] = `
+<DocumentFragment>
+  <footer
+    class="footer bg-blue-dark"
+    data-testid="footer"
+    title="footer"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="ftr-list"
+      >
+        <div
+          class="ftr-item"
+        >
+          <a
+            class="ftr-brand text-white"
+            href="/"
+          >
+            Blogs 
+            <span
+              class="ftr-brand-dot bg-white"
+            />
+          </a>
+          <p
+            class="text text-base"
+          >
+            Build a modern and creative website with crealand
+          </p>
+          <ul
+            class="social-links text-white flex flex-wrap text-gray text-base"
+          >
+            <li>
+              <a
+                data-testid="social"
+                href="https://github.com/jsx-eslint"
+              >
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a
+                data-testid="social"
+                href="https://github.com/jsx-eslint"
+              >
+                Linkedin
+              </a>
+            </li>
+            <li>
+              <a
+                data-testid="social"
+                href="https://github.com/jsx-eslint"
+              >
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a
+                data-testid="social"
+                href="https://github.com/jsx-eslint"
+              >
+                Google
+              </a>
+            </li>
+            <li>
+              <a
+                data-testid="social"
+                href="https://github.com/jsx-eslint"
+              >
+                YouTube
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="ftr-item"
+        >
+          <h4
+            class="ftr-item-title text-lg"
+          >
+            Read Our
+          </h4>
+          <ul
+            class="ftr-nav-links"
+          >
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="/example.com"
+              >
+                Journal
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="/example.com"
+              >
+                Articles
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="/example.com"
+              >
+                Biograpahy
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="/example.com"
+              >
+                Old records
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="/example.com"
+              >
+                Audio version
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="ftr-item"
+        >
+          <h4
+            class="ftr-item-title text-lg"
+          >
+            Products
+          </h4>
+          <ul
+            class="ftr-nav-links"
+          >
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="/example.com"
+              >
+                Reading collection
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="/example.com"
+              >
+                Library
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="/example.com"
+              >
+                Broadcast
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="/example.com"
+              >
+                Book Series
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="/example.com"
+              >
+                Podcast
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="ftr-item"
+        >
+          <h4
+            class="ftr-item-title text-lg"
+          >
+            Quick Links
+          </h4>
+          <ul
+            class="ftr-nav-links"
+          >
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="/example.com"
+              >
+                Blogs
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="/example.com"
+              >
+                Featured
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="/example.com"
+              >
+                Latest
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="/example.com"
+              >
+                Illustrations
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="/example.com"
+              >
+                Latest
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="ftr-item"
+        >
+          <h4
+            class="ftr-item-title text-lg"
+          >
+            More
+          </h4>
+          <ul
+            class="ftr-nav-links"
+          >
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="/example.com"
+              >
+                License
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="/example.com"
+              >
+                About Us
+              </a>
+            </li>
+            <li
+              class="ftr-nav-item"
+            >
+              <a
+                class="ftr-nav-link text-base"
+                data-testid="otherLinks"
+                href="/example.com"
+              >
+                Our policy
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="ftr-text text-center text-gray text-base"
+        data-testid="copyright"
+      >
+        Copyright © 2023. Crafted with love.
+      </div>
+    </div>
+  </footer>
+</DocumentFragment>
+`;
