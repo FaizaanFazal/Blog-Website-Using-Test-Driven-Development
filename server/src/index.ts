@@ -1,6 +1,5 @@
 import moduleAlias from 'module-alias';
 moduleAlias.addAlias('@', __dirname);
-// moduleAlias.addPath(__dirname + '/src')
 moduleAlias();
 
 import express, { Express, Request, Response } from "express";
