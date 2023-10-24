@@ -8,7 +8,7 @@ const options: swaggerJsdoc.Options = {
     openapi: "3.0.0",
     info: {
       title: "REST API Docs",
-      version: '1.0.0',
+      version: '1.0',
     },
     components: {
       securitySchemes: {
@@ -25,7 +25,7 @@ const options: swaggerJsdoc.Options = {
       },
     ],
   },
-  apis: ["./src/routes/*.js"],
+  apis: ["./src/routes/*.ts"],
 };
 
 const swaggerSpec = swaggerJsdoc(options);

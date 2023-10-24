@@ -41,7 +41,7 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
                 httpOnly: true
             })
             refreshTokens.push(refreshToken)
-            res.json(`Welcome Back! ${findacc.userName}`)
+            res.json(findacc)
         }
         else {
             throw new Error("Wrong Password")
