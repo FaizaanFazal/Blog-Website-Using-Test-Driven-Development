@@ -2,7 +2,8 @@ import moduleAlias from 'module-alias';
 moduleAlias.addAlias('@', __dirname);
 moduleAlias();
 import express, { Express, Request, Response ,NextFunction} from "express";
-import authRoute from './routes/authRoute.js' 
+import authRoute from './routes/authRoute' 
+import blogRoute from './routes/blogRoutes' 
 import logger from "./utils/logger";
 import swaggerDocs from './utils/swagger';
 import cookieParser from 'cookie-parser';
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use(cookieParser());
 swaggerDocs(app, port);
 logger.info("calling")
+
 
 // Cross origin checking
 const whitelist = ['http://localhost:8000']
@@ -40,6 +42,7 @@ app.use(isProtectedRouteMiddleware)
 
 //middlewares 
 app.use("/users/",authRoute)
+app.use("/blogs/",blogRoute)
 app.get("/", (req: Request, res: Response) => {
     res.send("Hello express running +type script... kachao");
 })

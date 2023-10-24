@@ -14,7 +14,7 @@ const router = Router();
  *    security:
  *      - apiAuth: []
  *    requestBody:
- *      description: contains two 5 properties email,userName, password,authorImageSrc,authorImageAlt
+ *      description: contains  5 properties email,userName, password,authorImageSrc,authorImageAlt
  *      required: true
  *      content:
  *        application/json:

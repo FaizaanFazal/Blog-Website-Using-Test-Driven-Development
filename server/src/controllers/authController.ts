@@ -3,7 +3,6 @@ import { PrismaClient } from '@prisma/client';
 import { generateAccestoken } from '../models/authModel.js';
 import jwt from "jsonwebtoken"
 import { Request, Response, NextFunction } from "express";
-import * as dayjs from 'dayjs'
 
 
 const prisma = new PrismaClient();
