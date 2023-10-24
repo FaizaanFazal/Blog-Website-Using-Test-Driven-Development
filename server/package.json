@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "prestart": "yarn run build",
-    "start": "nodemon build/index.js"
+    "start": "npx nodemon ./build/index.js"
   },
   "keywords": [],
   "author": "",

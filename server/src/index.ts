@@ -2,6 +2,7 @@ import moduleAlias from 'module-alias';
 moduleAlias.addAlias('@', __dirname);
 moduleAlias();
 import express, { Express, Request, Response ,NextFunction} from "express";
+import authRoute from './routes/authRoute.js' 
 import logger from "./utils/logger";
 import swaggerDocs from './utils/swagger';
 import cookieParser from 'cookie-parser';
@@ -17,9 +18,10 @@ const app: Express = express();
 app.use(express.json());
 app.use(cookieParser());
 swaggerDocs(app, port);
+logger.info("calling")
 
 // Cross origin checking
-const whitelist = ['http://localhost:3000']
+const whitelist = ['http://localhost:8000']
 app.use((req:Request,res:Response,next:NextFunction)=>{
     console.log(req.headers.origin);
     console.log(whitelist.includes(req.headers.origin as string))
@@ -35,11 +37,12 @@ app.use((req:Request,res:Response,next:NextFunction)=>{
 
 //protected routes authenticate
 app.use(isProtectedRouteMiddleware)
+
 //middlewares 
+app.use("/users/",authRoute)
 app.get("/", (req: Request, res: Response) => {
     res.send("Hello express running +type script... kachao");
 })
-
 
 app.listen(port, async () => {
     logger.info(`App is running at http://localhost:${port}`);

@@ -4,8 +4,8 @@ import { Request, Response, NextFunction, RequestHandler } from "express";
 
 export const protectedRoutes = [
     {
-        method: "",
-        path: ""
+        method: "get",
+        path: "/"
     },
     {
         method: "",
@@ -14,19 +14,19 @@ export const protectedRoutes = [
 
 
 //check protected routes to check authentication
-export const isProtectedRouteMiddleware: RequestHandler = (req: Request, res: Response, next: NextFunction) => {
+export const isProtectedRouteMiddleware: RequestHandler = async (req: Request, res: Response, next: NextFunction) => {
     console.log(req.method)
     const protectedPathData = protectedRoutes.find((route) => route.path === req.path);
     if (protectedPathData) {
         const authenticatedUser = authenticateToken(req, res, next);
-        if (authenticatedUser !== 403 && authenticatedUser !== 401) {
+        if (await authenticatedUser !== 403 && await authenticatedUser !== 401) {
             req.user = authenticatedUser;
             console.log("User", authenticatedUser)
         } else {
-            res.status(authenticatedUser);
+            res.status(authenticatedUser as any);
             res.end();
         }
-    } else {
-        next();
-    }
+    }  
+     next();
+
 };
