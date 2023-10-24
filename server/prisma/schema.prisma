@@ -15,7 +15,7 @@ model Users {
   email      String   @unique
   userName   String
   password   String
-  verified   Boolean
+  verified   Boolean? @default(false)
   authorImageSrc String
   authorImageAlt String
   createdAt  DateTime @default(now())

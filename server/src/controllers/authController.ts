@@ -63,6 +63,10 @@ export const getToken = (req: Request, res: Response, next: NextFunction) => {
     jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET as string, (err: any, user: any) => {
         if (err) return res.sendStatus(403)
         const accessToken = generateAccestoken({ email:req.body.email,username: req.body.userName })
-        res.json({ accessToken: accessToken })
+        res.cookie('accesstoken', accessToken, {
+            secure: false,
+            httpOnly: true
+        });
+        res.json(200)
     })
 }
