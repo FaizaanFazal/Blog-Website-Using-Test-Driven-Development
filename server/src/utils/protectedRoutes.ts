@@ -4,8 +4,8 @@ import { Request, Response, NextFunction, RequestHandler } from "express";
 
 export const protectedRoutes = [
     {
-        method: "get",
-        path: "/"
+        method: "post",
+        path: "/add"
     },
     {
         method: "",

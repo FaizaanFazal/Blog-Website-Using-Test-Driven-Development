@@ -1,6 +1,4 @@
-import { getToken, login, logout, register } from "@/controllers/authController";
 import { likeBlog } from "@/controllers/likeController";
-import { NextFunction, Request, Response } from "express";
 import Router from "express-promise-router";
 
 const router = Router();

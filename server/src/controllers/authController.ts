@@ -7,7 +7,7 @@ import { Request, Response, NextFunction } from "express";
 
 const prisma = new PrismaClient();
 dotenv.config()
-let refreshTokens: any[] = [] //store in db or on server not here in list
+const refreshTokens: any[] = [] //store in db or on server not here in list
 
 export const register = async (req: Request, res: Response, next: NextFunction) => {
     const newAcc = await prisma.users.create({ data: req.body });

@@ -4,6 +4,7 @@ moduleAlias();
 import express, { Express, Request, Response ,NextFunction} from "express";
 import authRoute from './routes/authRoute' 
 import blogRoute from './routes/blogRoutes' 
+import tagRoute from './routes/tagRoutes' 
 import likeRoute from './routes/likeRoutes'
 import logger from "./utils/logger";
 import swaggerDocs from './utils/swagger';
@@ -44,6 +45,7 @@ app.use(isProtectedRouteMiddleware)
 app.use("/users/",authRoute)
 app.use("/blogs/",blogRoute)
 app.use("/likes/",likeRoute)
+app.use("/tags/",tagRoute)
 app.get("/", (req: Request, res: Response) => {
     res.send("Hello express running +type script... kachao");
 })

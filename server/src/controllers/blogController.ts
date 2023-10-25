@@ -20,6 +20,7 @@ export const getblogbyid = async (req: Request, res: Response, next: NextFunctio
         where: { slug:id },
         include: {
             likes: true,
+            tags:true
         }
     });
     res.json(blog);
@@ -29,6 +30,7 @@ export const getallblogs = async (req: Request, res: Response, next: NextFunctio
     const allBlogs = await prisma.blogs.findMany({
         include: {
             likes: true,
+            tags:true
         }
     });
     res.json(allBlogs);
@@ -39,6 +41,7 @@ export const getFeatured = async (req: Request, res: Response, next: NextFunctio
         where: { featured:true },
         include: {
             likes: true,
+            tags:true
         }
     });
     res.json(featured);

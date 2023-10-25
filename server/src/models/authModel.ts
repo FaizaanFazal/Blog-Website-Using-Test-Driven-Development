@@ -10,7 +10,7 @@ export const generateAccestoken = (user: { id: string, username: string }) => {
     }
 }
 
-export const authenticateToken = (req: Request, res: Response, next: NextFunction) => {
+export const authenticateToken = (req: Request, _res: Response, _next: NextFunction) => {
     const token = req.cookies.accesstoken;
     if(!token){return 401}
     return new Promise((resolve, reject) => {

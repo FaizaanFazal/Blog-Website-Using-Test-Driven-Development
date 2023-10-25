@@ -42,9 +42,9 @@ model Blogs {
 
 model Likes {
   likeId          String    @id @default(uuid())
-  user            Users     @relation(fields: [userId], references: [id])
+  users            Users     @relation(fields: [userId], references: [id])
   userId          String
-  blog            Blogs  @relation(fields: [blogId], references: [id])
+  blogs           Blogs  @relation(fields: [blogId], references: [id])
   blogId          String
 
 }
