@@ -11,7 +11,7 @@ datasource db {
 }
 
 model Users {
-  id     String   @id @default(uuid())
+  id         String   @id @default(uuid())
   email      String   @unique
   userName   String
   password   String
@@ -27,16 +27,17 @@ model Users {
 model Blogs {
   id             String   @id @default(uuid())
   author          Users   @relation(fields: [authorId], references: [id])
-  authorId      String
+  authorId       String
   title          String
   imageSrc       String
   imageAlt       String
   content        String
-  featured       Boolean
-  slug           String
+  featured       Boolean @default(false)
+  slug           String   @unique
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
   likes          Likes[]
+  tags           Tags[]
 }
 
 model Likes {
@@ -46,4 +47,12 @@ model Likes {
   blog            Blogs  @relation(fields: [blogId], references: [id])
   blogId         String
 
+}
+
+model Tags{
+  tagId          String    @id @default(uuid())
+  tagTitle       String
+  blog           Blogs   @relation(fields: [blogId], references: [id])
+  blogId         String
+  
 }
