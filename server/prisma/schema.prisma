@@ -49,10 +49,16 @@ model Likes {
 
 }
 
-model Tags{
+model Tagslist{
   tagId          String    @id @default(uuid())
   tagTitle       String
+  tags          Tags[]
+}
+
+model Tags{
+  tags           Tagslist     @relation(fields: [tagId], references: [tagId])
+  tagId          String  @unique
   blog           Blogs   @relation(fields: [blogId], references: [id])
-  blogId         String
+  blogId         String  
   
 }
