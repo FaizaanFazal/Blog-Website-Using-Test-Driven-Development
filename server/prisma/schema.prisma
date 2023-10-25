@@ -37,7 +37,7 @@ model Blogs {
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
   likes          Likes[]
-  tags           Tags[]
+  tags           Blog_Tags[]
 }
 
 model Likes {
@@ -49,16 +49,17 @@ model Likes {
 
 }
 
-model Tagslist{
+model Tags{
   tagId          String    @id @default(uuid())
   tagTitle       String
-  tags          Tags[]
+  tags           Blog_Tags[]
 }
 
-model Tags{
-  tags           Tagslist     @relation(fields: [tagId], references: [tagId])
-  tagId          String  @unique
-  blog           Blogs   @relation(fields: [blogId], references: [id])
+model Blog_Tags{
+  Blog_Tags      String @id @default(uuid())
+  tags           Tags   @relation(fields: [tagId], references: [tagId])
+  tagId          String     
+  blog           Blogs      @relation(fields: [blogId], references: [id])
   blogId         String  
   
 }
