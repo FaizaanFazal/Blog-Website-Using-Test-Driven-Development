@@ -4,6 +4,7 @@ moduleAlias();
 import express, { Express, Request, Response ,NextFunction} from "express";
 import authRoute from './routes/authRoute' 
 import blogRoute from './routes/blogRoutes' 
+import likeRoute from './routes/likeRoutes'
 import logger from "./utils/logger";
 import swaggerDocs from './utils/swagger';
 import cookieParser from 'cookie-parser';
@@ -39,13 +40,20 @@ app.use((req:Request,res:Response,next:NextFunction)=>{
 
 //protected routes authenticate
 app.use(isProtectedRouteMiddleware)
-
 //middlewares 
 app.use("/users/",authRoute)
 app.use("/blogs/",blogRoute)
+app.use("/likes/",likeRoute)
 app.get("/", (req: Request, res: Response) => {
     res.send("Hello express running +type script... kachao");
 })
+app.use((err:any, req:Request, res:Response, next:NextFunction) => {
+    res.status(403).send({
+        success:false,
+        error:err.message
+    });
+});
+
 
 app.listen(port, async () => {
     logger.info(`App is running at http://localhost:${port}`);

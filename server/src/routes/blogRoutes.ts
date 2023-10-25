@@ -1,4 +1,5 @@
 import { addblog, getFeatured, getallblogs, getblogbyid } from "@/controllers/blogController";
+import { NextFunction, Request, Response } from "express";
 import Router from "express-promise-router";
 
 const router = Router();
@@ -277,5 +278,11 @@ router.get("/featured",getFeatured);
  */
 router.get("/:slug",getblogbyid);
 
+router.use((err:any, req:Request , res:Response, next:NextFunction) => {
+    res.status(403).send({
+        success:false,
+        error:err.message
+    });
+  });
 
 export default router

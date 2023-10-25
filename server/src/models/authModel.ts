@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express-serve-static-core";
 import jwt from "jsonwebtoken"
 
-export const generateAccestoken = (user: { email: string, username: string }) => {
+export const generateAccestoken = (user: { id: string, username: string }) => {
     if (process.env.ACCESS_TOKEN_SECRET) {
         return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1h' })
     }

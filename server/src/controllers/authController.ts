@@ -23,7 +23,7 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
     if (!findacc) { throw new Error("User not found") } //error to create
     else {
         if (findacc.password === req.body.password) {
-            const users = { email: req.body.email, username: findacc.userName }
+            const users = { id: findacc.id, username: findacc.userName }
             const accessToken = generateAccestoken(users)
             let refreshToken: string;
             if (process.env.REFRESH_TOKEN_SECRET) {
@@ -61,7 +61,7 @@ export const getToken = (req: Request, res: Response, next: NextFunction) => {
     if (!refreshTokens.includes(refreshToken)) return res.sendStatus(403)
     jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET as string, (err: any, user: any) => {
         if (err) return res.sendStatus(403)
-        const accessToken = generateAccestoken({ email:req.body.email,username: req.body.userName })
+        const accessToken = generateAccestoken({ id:req.body.id,username: req.body.userName })
         res.cookie('accesstoken', accessToken, {
             secure: false,
             httpOnly: true
