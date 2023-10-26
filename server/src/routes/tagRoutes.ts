@@ -1,4 +1,4 @@
-import { addTagsToBlog, getAlltags,createNewTag } from "@/controllers/tagController";
+import { addTagsToBlog,removeTagsToBlog, getAlltags,createNewTag } from "@/controllers/tagController";
 import Router from "express-promise-router";
 
 const router = Router();
@@ -51,7 +51,7 @@ const router = Router();
  *                  description: stack trace for detailed description of error
  */
 router.post("/",addTagsToBlog);
-
+router.post("/delete",removeTagsToBlog);
 /**
  * @openapi
  * '/tags/add':

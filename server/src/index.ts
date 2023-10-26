@@ -10,6 +10,7 @@ import logger from "./utils/logger";
 import swaggerDocs from './utils/swagger';
 import cookieParser from 'cookie-parser';
 import { isProtectedRouteMiddleware } from './utils/protectedRoutes';
+import { error } from 'console';
 
 export interface userRequest extends Request {
     user: any 
@@ -50,6 +51,7 @@ app.get("/", (req: Request, res: Response) => {
     res.send("Hello express running +type script... kachao");
 })
 app.use((err:any, req:Request, res:Response, next:NextFunction) => {
+    console.log(err)
     res.status(403).send({
         success:false,
         error:err.message

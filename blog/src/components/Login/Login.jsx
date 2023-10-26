@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import {useDispatch} from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify';
 import { isProperEmail, isProperPass } from '../../utils/helperfunctions';
 
@@ -8,6 +9,8 @@ export default function Login() {
   const [pass, setPass] = useState('');
   const [errorEmail, setErrorEmail] = useState('');
   const [errorPass, setErrorPass] = useState('');
+
+  const dispatch=useDispatch();
 
   const emailValidation = (e) => {
     setEmail(e.target.value);
@@ -41,7 +44,10 @@ export default function Login() {
     if (checkall === false) {
       return false;
     }
-    alert('validations working fine');
+    let userCredentials={
+      email,pass
+    }
+    dispatch(loginUser*userCredentials)
     return true;
   };
 
