@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import '../../styles/Card.scss';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   isProperImageURL, isProperPass, isProperEmail, isProperName,
 } from '../../utils/helperfunctions';
+import { useDispatch } from 'react-redux';
+import { signupUser } from '../../Redux/userSlice';
 
 export default function SignUp() {
   const [authorimage, setAuthorimage] = useState('');
@@ -17,6 +19,9 @@ export default function SignUp() {
   const [errorImage, setErrorImage] = useState('');
   const [errorEmail, setErrorEmail] = useState('');
   const [errorPass, setErrorPass] = useState('');
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const imgValidation = (e) => {
     const { value } = e.target;
@@ -78,9 +83,20 @@ export default function SignUp() {
     if (checkall === false) {
       return false;
     }
-    alert('validations working fine');
+    const userCredentials = {
+      email, password:pass,
+      userName:username,
+      authorImageSrc:authorimage,
+      authorImageAlt:username,
+      password:pass
+    };
+    dispatch(signupUser(userCredentials)).then((result) => {
+      if (result.payload) {
+        navigate('/');
+      }
+    });
     return true;
-    // add date on sending data
+   
   };
 
   const areFieldfilled = () => {

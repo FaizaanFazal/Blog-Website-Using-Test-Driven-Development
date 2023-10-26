@@ -34,6 +34,7 @@ app.use((req:Request,res:Response,next:NextFunction)=>{
         console.log('HERE',req.headers.origin)
         res.setHeader("Access-Control-Allow-Origin", req.headers.origin as string);
         res.setHeader("Access-Control-Allow-Methods", '*')
+        res.setHeader("Access-Control-Allow-Headers", "*")
     } else {
         res.setHeader("Access-Control-Allow-Origin", '');//undefined cannot be used because of string property
     }

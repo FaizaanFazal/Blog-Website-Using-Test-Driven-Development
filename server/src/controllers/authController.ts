@@ -4,7 +4,6 @@ import { generateAccestoken } from '../models/authModel.js';
 import jwt from "jsonwebtoken"
 import { Request, Response, NextFunction } from "express";
 
-
 const prisma = new PrismaClient();
 dotenv.config()
 const refreshTokens: any[] = [] //store in db or on server not here in list
@@ -31,16 +30,18 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
             }
             else { throw new Error("Refresh token issue") }
             //stroing accestoken with 1h expiry in cookies
+            console.log(accessToken)
             res.cookie('accesstoken', accessToken, {
                 secure: false,
                 httpOnly: true
-            });
+            }).send();
             res.cookie('refreshtoken', refreshToken, {
                 secure: false,
                 httpOnly: true
-            })
+            }).send();
             refreshTokens.push(refreshToken)
             res.json(findacc)
+            res.send();
         }
         else {
             throw new Error("Wrong Password")
