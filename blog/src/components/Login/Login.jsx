@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import {useDispatch} from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import { isProperEmail, isProperPass } from '../../utils/helperfunctions';
+import { loginUser } from '../../Redux/userSlice';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -10,7 +11,9 @@ export default function Login() {
   const [errorEmail, setErrorEmail] = useState('');
   const [errorPass, setErrorPass] = useState('');
 
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  // const { loading, error } = useSelector((state) => state.user);
 
   const emailValidation = (e) => {
     setEmail(e.target.value);
@@ -42,13 +45,18 @@ export default function Login() {
     e.preventDefault();
     const checkall = validateAll();
     if (checkall === false) {
-      return false;
+      alert('checks failed');
     }
-    let userCredentials={
-      email,pass
-    }
-    dispatch(loginUser*userCredentials)
-    return true;
+    const userCredentials = {
+      email, pass,
+    };
+    dispatch(loginUser(userCredentials)).then((result) => {
+      if (result.payload) {
+        setEmail('');
+        setPass('');
+        navigate('/');
+      }
+    });
   };
 
   const areFieldfilled = () => {
@@ -103,8 +111,11 @@ export default function Login() {
                 disabled={!areFieldfilled()}
               >
                 Login
+                {/* {loading ? 'loading...'
+                  : 'Login'} */}
               </button>
             </div>
+            {/* <small style={{ color: 'red' }}>{error}</small> */}
             <div className="d-flex justify-content-between">
               <small><Link to="/forgetpass">Forget password?</Link></small>
               <small><Link to="/signup">create an account!</Link></small>
