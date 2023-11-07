@@ -25,11 +25,11 @@ export default function Menuwrapper() {
 
   useEffect(() => {
     let c =getUser();
-    if (c["userName"] && c["userName"].length > 0) {
-      console.log(c["userName"])
+    if (c) {
+      console.log("there"+c?.userName)
       setUserr(c);
     }
-    console.log(c.userName)
+    console.log("here"+c?.userName)
   }, [])
   return (
     <div>

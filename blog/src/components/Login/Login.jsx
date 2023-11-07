@@ -80,10 +80,10 @@ export default function Login() {
   };
   
   useEffect(()=>{
-    if(!user.userName){
+    if(user!==null){
       navigate('/');
     }
-  },[])
+  },[user])
 
   return (
     <section data-testid="loginForm">
