@@ -3,10 +3,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import '../../styles/Card.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import {
   isProperImageURL, isProperPass, isProperEmail, isProperName,
 } from '../../utils/helperfunctions';
-import { useDispatch } from 'react-redux';
 import { signupUser } from '../../Redux/userSlice';
 
 export default function SignUp() {
@@ -85,11 +85,11 @@ export default function SignUp() {
       return false;
     }
     const userCredentials = {
-      email, password: pass,
+      email,
+      password: pass,
       userName: username,
       authorImageSrc: authorimage,
       authorImageAlt: username,
-      password: pass
     };
     dispatch(signupUser(userCredentials)).then((result) => {
       if (result.payload) {
@@ -97,7 +97,6 @@ export default function SignUp() {
       }
     });
     return true;
-
   };
 
   const areFieldfilled = () => {
@@ -155,7 +154,7 @@ export default function SignUp() {
                 data-testid="inputImageAlt"
                 className="form-control"
                 placeholder="Image Alternative..."
-                onChange={() => setAuthorAlt(e.target.value)}
+                onChange={(e) => setAuthorAlt(e.target.value)}
               />
             </div>
 

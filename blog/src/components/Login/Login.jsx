@@ -48,7 +48,7 @@ export default function Login() {
       alert('checks failed');
     }
     const userCredentials = {
-      email, password:pass,
+      email, password: pass,
     };
     dispatch(loginUser(userCredentials)).then((result) => {
       if (result.payload) {

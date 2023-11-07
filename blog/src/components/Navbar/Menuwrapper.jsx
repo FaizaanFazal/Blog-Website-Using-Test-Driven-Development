@@ -1,21 +1,9 @@
-import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Navitem from './Navitem';
 import { useSelector } from 'react-redux';
+import Navitem from './Navitem';
 
 export default function Menuwrapper() {
-  const [user, setUser] = useState();
-  const userr = useSelector(state => state.user.user); //userName
-  console.log(userr)
-
-  useEffect(() => {
-    if (userr["userName"] && userr["userName"].length > 0) {
-      setUser(userr);
-    }
-    else {
-      setUser(null)
-    }
-  }, [userr])
+  const userr = useSelector((state) => state.user.user); // userName
 
   return (
     <div>
@@ -27,8 +15,8 @@ export default function Menuwrapper() {
         <Navitem to="/about" text="About" />
         <Navitem to="/contacts" text="Contact" />
         <div className="nav-btns">
-          {user ? (
-            <div className="nav-btn btn">{user.userName}</div>
+          {userr.userName ? (
+            <div className="nav-btn btn">{userr?.userName}</div>
           ) : (
             <Link data-testid="listitem" to="/login" className="nav-btn btn">
               Login

@@ -13,13 +13,13 @@ export const loginUser = createAsyncThunk(
 );
 
 export const signupUser = createAsyncThunk(
-    'user/register',
-    async (userCredentials) => {
-      const request = await placeholderApi.post('/users/register', userCredentials);
-      const response = await request.data;
-      return response;
-    },
-  );
+  'user/register',
+  async (userCredentials) => {
+    const request = await placeholderApi.post('/users/register', userCredentials);
+    const response = await request.data;
+    return response;
+  },
+);
 
 export const userSlice = createSlice({
   name: 'user',
