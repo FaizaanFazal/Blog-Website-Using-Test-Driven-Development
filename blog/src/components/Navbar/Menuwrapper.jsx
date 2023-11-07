@@ -1,10 +1,36 @@
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { Link, Navigate, json } from 'react-router-dom';
 import Navitem from './Navitem';
+import { useEffect, useReducer, useState } from 'react';
+
+function getUser() {
+  let user = localStorage.getItem('user');
+  if (user) {
+    user=JSON.parse(user);
+  }
+  else{
+    user = null;
+  }
+  return user;
+}
 
 export default function Menuwrapper() {
-  const userr = useSelector((state) => state.user.user); // userName
+  const [userr, setUserr] = useState(getUser());
+  console.log(userr)
 
+  const handlelogout = () => {
+    localStorage.removeItem('user');
+    setUserr(null);
+
+  }
+
+  useEffect(() => {
+    let c =getUser();
+    if (c["userName"] && c["userName"].length > 0) {
+      console.log(c["userName"])
+      setUserr(c);
+    }
+    console.log(c.userName)
+  }, [])
   return (
     <div>
       <ul className="nav-menu flex items-center">
@@ -15,8 +41,10 @@ export default function Menuwrapper() {
         <Navitem to="/about" text="About" />
         <Navitem to="/contacts" text="Contact" />
         <div className="nav-btns">
-          {userr.userName ? (
-            <div className="nav-btn btn">{userr?.userName}</div>
+          {userr?.userName ? (
+            <button data-testid="listitem" onClick={handlelogout} className="nav-btn btn">
+              Logout
+            </button>
           ) : (
             <Link data-testid="listitem" to="/login" className="nav-btn btn">
               Login

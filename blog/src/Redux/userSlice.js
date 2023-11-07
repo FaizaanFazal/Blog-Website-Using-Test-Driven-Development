@@ -6,7 +6,7 @@ export const loginUser = createAsyncThunk(
   'user/loginUser',
   async (userCredentials) => {
     const request = await placeholderApi.post('/users/login', userCredentials);
-    const response = await request.data;
+    const { password, ...response } = await request.data;
     localStorage.setItem('user', JSON.stringify(response));
     return response;
   },

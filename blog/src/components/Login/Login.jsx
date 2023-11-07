@@ -1,11 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import { isProperEmail, isProperPass } from '../../utils/helperfunctions';
 import { loginUser } from '../../Redux/userSlice';
 
+function getUser(){
+  let user= localStorage.getItem('user');
+  if(user){
+    user=JSON.stringify(user);
+  }
+  else{
+    user=null;
+  }
+  return user;
+}
+
 export default function Login() {
+  const[user,setUser]=useState(getUser());
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
   const [errorEmail, setErrorEmail] = useState('');
@@ -13,6 +25,7 @@ export default function Login() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+ 
   // const { loading, error } = useSelector((state) => state.user);
 
   const emailValidation = (e) => {
@@ -65,6 +78,12 @@ export default function Login() {
     }
     return true;
   };
+  
+  useEffect(()=>{
+    if(!user.userName){
+      navigate('/');
+    }
+  },[])
 
   return (
     <section data-testid="loginForm">
@@ -126,5 +145,7 @@ export default function Login() {
 
       </div>
     </section>
+    
+   
   );
 }
