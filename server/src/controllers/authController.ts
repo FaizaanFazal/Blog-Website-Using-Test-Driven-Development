@@ -34,11 +34,11 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
             res.cookie('accesstoken', accessToken, {
                 secure: false,
                 httpOnly: true
-            }).send();
+            });
             res.cookie('refreshtoken', refreshToken, {
                 secure: false,
                 httpOnly: true
-            }).send();
+            });
             refreshTokens.push(refreshToken)
             res.json(findacc)
             res.send();

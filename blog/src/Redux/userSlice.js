@@ -6,7 +6,6 @@ export const loginUser = createAsyncThunk(
   'user/loginUser',
   async (userCredentials) => {
     const request = await placeholderApi.post('/users/login', userCredentials);
-    console.log(request.data)
     const response = await request.data;
     localStorage.setItem('user', JSON.stringify(response));
     return response;
@@ -34,41 +33,41 @@ export const userSlice = createSlice({
       .addCase(loginUser.pending, (state) => {
         state.loading = true;
         state.user = {};
-        state.error = null;
+        state.errror = null;
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.loading = false;
         state.user = action.payload;
-        state.error = null;
+        state.errror = null;
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
         state.user = null;
         console.log(action.error.message);
         if (action.error.message === 'Request failed with status code 401') {
-          state.error = 'Access Denied! Invalid Credentials';
+          state.errror = 'Access Denied! Invalid Credentials';
         } else {
-          state.error = action.error.message;
+          state.errror = action.error.message;
         }
       })// signup cases
       .addCase(signupUser.pending, (state) => {
         state.loading = true;
         state.user = {};
-        state.error = null;
+        state.errror = null;
       })
       .addCase(signupUser.fulfilled, (state, action) => {
         state.loading = false;
         state.user = action.payload;
-        state.error = null;
+        state.errror = null;
       })
       .addCase(signupUser.rejected, (state, action) => {
         state.loading = false;
         state.user = null;
         console.log(action.error.message);
         if (action.error.message === 'Request failed with status code 401') {
-          state.error = 'Access Denied! Invalid Credentials';
+          state.errror = 'Access Denied! Invalid Credentials';
         } else {
-          state.error = action.error.message;
+          state.errror = action.error.message;
         }
       });
   },
