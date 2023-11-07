@@ -11,6 +11,7 @@ import { signupUser } from '../../Redux/userSlice';
 
 export default function SignUp() {
   const [authorimage, setAuthorimage] = useState('');
+  const [authorAlt, setAuthorAlt] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
@@ -84,11 +85,11 @@ export default function SignUp() {
       return false;
     }
     const userCredentials = {
-      email, password:pass,
-      userName:username,
-      authorImageSrc:authorimage,
-      authorImageAlt:username,
-      password:pass
+      email, password: pass,
+      userName: username,
+      authorImageSrc: authorimage,
+      authorImageAlt: username,
+      password: pass
     };
     dispatch(signupUser(userCredentials)).then((result) => {
       if (result.payload) {
@@ -96,7 +97,7 @@ export default function SignUp() {
       }
     });
     return true;
-   
+
   };
 
   const areFieldfilled = () => {
@@ -116,22 +117,22 @@ export default function SignUp() {
           </div>
 
           {imgdisplay.status === true
-                && (
-                <div className="p-3" data-testid="imgAuthor">
-                  <img
-                    data-testid="Image"
-                    src={imgdisplay.src || null}
-                    alt="Author dp"
-                    className="object-fit-cover smallimg"
-                    onError={({ currentTarget }) => {
-                      // eslint-disable-next-line no-param-reassign
-                      currentTarget.onerror = null; // prevents looping
-                      // eslint-disable-next-line no-param-reassign
-                      currentTarget.src = 'https://media.istockphoto.com/id/1456566772/photo/page-not-found-404-design-404-error-web-page-concept-on-a-computer-screen-3d-illustration.jpg?s=1024x1024&w=is&k=20&c=5gcQ1JbTHMqwEpw13pzVxpR8ajQ1gsrxuLOmd4CMtro=';
-                    }}
-                  />
-                </div>
-                )}
+            && (
+              <div className="p-3" data-testid="imgAuthor">
+                <img
+                  data-testid="Image"
+                  src={imgdisplay.src || null}
+                  alt="Author dp"
+                  className="object-fit-cover smallimg"
+                  onError={({ currentTarget }) => {
+                    // eslint-disable-next-line no-param-reassign
+                    currentTarget.onerror = null; // prevents looping
+                    // eslint-disable-next-line no-param-reassign
+                    currentTarget.src = 'https://media.istockphoto.com/id/1456566772/photo/page-not-found-404-design-404-error-web-page-concept-on-a-computer-screen-3d-illustration.jpg?s=1024x1024&w=is&k=20&c=5gcQ1JbTHMqwEpw13pzVxpR8ajQ1gsrxuLOmd4CMtro=';
+                  }}
+                />
+              </div>
+            )}
 
           <form className="text-darkblue p-3">
             <div className="form-group">
@@ -141,10 +142,21 @@ export default function SignUp() {
                 value={authorimage}
                 data-testid="inputImageurl"
                 className="form-control"
-                placeholder="Name..."
+                placeholder="Image URl..."
                 onChange={imgValidation}
               />
               {errorImage && <small data-testid="errorImage" style={{ color: 'red' }}>{errorImage}</small>}
+            </div>
+            <div className="form-group">
+              <label>Image Alt</label>
+              <input
+                type="text"
+                value={authorAlt}
+                data-testid="inputImageAlt"
+                className="form-control"
+                placeholder="Image Alternative..."
+                onChange={() => setAuthorAlt(e.target.value)}
+              />
             </div>
 
             <div className="form-group">
