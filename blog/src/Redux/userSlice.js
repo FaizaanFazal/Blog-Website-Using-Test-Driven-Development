@@ -11,23 +11,16 @@ export const loginUser = createAsyncThunk(
     return response;
   },
 );
-export const getUser = createAsyncThunk(async (state) => {
-    console.log(state);
-    const response=state;
-    return response;
-  },
-);
+
 export const logout = createAsyncThunk(
   'user/logout',
   async () => {
     const request = await placeholderApi.post('/users/logout');
-    const response= await request.data;
+    const response = await request.data;
     localStorage.removeItem('user');
     return response;
   },
 );
-
-
 
 export const signupUser = createAsyncThunk(
   'user/register',
@@ -38,49 +31,55 @@ export const signupUser = createAsyncThunk(
   },
 );
 
+
 export const userSlice = createSlice({
   name: 'user',
   initialState: {
     loading: false,
     user: {},
     errror: null,
-    isloggedin:false,
+    isloggedin: false,
   },
+  reducers:{
+    getUserFromLocalStorage: (state) => {
+      state.user = JSON.parse(localStorage.getItem('user')) || null;
+    },
+    },
   extraReducers: (builder) => {
     builder
       .addCase(loginUser.pending, (state) => {
         state.loading = true;
         state.user = {};
         state.errror = null;
-        state.isloggedin=false;
+        state.isloggedin = false;
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.loading = false;
         state.user = action.payload;
         state.errror = null;
-        state.isloggedin=true;
+        state.isloggedin = true;
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
         state.user = null;
-        state.isloggedin=false;
+        state.isloggedin = false;
         console.log(action.error.message);
         if (action.error.message === 'Request failed with status code 401') {
           state.errror = 'Access Denied! Invalid Credentials';
         } else {
           state.errror = action.error.message;
         }
-      })//logout cases
-      .addCase(logout.fulfilled, (state, action) => {
+      })// logout cases
+      .addCase(logout.fulfilled, (state) => {
         state.loading = false;
         state.user = null;
         state.errror = null;
-        state.isloggedin=false;
+        state.isloggedin = false;
       })
       .addCase(logout.rejected, (state, action) => {
         state.loading = false;
         state.user = null;
-        state.isloggedin=false;
+        state.isloggedin = false;
         console.log(action.error.message);
         if (action.error.message === 'Request failed with status code 401') {
           state.errror = 'Something went wrong';
@@ -111,4 +110,7 @@ export const userSlice = createSlice({
   },
 });
 
-export default userSlice.reducer;
+// export const { getUserFromLocalStorage } = userSlice.actions;
+const {actions,reducer}=userSlice
+export const { getUserFromLocalStorage }=actions
+export default reducer

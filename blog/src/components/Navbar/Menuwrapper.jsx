@@ -1,22 +1,21 @@
-import { Link, Navigate, json } from 'react-router-dom';
-import Navitem from './Navitem';
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Navitem from './Navitem';
 import { logout } from '../../Redux/userSlice';
 
-
 export default function Menuwrapper() {
-  const user = useSelector(state => state.user.isloggedin);
-  const dispatch=useDispatch();
+  const [user, setUser] = useState();
+  const userr = useSelector((state) => state.user.user);
+  const dispatch = useDispatch();
 
   const handlelogout = () => {
-   
-    dispatch(logout())
-  }
+    dispatch(logout());
+  };
 
   useEffect(() => {
-    
-  }, [user])
+    setUser(userr)
+  }, [userr]);
 
   return (
     <div>
@@ -28,8 +27,8 @@ export default function Menuwrapper() {
         <Navitem to="/about" text="About" />
         <Navitem to="/contacts" text="Contact" />
         <div className="nav-btns">
-          {user ? (
-            <button data-testid="listitem" onClick={handlelogout} className="nav-btn btn">
+          {user?.userName ? (
+            <button type="button" data-testid="listitem" onClick={handlelogout} className="nav-btn btn">
               Logout
             </button>
           ) : (

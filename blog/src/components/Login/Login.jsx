@@ -3,24 +3,20 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import { isProperEmail, isProperPass } from '../../utils/helperfunctions';
-import { loginUser } from '../../Redux/userSlice';
+import { getUserFromLocalStorage, loginUser } from '../../Redux/userSlice';
 
-const getUser=async()=>{
-  return new Promise((resolve) => {
-    let user=  localStorage.getItem('user');
-    if(user){
-      user=JSON.stringify(user);
-    }
-    else{
-      user=null;
-    }
-    resolve(user);
-})
- 
-}
+const getUser = async () => new Promise((resolve) => {
+  let user = localStorage.getItem('user');
+  if (user) {
+    user = JSON.stringify(user);
+  } else {
+    user = null;
+  }
+  resolve(user);
+});
 
 export default function Login() {
-  const[user,setUser]=useState(getUser());
+  const [user] = useState(getUser());
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
   const [errorEmail, setErrorEmail] = useState('');
@@ -28,7 +24,8 @@ export default function Login() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
- 
+
+
   // const { loading, error } = useSelector((state) => state.user);
 
   const emailValidation = (e) => {
@@ -81,15 +78,15 @@ export default function Login() {
     }
     return true;
   };
-  
-  useEffect(()=>{
-    let user=  localStorage.getItem('user');
-    if(user!==null){
-      console.log(user)
-      navigate('/');
 
+  useEffect(() => {
+    const user = localStorage.getItem('user');
+    if (user !== null) {
+      console.log(user);
+      navigate('/');
+      // dispatch(getUserFromLocalStorage());
     }
-  },[user])
+  }, [user]);
 
   return (
     <section data-testid="loginForm">
@@ -151,7 +148,6 @@ export default function Login() {
 
       </div>
     </section>
-    
-   
+
   );
 }

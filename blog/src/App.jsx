@@ -2,10 +2,10 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Navigate,
 } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import {getUser} from './Redux/userSlice'
+import { useEffect } from 'react';
+import {getUserFromLocalStorage} from './Redux/userSlice';
 import Main from './pages/Main';
 import Blogs from './pages/Blogs';
 import Header from './components/Header/Header';
@@ -14,21 +14,12 @@ import Footer from './components/Footer/Footer';
 import CreatePost from './components/CreatePost/CreatePost';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
-import { useEffect } from 'react';
 
 function App() {
-  // const ProtectedRoute = ({ children }) => {
-  //   const user = useSelector((state) => state.user.user);
-  //   if (user.userName && user.userName.length > 0) {
-  //     return <Navigate to="/" />;
-  //   }
-  //   return children;
-  // };
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getUser());
+    dispatch(getUserFromLocalStorage());
   }, []);
-
   return (
     <>
 
