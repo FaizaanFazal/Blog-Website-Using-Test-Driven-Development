@@ -1,36 +1,23 @@
 import { Link, Navigate, json } from 'react-router-dom';
 import Navitem from './Navitem';
-import { useEffect, useReducer, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../Redux/userSlice';
 
-function getUser() {
-  let user = localStorage.getItem('user');
-  if (user) {
-    user=JSON.parse(user);
-  }
-  else{
-    user = null;
-  }
-  return user;
-}
 
 export default function Menuwrapper() {
-  const [userr, setUserr] = useState(getUser());
-  console.log(userr)
+  const user = useSelector(state => state.user.isloggedin);
+  const dispatch=useDispatch();
 
   const handlelogout = () => {
-    localStorage.removeItem('user');
-    setUserr(null);
-
+   
+    dispatch(logout())
   }
 
   useEffect(() => {
-    let c =getUser();
-    if (c) {
-      console.log("there"+c?.userName)
-      setUserr(c);
-    }
-    console.log("here"+c?.userName)
-  }, [])
+    
+  }, [user])
+
   return (
     <div>
       <ul className="nav-menu flex items-center">
@@ -41,7 +28,7 @@ export default function Menuwrapper() {
         <Navitem to="/about" text="About" />
         <Navitem to="/contacts" text="Contact" />
         <div className="nav-btns">
-          {userr?.userName ? (
+          {user ? (
             <button data-testid="listitem" onClick={handlelogout} className="nav-btn btn">
               Logout
             </button>

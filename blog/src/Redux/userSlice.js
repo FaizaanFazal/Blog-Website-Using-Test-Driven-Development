@@ -11,6 +11,23 @@ export const loginUser = createAsyncThunk(
     return response;
   },
 );
+export const getUser = createAsyncThunk(async (state) => {
+    console.log(state);
+    const response=state;
+    return response;
+  },
+);
+export const logout = createAsyncThunk(
+  'user/logout',
+  async () => {
+    const request = await placeholderApi.post('/users/logout');
+    const response= await request.data;
+    localStorage.removeItem('user');
+    return response;
+  },
+);
+
+
 
 export const signupUser = createAsyncThunk(
   'user/register',
@@ -27,6 +44,7 @@ export const userSlice = createSlice({
     loading: false,
     user: {},
     errror: null,
+    isloggedin:false,
   },
   extraReducers: (builder) => {
     builder
@@ -34,18 +52,38 @@ export const userSlice = createSlice({
         state.loading = true;
         state.user = {};
         state.errror = null;
+        state.isloggedin=false;
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.loading = false;
         state.user = action.payload;
         state.errror = null;
+        state.isloggedin=true;
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
         state.user = null;
+        state.isloggedin=false;
         console.log(action.error.message);
         if (action.error.message === 'Request failed with status code 401') {
           state.errror = 'Access Denied! Invalid Credentials';
+        } else {
+          state.errror = action.error.message;
+        }
+      })//logout cases
+      .addCase(logout.fulfilled, (state, action) => {
+        state.loading = false;
+        state.user = null;
+        state.errror = null;
+        state.isloggedin=false;
+      })
+      .addCase(logout.rejected, (state, action) => {
+        state.loading = false;
+        state.user = null;
+        state.isloggedin=false;
+        console.log(action.error.message);
+        if (action.error.message === 'Request failed with status code 401') {
+          state.errror = 'Something went wrong';
         } else {
           state.errror = action.error.message;
         }

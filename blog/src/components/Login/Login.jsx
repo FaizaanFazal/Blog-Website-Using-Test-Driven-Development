@@ -5,15 +5,18 @@ import { ToastContainer, toast } from 'react-toastify';
 import { isProperEmail, isProperPass } from '../../utils/helperfunctions';
 import { loginUser } from '../../Redux/userSlice';
 
-function getUser(){
-  let user= localStorage.getItem('user');
-  if(user){
-    user=JSON.stringify(user);
-  }
-  else{
-    user=null;
-  }
-  return user;
+const getUser=async()=>{
+  return new Promise((resolve) => {
+    let user=  localStorage.getItem('user');
+    if(user){
+      user=JSON.stringify(user);
+    }
+    else{
+      user=null;
+    }
+    resolve(user);
+})
+ 
 }
 
 export default function Login() {
@@ -80,8 +83,11 @@ export default function Login() {
   };
   
   useEffect(()=>{
+    let user=  localStorage.getItem('user');
     if(user!==null){
+      console.log(user)
       navigate('/');
+
     }
   },[user])
 

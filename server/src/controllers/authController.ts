@@ -33,11 +33,11 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
             console.log(accessToken)
             res.cookie('accesstoken', accessToken, {
                 secure: false,
-                httpOnly: true
+              
             });
             res.cookie('refreshtoken', refreshToken, {
                 secure: false,
-                httpOnly: true
+               
             });
             refreshTokens.push(refreshToken)
             res.json(findacc)
