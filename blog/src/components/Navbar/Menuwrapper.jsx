@@ -14,7 +14,7 @@ export default function Menuwrapper() {
   };
 
   useEffect(() => {
-    setUser(userr)
+    setUser(userr);
   }, [userr]);
 
   return (

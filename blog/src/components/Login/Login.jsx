@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import { isProperEmail, isProperPass } from '../../utils/helperfunctions';
-import { getUserFromLocalStorage, loginUser } from '../../Redux/userSlice';
+import { loginUser } from '../../Redux/userSlice';
 
 const getUser = async () => new Promise((resolve) => {
   let user = localStorage.getItem('user');
@@ -24,7 +24,6 @@ export default function Login() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
 
   // const { loading, error } = useSelector((state) => state.user);
 

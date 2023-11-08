@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import {getUserFromLocalStorage} from './Redux/userSlice';
+import { getUserFromLocalStorage } from './Redux/userSlice';
 import Main from './pages/Main';
 import Blogs from './pages/Blogs';
 import Header from './components/Header/Header';
