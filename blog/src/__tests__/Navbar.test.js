@@ -45,7 +45,7 @@ describe('Unit tests for navbar', () => {
     renderWithProviders(<Navbar />);
     expect(screen.getByText('Contact')).toHaveAttribute('href', '/contacts');
   });
-//only rendered when user is logged in so comment fo now
+// only rendered when user is logged in so comment fo now
   // it('checks link of Post creation page is correct', () => {
   //   renderWithProviders(<Navbar />);
   //   expect(screen.getByText('Post')).toHaveAttribute('href', '/createpost');

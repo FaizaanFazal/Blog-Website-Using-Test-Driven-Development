@@ -1,5 +1,4 @@
 import { fireEvent, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
 import Header from '../components/Header/Header';
 import { renderWithProviders } from '../utils/wrappertesting';
 
