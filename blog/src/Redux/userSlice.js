@@ -62,9 +62,10 @@ export const userSlice = createSlice({
         state.loading = false;
         state.user = null;
         state.isloggedin = false;
-        console.log(action.error.message);
-        if (action.error.message === 'Request failed with status code 401') {
+        console.log(action.error.code);
+        if (action.error.code === 'ERR_BAD_REQUEST') {
           state.errror = 'Access Denied! Invalid Credentials';
+          action.error.message="Access Denied! Invalid Credentials"
         } else {
           state.errror = action.error.message;
         }

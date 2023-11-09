@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { isProperEmail, isProperPass } from '../../utils/helperfunctions';
 import { loginUser } from '../../Redux/userSlice';
 
@@ -24,6 +25,7 @@ export default function Login() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const customId = "custom-id-yes";
 
   // const { loading, error } = useSelector((state) => state.user);
 
@@ -68,8 +70,25 @@ export default function Login() {
         setPass('');
         navigate('/');
       }
-    });
+      else {
+        toast.error(result.error.message,
+          {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 2000,
+            toastId: customId,
+            closeOnClick: true,
+          });
+      }
+    })
   };
+  const CloseButton = ({ closeToast }) => (
+    <i
+      
+      onClick={closeToast}
+    >
+    Xs
+    </i>
+  );
 
   const areFieldfilled = () => {
     if (!email || !pass) {
@@ -89,7 +108,6 @@ export default function Login() {
 
   return (
     <section data-testid="loginForm">
-      <ToastContainer />
       <div className="container">
         <div className="box-auth bg-white">
           <div className="heading">
