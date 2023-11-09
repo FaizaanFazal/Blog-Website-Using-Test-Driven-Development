@@ -25,14 +25,13 @@ export const signupUser = createAsyncThunk(
   'user/register',
   async (userCredentials) => {
     const request = await placeholderApi.post('/users/register', userCredentials);
-    if(request.status=='200'){
+    if (request.status === '200') {
       const { password, ...response } = await request.data;
       localStorage.setItem('user', JSON.stringify(response));
       return response;
     }
-    else{
-      return request.data
-    }
+
+    return request.data;
   },
 );
 
@@ -101,18 +100,18 @@ export const userSlice = createSlice({
         state.loading = true;
         state.user = {};
         state.errror = null;
-        state.isloggedin=false;
+        state.isloggedin = false;
       })
       .addCase(signupUser.fulfilled, (state, action) => {
         state.loading = false;
         state.user = action.payload;
         state.errror = null;
-        state.isloggedin=true;
+        state.isloggedin = true;
       })
       .addCase(signupUser.rejected, (state, action) => {
         state.loading = false;
         state.user = null;
-        state.isloggedin=false;
+        state.isloggedin = false;
         console.log(action.error);
         console.log(action.error.message);
         if (action.error.code === 'ERR_BAD_REQUEST') {

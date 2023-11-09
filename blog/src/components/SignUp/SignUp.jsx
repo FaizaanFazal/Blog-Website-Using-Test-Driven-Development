@@ -93,15 +93,14 @@ export default function SignUp() {
     };
     dispatch(signupUser(userCredentials)).then((result) => {
       if (result.payload) {
-        toast.success("Registered succesfully",
+        toast.success('Registered succesfully',
           {
             position: toast.POSITION.TOP_RIGHT,
             autoClose: 2000,
             closeOnClick: true,
           });
         navigate('/');
-      }
-      else {
+      } else {
         toast.error(result.error.message,
           {
             position: toast.POSITION.TOP_RIGHT,
