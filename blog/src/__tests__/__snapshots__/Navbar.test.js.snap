@@ -43,6 +43,9 @@ exports[`Unit tests for navbar snapshot test to check it renders Navbar componen
           />
         </button>
         <div>
+          <div
+            class="Toastify"
+          />
           <ul
             class="nav-menu flex items-center"
           >
@@ -86,22 +89,11 @@ exports[`Unit tests for navbar snapshot test to check it renders Navbar componen
               class="nav-btns"
             >
               <a
-                class="nav-btn btn"
+                class="nav-btn btn animated-button"
                 data-testid="listitem"
                 href="/login"
               >
                 Login
-              </a>
-            </div>
-            <div
-              class="nav-btns"
-            >
-              <a
-                class="nav-btn btn"
-                data-testid="listitem"
-                href="/createpost"
-              >
-                Post
               </a>
             </div>
           </ul>
