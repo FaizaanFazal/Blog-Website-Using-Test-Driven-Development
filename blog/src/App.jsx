@@ -3,6 +3,9 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { getUserFromLocalStorage } from './Redux/userSlice';
 import Main from './pages/Main';
 import Blogs from './pages/Blogs';
 import Header from './components/Header/Header';
@@ -13,6 +16,11 @@ import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUserFromLocalStorage());
+  }, []);
   return (
     <>
 

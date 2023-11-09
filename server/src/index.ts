@@ -26,14 +26,15 @@ logger.info("calling")
 
 
 // Cross origin checking
-const whitelist = ['http://localhost:8000']
+const whitelist = ['http://localhost:8000','http://localhost:3000']
 app.use((req:Request,res:Response,next:NextFunction)=>{
     console.log(req.headers.origin);
     console.log(whitelist.includes(req.headers.origin as string))
     if (whitelist.includes(req.headers.origin as string)) {
-        console.log('HERE')
+        console.log('HERE',req.headers.origin)
         res.setHeader("Access-Control-Allow-Origin", req.headers.origin as string);
         res.setHeader("Access-Control-Allow-Methods", '*')
+        res.setHeader("Access-Control-Allow-Headers", "*")
     } else {
         res.setHeader("Access-Control-Allow-Origin", '');//undefined cannot be used because of string property
     }

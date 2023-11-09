@@ -1,16 +1,23 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import {useDispatch} from 'react-redux'
-import { ToastContainer, toast } from 'react-toastify';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { isProperEmail, isProperPass } from '../../utils/helperfunctions';
+import { loginUser } from '../../Redux/userSlice';
 
 export default function Login() {
+  const user = useSelector((state) => state.user);
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
   const [errorEmail, setErrorEmail] = useState('');
   const [errorPass, setErrorPass] = useState('');
 
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const customId = 'custom-id-yes';
+
+  // const { loading, error } = useSelector((state) => state.user);
 
   const emailValidation = (e) => {
     setEmail(e.target.value);
@@ -38,17 +45,32 @@ export default function Login() {
     return true;
   };
 
+  // asdasd
+
   const handlelogin = (e) => {
     e.preventDefault();
     const checkall = validateAll();
     if (checkall === false) {
-      return false;
+      alert('checks failed');
     }
-    let userCredentials={
-      email,pass
-    }
-    dispatch(loginUser*userCredentials)
-    return true;
+    const userCredentials = {
+      email, password: pass,
+    };
+    dispatch(loginUser(userCredentials)).then((result) => {
+      if (result.payload) {
+        setEmail('');
+        setPass('');
+        navigate('/');
+      } else {
+        toast.error(result.error.message,
+          {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 2000,
+            toastId: customId,
+            closeOnClick: true,
+          });
+      }
+    });
   };
 
   const areFieldfilled = () => {
@@ -58,9 +80,17 @@ export default function Login() {
     return true;
   };
 
+  useEffect(() => {
+    const userr = localStorage.getItem('user');
+    if (userr !== null) {
+      console.log(userr);
+      navigate('/');
+      // dispatch(getUserFromLocalStorage());
+    }
+  }, [user]);
+
   return (
     <section data-testid="loginForm">
-      <ToastContainer />
       <div className="container">
         <div className="box-auth bg-white">
           <div className="heading">
@@ -103,8 +133,11 @@ export default function Login() {
                 disabled={!areFieldfilled()}
               >
                 Login
+                {/* {loading ? 'loading...'
+                  : 'Login'} */}
               </button>
             </div>
+            {/* <small style={{ color: 'red' }}>{error}</small> */}
             <div className="d-flex justify-content-between">
               <small><Link to="/forgetpass">Forget password?</Link></small>
               <small><Link to="/signup">create an account!</Link></small>
@@ -115,5 +148,6 @@ export default function Login() {
 
       </div>
     </section>
+
   );
 }

@@ -35,7 +35,21 @@ exports[`Unit tests for SignUp Components Snapshot test for SignUp component 1`]
             <input
               class="form-control"
               data-testid="inputImageurl"
-              placeholder="Name..."
+              placeholder="Image URl..."
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            class="form-group"
+          >
+            <label>
+              Image Alt
+            </label>
+            <input
+              class="form-control"
+              data-testid="inputImageAlt"
+              placeholder="Image Alternative..."
               type="text"
               value=""
             />
