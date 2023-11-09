@@ -100,13 +100,16 @@ export const userSlice = createSlice({
         state.loading = false;
         state.user = action.payload;
         state.errror = null;
+        state.isloggedin=true;
       })
       .addCase(signupUser.rejected, (state, action) => {
         state.loading = false;
         state.user = null;
+        console.log(action.error);
         console.log(action.error.message);
-        if (action.error.message === 'Request failed with status code 401') {
-          state.errror = 'Access Denied! Invalid Credentials';
+        if (action.error.code === 'ERR_BAD_REQUEST') {
+          state.errror = 'Forbideen';
+          action.error.message = 'Email Already exists!';
         } else {
           state.errror = action.error.message;
         }
