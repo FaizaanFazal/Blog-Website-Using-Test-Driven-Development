@@ -1,11 +1,14 @@
 // eslint-disable jsx-a11y/label-has-associated-control
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../../styles/Card.scss';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { isProperImageURL } from '../../utils/helperfunctions';
 
 export default function CreatePost() {
+  const user = useSelector((state) => state.user);
   const [title, setTitle] = useState('');
   const [imgUrl, setImgUrl] = useState('');
   const [content, setContent] = useState('');
@@ -15,6 +18,8 @@ export default function CreatePost() {
   const [errorImgurl, setErrorImgurl] = useState('');
   const [errorContent, setErrorContent] = useState('');
   const [errorSlug, setErrorSlug] = useState('');
+
+  const navigate = useNavigate();
 
   const titleValidation = (e) => {
     setTitle(e.target.value);
@@ -99,6 +104,14 @@ export default function CreatePost() {
     }
     return true;
   };
+
+  useEffect(() => {
+    const userr = localStorage.getItem('user');
+    if (userr === null) {
+      console.log(userr);
+      navigate('/login');
+    }
+  }, [user]);
 
   return (
     <section data-testid="createpost">

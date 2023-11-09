@@ -42,11 +42,10 @@ export const userSlice = createSlice({
   reducers: {
     getUserFromLocalStorage: (state) => {
       state.user = JSON.parse(localStorage.getItem('user')) || null;
-      if(state.user?.userName){
-        state.isloggedin=true
-      }
-      else{
-        state.isloggedin=false
+      if (state.user?.userName) {
+        state.isloggedin = true;
+      } else {
+        state.isloggedin = false;
       }
     },
   },
@@ -71,7 +70,7 @@ export const userSlice = createSlice({
         console.log(action.error.code);
         if (action.error.code === 'ERR_BAD_REQUEST') {
           state.errror = 'Access Denied! Invalid Credentials';
-          action.error.message="Access Denied! Invalid Credentials"
+          action.error.message = 'Access Denied! Invalid Credentials';
         } else {
           state.errror = action.error.message;
         }

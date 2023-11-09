@@ -1,18 +1,18 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
 import Navitem from './Navitem';
 import { logout } from '../../Redux/userSlice';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Menuwrapper() {
   const [user, setUser] = useState();
-  const userr = useSelector((state) => state.user.user);
+  const userr = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   const handlelogout = () => {
-    dispatch(logout()).then((result)=>{
+    dispatch(logout()).then(() => {
       toast.info('Logged out', { position: toast.POSITION.TOP_RIGHT, duration: 2000 });
     });
   };
@@ -32,7 +32,7 @@ export default function Menuwrapper() {
         <Navitem to="/about" text="About" />
         <Navitem to="/contacts" text="Contact" />
         <div className="nav-btns">
-          {user?.userName ? (
+          {user?.user?.userName ? (
             <button type="button" data-testid="listitem" onClick={handlelogout} className="animated-button nav-btn btn">
               Logout
             </button>
@@ -42,9 +42,11 @@ export default function Menuwrapper() {
             </Link>
           )}
         </div>
+        {user?.isloggedin && (
         <div className="nav-btns">
           <Link data-testid="listitem" to="/createpost" className="nav-btn btn">Post</Link>
         </div>
+        )}
       </ul>
     </div>
   );

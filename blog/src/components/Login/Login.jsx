@@ -1,23 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { ToastContainer, toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { isProperEmail, isProperPass } from '../../utils/helperfunctions';
 import { loginUser } from '../../Redux/userSlice';
 
-const getUser = async () => new Promise((resolve) => {
-  let user = localStorage.getItem('user');
-  if (user) {
-    user = JSON.stringify(user);
-  } else {
-    user = null;
-  }
-  resolve(user);
-});
-
 export default function Login() {
-  const [user] = useState(getUser());
+  const user = useSelector((state) => state.user);
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
   const [errorEmail, setErrorEmail] = useState('');
@@ -25,7 +15,7 @@ export default function Login() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const customId = "custom-id-yes";
+  const customId = 'custom-id-yes';
 
   // const { loading, error } = useSelector((state) => state.user);
 
@@ -69,8 +59,7 @@ export default function Login() {
         setEmail('');
         setPass('');
         navigate('/');
-      }
-      else {
+      } else {
         toast.error(result.error.message,
           {
             position: toast.POSITION.TOP_RIGHT,
@@ -79,16 +68,8 @@ export default function Login() {
             closeOnClick: true,
           });
       }
-    })
+    });
   };
-  const CloseButton = ({ closeToast }) => (
-    <i
-      
-      onClick={closeToast}
-    >
-    Xs
-    </i>
-  );
 
   const areFieldfilled = () => {
     if (!email || !pass) {
@@ -98,9 +79,9 @@ export default function Login() {
   };
 
   useEffect(() => {
-    const user = localStorage.getItem('user');
-    if (user !== null) {
-      console.log(user);
+    const userr = localStorage.getItem('user');
+    if (userr !== null) {
+      console.log(userr);
       navigate('/');
       // dispatch(getUserFromLocalStorage());
     }

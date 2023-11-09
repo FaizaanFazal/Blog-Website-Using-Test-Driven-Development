@@ -3,7 +3,7 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getUserFromLocalStorage } from './Redux/userSlice';
 import Main from './pages/Main';
