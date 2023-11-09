@@ -42,6 +42,12 @@ export const userSlice = createSlice({
   reducers: {
     getUserFromLocalStorage: (state) => {
       state.user = JSON.parse(localStorage.getItem('user')) || null;
+      if(state.user?.userName){
+        state.isloggedin=true
+      }
+      else{
+        state.isloggedin=false
+      }
     },
   },
   extraReducers: (builder) => {

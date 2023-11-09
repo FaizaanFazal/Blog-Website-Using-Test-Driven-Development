@@ -13,7 +13,7 @@ export default function Menuwrapper() {
 
   const handlelogout = () => {
     dispatch(logout()).then((result)=>{
-      toast.info('Logged out', { position: toast.POSITION.TOP_LEFT, duration: 2000 });
+      toast.info('Logged out', { position: toast.POSITION.TOP_RIGHT, duration: 2000 });
     });
   };
 
