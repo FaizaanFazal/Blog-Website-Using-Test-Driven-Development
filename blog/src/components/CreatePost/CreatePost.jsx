@@ -1,8 +1,8 @@
 // eslint-disable jsx-a11y/label-has-associated-control
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-import '../../styles/Card.scss';
 import 'react-toastify/dist/ReactToastify.css';
+import '../../styles/Card.scss';
 import { isProperImageURL } from '../../utils/helperfunctions';
 
 export default function CreatePost() {
