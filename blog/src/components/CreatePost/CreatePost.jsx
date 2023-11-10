@@ -6,16 +6,19 @@ import '../../styles/Card.scss';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { isProperImageURL } from '../../utils/helperfunctions';
+import { createBlog } from '../../Redux/blogSlice';
 
 export default function CreatePost() {
   const user = useSelector((state) => state.user);
   const [title, setTitle] = useState('');
   const [imgUrl, setImgUrl] = useState('');
+  const [imgAlt, setImgAlt] = useState('');
   const [content, setContent] = useState('');
   const [slug, setSlug] = useState('');
   const [imgdisplay, setImgdisplay] = useState({ src: '', status: false });
   const [errorTitle, setErrorTitle] = useState('');
   const [errorImgurl, setErrorImgurl] = useState('');
+  const [errorImgalt, setErrorImgalt] = useState('');
   const [errorContent, setErrorContent] = useState('');
   const [errorSlug, setErrorSlug] = useState('');
 
@@ -53,6 +56,12 @@ export default function CreatePost() {
     if (value.length < 8) { setErrorImgurl('* Required at least 8 characters.'); }
     if (check === false) { setErrorImgurl('* Incorrect URL format example:(https://google.com)'); } else { setErrorImgurl(null); }
     if (check === true) { setImgdisplay({ src: value, status: true }); } else { setImgdisplay({ src: '', status: false }); }
+  };
+
+  const imgaltValidation = (e) => {
+    const { value } = e.target;
+    setImgAlt(value);
+    if (value.length < 8) { setErrorImgalt('* Required at least 8 characters.'); }
   };
 
   const contentValidation = (e) => {
@@ -94,7 +103,28 @@ export default function CreatePost() {
     if (all === false) {
       return false;
     }
-    alert('validations working fine');
+    let authorid = useSelector((state) => state.user.user.id);
+    const blog = {
+      authorId: authorid,
+      title: title,
+      imageSrc: imgUrl,
+      imageAlt: imgAlt,
+      content: content,
+      slug: slug,
+    }
+    dispatch(createBlog(blog)).then((result) => {
+      if (result.payload) {
+        toast.error("Blog added succesfully",{position: toast.POSITION.TOP_RIGHT,autoClose: 2000,});
+        setTitle('');
+        setImgUrl('');
+        setImgAlt('');
+        setContent('');
+        setSlug('');
+      }
+      else{
+        toast.error(result.error.message,{position: toast.POSITION.TOP_RIGHT,autoClose: 2000,});
+      }
+    });
     return true;
   };
 
@@ -163,6 +193,25 @@ export default function CreatePost() {
             {errorImgurl && (
               <small data-testid="errorImg" style={{ color: 'red' }}>
                 {errorImgurl}
+                {' '}
+                <br />
+              </small>
+            )}
+          </div>
+
+          <div className="form-group">
+            <label>Image Alt</label>
+            <input
+              type="text"
+              data-testid="imgaltinput"
+              className="form-control"
+              placeholder="Image Alt"
+              value={imgUrl}
+              onChange={imgaltValidation}
+            />
+            {errorImgurl && (
+              <small data-testid="errorImgalt" style={{ color: 'red' }}>
+                {errorImgalt}
                 {' '}
                 <br />
               </small>

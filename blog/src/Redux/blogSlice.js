@@ -1,17 +1,18 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import {  featured, recentArticles } from '../data/blog-posts';
 import placeholderApi from '../utils/axios-instances';
 
 
 export const fetchBlogs = createAsyncThunk("blogs/all", async () => {
   const response = await placeholderApi.get('/blogs/all')
-  return response.json();
+  console.log(response.data)
+  return response.data;
 });
 
 const blogSlice = createSlice({
   name: 'blog',
   initialState: {
-    blogs:{},
+    blogs:[],
     error:null,
     recentArticles,
     featured,
@@ -20,7 +21,7 @@ const blogSlice = createSlice({
   reducers: {
    async createBlog(state, action) {
       await placeholderApi.post('/blogs/add', blogdetails).then((response)=>{
-        state.blogs.push(action.payload);
+        state.blogs.push(response.data);
       }).catch((error)=>{
         state.error=error
       });

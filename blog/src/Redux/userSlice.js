@@ -24,9 +24,13 @@ export const logout = createAsyncThunk(
 export const signupUser = createAsyncThunk(
   'user/register',
   async (userCredentials) => {
-    const request = await placeholderApi.post('/users/register', userCredentials);
-    const response = await request.data;
-    return response;
+    await placeholderApi.post('/users/register', userCredentials).then((response)=>{
+      const { password, ...respons } = response;
+      localStorage.setItem('user', JSON.stringify(response));
+      return respons;
+    }).catch((error)=>{
+      return error
+    });
   },
 );
 
@@ -95,15 +99,18 @@ export const userSlice = createSlice({
         state.loading = true;
         state.user = {};
         state.errror = null;
+        state.isloggedin = false;
       })
       .addCase(signupUser.fulfilled, (state, action) => {
         state.loading = false;
         state.user = action.payload;
         state.errror = null;
+        state.isloggedin=true
       })
       .addCase(signupUser.rejected, (state, action) => {
         state.loading = false;
         state.user = null;
+        state.isloggedin = false;
         console.log(action.error.message);
         if (action.error.message === 'Request failed with status code 401') {
           state.errror = 'Access Denied! Invalid Credentials';

@@ -23,6 +23,7 @@ function App() {
     dispatch(getUserFromLocalStorage());
     dispatch(fetchBlogs());
   }, [dispatch]);
+  
   return (
     <>
 
