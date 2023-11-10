@@ -6,6 +6,7 @@ import {
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getUserFromLocalStorage } from './Redux/userSlice';
+import { fetchBlogs } from './Redux/blogSlice';
 import Main from './pages/Main';
 import Blogs from './pages/Blogs';
 import Header from './components/Header/Header';
@@ -20,7 +21,8 @@ function App() {
 
   useEffect(() => {
     dispatch(getUserFromLocalStorage());
-  }, []);
+    dispatch(fetchBlogs());
+  }, [dispatch]);
   return (
     <>
 
