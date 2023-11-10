@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../../styles/Card.scss';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { isProperImageURL } from '../../utils/helperfunctions';
-import { createBlog } from '../../Redux/blogSlice';
+import { createBlogs } from '../../Redux/blogSlice';
 
 export default function CreatePost() {
   const user = useSelector((state) => state.user);
@@ -23,6 +23,7 @@ export default function CreatePost() {
   const [errorSlug, setErrorSlug] = useState('');
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const titleValidation = (e) => {
     setTitle(e.target.value);
@@ -97,32 +98,33 @@ export default function CreatePost() {
     return true;
   };
 
-  const handlesubmit = (e) => {
+  const handlesubmit = async (e) => {
     e.preventDefault();
     const all = validateAll();
     if (all === false) {
       return false;
     }
-    let authorid = useSelector((state) => state.user.user.id);
+    let user = localStorage.getItem('user');
+    user = JSON.parse(user);
+    console.log(user);
     const blog = {
-      authorId: authorid,
-      title: title,
+      authorId: user.id,
+      title,
       imageSrc: imgUrl,
       imageAlt: imgAlt,
-      content: content,
-      slug: slug,
-    }
-    dispatch(createBlog(blog)).then((result) => {
+      content,
+      slug,
+    };
+    dispatch(createBlogs(blog)).then((result) => {
       if (result.payload) {
-        toast.error("Blog added succesfully",{position: toast.POSITION.TOP_RIGHT,autoClose: 2000,});
+        toast.success('Blog added succesfully', { position: toast.POSITION.TOP_RIGHT, autoClose: 2000 });
         setTitle('');
         setImgUrl('');
         setImgAlt('');
         setContent('');
         setSlug('');
-      }
-      else{
-        toast.error(result.error.message,{position: toast.POSITION.TOP_RIGHT,autoClose: 2000,});
+      } else {
+        toast.error(result.error.message, { position: toast.POSITION.TOP_RIGHT, autoClose: 2000 });
       }
     });
     return true;
@@ -206,7 +208,7 @@ export default function CreatePost() {
               data-testid="imgaltinput"
               className="form-control"
               placeholder="Image Alt"
-              value={imgUrl}
+              value={imgAlt}
               onChange={imgaltValidation}
             />
             {errorImgurl && (

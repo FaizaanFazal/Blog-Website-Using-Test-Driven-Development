@@ -24,13 +24,11 @@ export const logout = createAsyncThunk(
 export const signupUser = createAsyncThunk(
   'user/register',
   async (userCredentials) => {
-    await placeholderApi.post('/users/register', userCredentials).then((response)=>{
+    await placeholderApi.post('/users/register', userCredentials).then((response) => {
       const { password, ...respons } = response;
       localStorage.setItem('user', JSON.stringify(response));
       return respons;
-    }).catch((error)=>{
-      return error
-    });
+    }).catch((error) => error);
   },
 );
 
@@ -105,7 +103,7 @@ export const userSlice = createSlice({
         state.loading = false;
         state.user = action.payload;
         state.errror = null;
-        state.isloggedin=true
+        state.isloggedin = true;
       })
       .addCase(signupUser.rejected, (state, action) => {
         state.loading = false;
