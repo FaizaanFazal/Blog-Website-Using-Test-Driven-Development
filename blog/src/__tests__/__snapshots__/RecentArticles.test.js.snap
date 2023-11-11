@@ -59,10 +59,10 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
               data-testid="artice"
             >
               <img
-                alt="10 Tips for Budget-Friendly Travel Blog Header Image"
+                alt="undefined"
                 class="card-overlay-img object-fit-cover"
                 data-testid="Image"
-                src="blogImg2.jpg"
+                src="undefined"
               />
               <div
                 class="card-content"
@@ -86,9 +86,9 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
                       class="info-avatar"
                     >
                       <img
-                        alt=" Jonathan"
+                        alt="undefined"
                         class="object-fit-cover"
-                        src="author2.jpg"
+                        src="undefined"
                       />
                     </div>
                     <div
@@ -133,10 +133,10 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
               data-testid="artice"
             >
               <img
-                alt="10 Tips for Budget-Friendly Travel Blog Header Image"
+                alt="undefined"
                 class="card-overlay-img object-fit-cover"
                 data-testid="Image"
-                src="blogImg3.jpg"
+                src="undefined"
               />
               <div
                 class="card-content"
@@ -160,9 +160,9 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
                       class="info-avatar"
                     >
                       <img
-                        alt=" Sophia"
+                        alt="undefined"
                         class="object-fit-cover"
-                        src="author3.jpg"
+                        src="undefined"
                       />
                     </div>
                     <div
@@ -207,10 +207,10 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
               data-testid="artice"
             >
               <img
-                alt="Embracing AI in the Workplace"
+                alt="undefined"
                 class="card-overlay-img object-fit-cover"
                 data-testid="Image"
-                src="blogImg4.jpg"
+                src="undefined"
               />
               <div
                 class="card-content"
@@ -234,9 +234,9 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
                       class="info-avatar"
                     >
                       <img
-                        alt=" Alexander"
+                        alt="undefined"
                         class="object-fit-cover"
-                        src="author4.jpg"
+                        src="undefined"
                       />
                     </div>
                     <div

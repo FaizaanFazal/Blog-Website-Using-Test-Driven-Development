@@ -46,6 +46,20 @@ exports[`Unit tests for CreatePost component snapshot test to check CreatePost c
             type="url"
             value=""
           />
+        </div>
+        <div
+          class="form-group"
+        >
+          <label>
+            Image Alt
+          </label>
+          <input
+            class="form-control"
+            data-testid="imgaltinput"
+            placeholder="Image Alt"
+            type="text"
+            value=""
+          />
           <small
             class="text-warning"
           >

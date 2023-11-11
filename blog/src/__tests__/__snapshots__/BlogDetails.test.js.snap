@@ -12,9 +12,7 @@ exports[`Unit tests for BlogDetails Components Snapshot test for BlogDetails com
       <h4
         class="title title-lg"
         data-testid="titleHeading"
-      >
-        10 Tips for Budget-Friendly Travel
-      </h4>
+      />
       <div
         class="card-footer  flex justify-between items-center"
       >
@@ -25,9 +23,7 @@ exports[`Unit tests for BlogDetails Components Snapshot test for BlogDetails com
             class="info-avatar"
           >
             <img
-              alt=" Elena"
               class="object-fit-cover"
-              src="author1.jpg"
             />
           </div>
           <div
@@ -35,21 +31,19 @@ exports[`Unit tests for BlogDetails Components Snapshot test for BlogDetails com
           >
             <p
               class="intro-name text-base"
-            >
-              Elena Rodriguez
-            </p>
+            />
             <div
               class="intro-verify flex items-center"
             >
               <img
                 alt="icon"
                 class="verify-icon"
-                src="verify_icon_filled.svg"
+                src="verify_icon_light.svg"
               />
               <span
                 class="verify-status text-sm text"
               >
-                Verified writer
+                Not-Verified writer
               </span>
             </div>
           </div>
@@ -57,9 +51,7 @@ exports[`Unit tests for BlogDetails Components Snapshot test for BlogDetails com
         <div
           class="date-info text text-base"
           data-testid="detailsdate"
-        >
-          15 August
-        </div>
+        />
       </div>
       <div
         class="cover-grid grid mt-3 mb-2 "
@@ -68,10 +60,8 @@ exports[`Unit tests for BlogDetails Components Snapshot test for BlogDetails com
           class="cover-grid-img"
         >
           <img
-            alt="10 Tips for Budget-Friendly Travel Blog Header Image"
             class="object-fit-cover"
             data-testid="Image"
-            src="blogImg1.jpg"
           />
         </div>
       </div>
@@ -79,14 +69,7 @@ exports[`Unit tests for BlogDetails Components Snapshot test for BlogDetails com
         <p
           class="text-lg text-black mt-3 px-1 discriptiontext mb-5 new-line"
           data-testid="discription"
-        >
-          Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank.Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank.Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank. 
- 
- Traveling on a budget doesnt have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank.Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank.Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank. 
- 
- Traveling on a budget doesnt have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank.Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank.Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank. 
-
-        </p>
+        />
       </div>
     </div>
     <br />
