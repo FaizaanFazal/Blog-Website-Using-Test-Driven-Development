@@ -1,4 +1,4 @@
-import { getToken, login, logout, register } from "@/controllers/authController";
+import { getAllUsers, getToken, login, logout, register } from "@/controllers/authController";
 import Router from "express-promise-router";
 
 const router = Router();
@@ -200,5 +200,7 @@ router.post("/logout",logout);
  *                  description: stack trace for detailed checking
  */
 router.post("/token",getToken);
+router.get("/allusers",getAllUsers);
+
 
 export default router

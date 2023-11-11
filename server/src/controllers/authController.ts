@@ -8,6 +8,15 @@ const prisma = new PrismaClient();
 dotenv.config()
 const refreshTokens: any[] = [] //store in db or on server not here in list
 
+export const getAllUsers = async (req: Request, res: Response, next: NextFunction) => {
+    const allUsers = await prisma.users.findMany();
+    const usersWithoutPassword = allUsers.map((user) => { //removing passwords
+      const { password, ...userWithoutPassword } = user;
+      return userWithoutPassword;
+    });
+    res.json(usersWithoutPassword);
+  };
+
 export const register = async (req: Request, res: Response, next: NextFunction) => {
     const newAcc = await prisma.users.create({ data: req.body });
     res.json(newAcc);

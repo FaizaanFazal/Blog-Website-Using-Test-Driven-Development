@@ -30,14 +30,14 @@ export default function AllArticles() {
           <div className="card-list grid-cols grid-cols-2">
             {
                 allArticles?.slice(0, 2).map((blogItem) => (
-                  <Card blogItemData={blogItem} showContent key={blogItem.id} />
+                  <Card blogItemData={blogItem} data-testid="article" showContent key={blogItem.id} />
                 ))
               }
           </div>
           <div className="card-list grid-cols grid-cols-3">
             {
-                allArticles?.slice(9, 12).map((blogItem) => (
-                  <Card blogItemData={blogItem} isCardSm key={blogItem.id} />
+                allArticles?.slice(2, 5).map((blogItem) => (
+                  <Card blogItemData={blogItem} data-testid="article" isCardSm key={blogItem.id} />
                 ))
               }
           </div>

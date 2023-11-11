@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { getUserFromLocalStorage } from './Redux/userSlice';
+import { fetchAllUsers, getUserFromLocalStorage } from './Redux/userSlice';
 import { fetchBlogs } from './Redux/blogSlice';
 import Main from './pages/Main';
 import Blogs from './pages/Blogs';
@@ -18,10 +18,12 @@ import SignUp from './components/SignUp/SignUp';
 
 function App() {
   const dispatch = useDispatch();
-
   useEffect(() => {
-    dispatch(getUserFromLocalStorage());
-    dispatch(fetchBlogs());
+    if (window.location.reload) {
+      dispatch(getUserFromLocalStorage());
+      dispatch(fetchBlogs());
+      dispatch(fetchAllUsers());
+    }
   }, [dispatch]);
 
   return (
