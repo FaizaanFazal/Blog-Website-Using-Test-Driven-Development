@@ -24,11 +24,14 @@ export const logout = createAsyncThunk(
 export const signupUser = createAsyncThunk(
   'user/register',
   async (userCredentials) => {
-    await placeholderApi.post('/users/register', userCredentials).then((response) => {
-      const { password, ...respons } = response;
+    const request = await placeholderApi.post('/users/register', userCredentials);
+    if (request.status === '200') {
+      const { password, ...response } = await request.data;
       localStorage.setItem('user', JSON.stringify(response));
-      return respons;
-    }).catch((error) => error);
+      return response;
+    }
+
+    return request.data;
   },
 );
 
@@ -109,9 +112,11 @@ export const userSlice = createSlice({
         state.loading = false;
         state.user = null;
         state.isloggedin = false;
+        console.log(action.error);
         console.log(action.error.message);
-        if (action.error.message === 'Request failed with status code 401') {
-          state.errror = 'Access Denied! Invalid Credentials';
+        if (action.error.code === 'ERR_BAD_REQUEST') {
+          state.errror = 'Forbideen';
+          action.error.message = 'Email Already exists!';
         } else {
           state.errror = action.error.message;
         }
