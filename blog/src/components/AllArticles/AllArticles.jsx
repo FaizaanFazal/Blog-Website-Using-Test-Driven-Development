@@ -29,7 +29,7 @@ export default function AllArticles() {
           {/* --- binding top 5 posts on list- ---} */}
           <div className="card-list grid-cols grid-cols-2">
             {
-                allArticles?.slice(7, 9).map((blogItem) => (
+                allArticles?.slice(0, 2).map((blogItem) => (
                   <Card blogItemData={blogItem} showContent key={blogItem.id} />
                 ))
               }

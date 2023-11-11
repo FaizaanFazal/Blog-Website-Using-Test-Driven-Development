@@ -1,9 +1,14 @@
 import '../../styles/Card.scss';
 import { Link } from 'react-router-dom';
 import images from '../../utils/images';
+import { useDispatch } from 'react-redux';
 
 export default function Card({ blogItemData, showContent, isCardSm }) {
   // todo get id of author from blog and fetch his image url and name from users
+  const MAX_LENGTH = 250;
+  const {id}=blogItemData;
+  const dispatch=useDispatch();
+  dispatch(id);
 
   return (
     <Link to={`/blogdetails/${blogItemData?.slug}`} data-testid="slugLink">
@@ -15,7 +20,10 @@ export default function Card({ blogItemData, showContent, isCardSm }) {
               {blogItemData?.title}
             </h3>
             {
-              showContent && <p className="text text-lg">{blogItemData?.content }</p>
+              showContent && <p className="text text-lg">
+              {`${blogItemData.content.substring(0, MAX_LENGTH)}...`}
+              <Link data-testid="slugLinkArticle" to={`blogdetails/${blogItemData.slug}`}>Read more</Link>
+              </p>
             }
           </div>
           <div className="card-footer card-footer-light flex justify-between items-center">
