@@ -27,7 +27,7 @@ describe('Unit tests for Featured component', () => {
   it('Image Alternative (alt) is correct', () => {
     renderWithProviders(<CardWide blogItemData={greater[0]} />);
     const Featuredimage = screen.getByTestId('FeaturedImg');
-    expect(Featuredimage).toHaveAttribute('alt', greater[0].image.alt);
+    expect(Featuredimage).toHaveAttribute('alt', greater[0].imageAlt);
   });
 
   it('Heading is rendered', () => {

@@ -4,7 +4,17 @@ import { Link } from 'react-router-dom';
 import Card from '../Card/Card';
 
 export default function RecentArticles() {
-  const recentArticles = useSelector((state) => state.blog.recentArticles);
+  const recentArticles = useSelector((state) => state.blog.blogs);
+  let sortedAsc = recentArticles.map((obj) => ({ ...obj, date: new Date(obj.date) }));
+
+  sortedAsc = sortedAsc.sort( // sorting in ascending and slicing last three items
+    (objA, objB) => Number(objA.createdAt) - Number(objB.createdAt),
+  ).slice(-3);
+
+  const reversedList = [];
+  for (let i = sortedAsc.length - 1; i >= 0; i -= 1) { // reversing the sorted list
+    reversedList.push(sortedAsc[i]);
+  }
 
   return (
     <section className="recent-sc">
@@ -30,10 +40,10 @@ export default function RecentArticles() {
 
           <div className="card-list grid-cols grid-cols-3">
             {
-            recentArticles?.map((blogItem) => (
-              <Card blogItemData={blogItem} isCardSm key={blogItem.id} />
-            ))
-          }
+              reversedList?.map((blogItem) => (
+                <Card blogItemData={blogItem} isCardSm key={blogItem.id} />
+              ))
+            }
           </div>
         </div>
       </div>

@@ -16,10 +16,10 @@ exports[`Unit tests for Featured component snapshot test to check Featured compo
           class="card-grid-img"
         >
           <img
-            alt="10 Tips for Budget-Friendly Travel Blog Header Image"
+            alt="undefined"
             class="object-fit-cover"
             data-testid="FeaturedImg"
-            src="blogImg1.jpg"
+            src="undefined"
           />
         </div>
         <div

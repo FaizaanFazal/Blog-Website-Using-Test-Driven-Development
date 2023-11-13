@@ -24,6 +24,6 @@ describe('Unit tests for RecentArticle Components', () => {
   it('Image have ALT', () => {
     renderWithProviders(<Card blogItemData={small[0]} isCardSm key={small.id} />);
     const img = screen.getByTestId('Image');
-    expect(img).toHaveAttribute('alt', small[0].image.alt);
+    expect(img).toHaveAttribute('alt', small[0].imageAlt);
   });
 });

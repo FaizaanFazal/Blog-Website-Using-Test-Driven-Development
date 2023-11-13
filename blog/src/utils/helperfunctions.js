@@ -53,12 +53,15 @@ export function backspace(element) {
 export const small = [
   {
     id: 1,
+    authorId: 'de2f4aad-949e-4452-8799-aa09630b8e02',
     title: '10 Tips for Budget-Friendly Travel',
     author: 'Elena Rodriguez',
     authorImage: { src: images.author1, alt: 'Elena Rodriguez' },
     date: '15 August',
-    image: { src: images.blogImg1, alt: '10 Tips for Budget-Friendly Travel Blog Header Image' },
+    imageSrc: images.blogImg1,
+    imageAlt: '10 Tips for Budget-Friendly Travel Blog Header Image',
     verified: true,
+    createdAt: '2023-11-10T11:40:54.577Z',
     slug: 'post1',
     content: "test Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank.",
   },
@@ -66,12 +69,15 @@ export const small = [
 export const greater = [
   {
     id: 1,
+    authorId: 'de2f4aad-949e-4452-8799-aa09630b8e02',
     title: '10 Tips for Budget-Friendly Travel',
     author: 'Elena Rodriguez',
-    authorImage: { src: images.author1, alt: ' Elena' },
+    authorImage: { src: images.author1, alt: 'Elena Rodriguez' },
     date: '15 August',
-    image: { src: images.blogImg1, alt: '10 Tips for Budget-Friendly Travel Blog Header Image' },
-    slug: 'post1',
+    imageSrc: images.blogImg1,
+    imageAlt: '10 Tips for Budget-Friendly Travel Blog Header Image',
     verified: true,
+    slug: 'post1',
+    createdAt: '2023-11-10T11:40:54.577Z',
     content: "Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank.Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank.Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank. \n \n Traveling on a budget doesnt have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank.Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank.Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank. \n \n Traveling on a budget doesnt have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank.Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank.Traveling on a budget doesn't have to compromise your experience. Here are 10 tips to make the most of your journey without breaking the bank. \n",
   }];
