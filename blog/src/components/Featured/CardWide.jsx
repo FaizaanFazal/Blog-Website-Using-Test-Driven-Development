@@ -1,29 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import images from '../../utils/images';
 import '../../styles/Card.scss';
-import { useSelector } from 'react-redux';
 
 const CardWide = ({ blogItemData }) => {
   const [author, setAuthor] = useState();
-  const users = useSelector((state) => state.user.allusers);
   const { authorId } = blogItemData;
   const [slicedDate, setSlicedDate] = useState('');
 
   const MAX_LENGTH = 250;
+  const users = useSelector((state) => state.user.allusers);
+
   let filtered;
-  useEffect(()=>{
-    
-      filtered = users?.filter((user) => user.id === authorId);
-      console.log(filtered)
-      setAuthor(filtered[0]);
-      if (filtered) {
-        const dateString = blogItemData?.createdAt;
-        setSlicedDate(dateString.substring(0, 10));
-      } else {
-        setSlicedDate('NA');
-      }
-  },[])
+  useEffect(() => {
+    console.log(users);
+    filtered = users?.filter((user) => user.id === authorId);
+    setAuthor(filtered[0]);
+    if (filtered) {
+      const dateString = blogItemData?.createdAt;
+      setSlicedDate(dateString.substring(0, 10));
+    } else {
+      setSlicedDate('NA');
+    }
+  }, [users]);
   return (
     <div className="card-grid grid">
       <div className="card-grid-img">

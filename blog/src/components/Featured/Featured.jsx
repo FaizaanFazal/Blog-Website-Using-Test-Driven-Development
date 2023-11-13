@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import CardWide from './CardWide';
 
 export default function Featured() {
   const blogs = useSelector((state) => state.blog.blogs);
   const filteredPost = blogs.filter((blog) => blog.featured === true);
-  
 
   return (
     <div data-testid="featured" className="container">

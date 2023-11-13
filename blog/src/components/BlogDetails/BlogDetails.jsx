@@ -41,7 +41,7 @@ export default function BlogDetails() {
               <img src={author?.authorImageSrc} alt={author?.authorImageAlt} className="object-fit-cover" />
             </div>
             <div className="info-intro">
-              <p className="intro-name text-base">{blogdetail?.author}</p>
+              <p className="intro-name text-base">{author?.userName}</p>
               {author?.verified
                 ? (
                   <div className="intro-verify flex items-center">
