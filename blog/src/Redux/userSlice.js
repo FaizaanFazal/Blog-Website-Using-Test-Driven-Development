@@ -35,11 +35,17 @@ export const signupUser = createAsyncThunk(
   },
 );
 
+export const fetchAllUsers = createAsyncThunk('users/allusers', async () => {
+  const response = await placeholderApi.get('/users/allusers');
+  return response.data;
+});
+
 export const userSlice = createSlice({
   name: 'user',
   initialState: {
     loading: false,
     user: {},
+    allusers: [],
     errror: null,
     isloggedin: false,
   },
@@ -55,6 +61,20 @@ export const userSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      .addCase(fetchAllUsers.fulfilled, (state, action) => {
+        state.allusers = action.payload;
+        state.errror = null;
+      })
+      .addCase(fetchAllUsers.rejected, (state, action) => {
+        state.allusers = {};
+        console.log(action.error.code);
+        if (action.error.code === 'ERR_BAD_REQUEST') {
+          state.errror = 'Something went wrong';
+          action.error.message = 'Something went wrong';
+        } else {
+          state.errror = action.error.message;
+        }
+      })
       .addCase(loginUser.pending, (state) => {
         state.loading = true;
         state.user = {};

@@ -1,9 +1,23 @@
 import '../../styles/Card.scss';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 import images from '../../utils/images';
 
 export default function Card({ blogItemData, showContent, isCardSm }) {
   // todo get id of author from blog and fetch his image url and name from users
+  const dateString = blogItemData.createdAt;
+  const slicedDate = dateString?.substring(0, 10);
+
+  const [author, setAuthor] = useState();
+  const MAX_LENGTH = 250;
+  const { authorId } = blogItemData;
+  const users = useSelector((state) => state.user.allusers);
+  useEffect(() => {
+    const filtered = users.filter((user) => user.id === authorId);
+    console.log(filtered[0]);
+    setAuthor(filtered[0]);
+  }, [users]);
 
   return (
     <Link to={`/blogdetails/${blogItemData?.slug}`} data-testid="slugLink">
@@ -15,23 +29,39 @@ export default function Card({ blogItemData, showContent, isCardSm }) {
               {blogItemData?.title}
             </h3>
             {
-              showContent && <p className="text text-lg">{blogItemData?.content }</p>
+              showContent && (
+              <p className="text text-lg">
+                {`${blogItemData.content.substring(0, MAX_LENGTH)}...`}
+
+              </p>
+              )
             }
           </div>
           <div className="card-footer card-footer-light flex justify-between items-center">
             <div className="writer-info grid">
               <div className="info-avatar">
-                <img src={`${blogItemData?.authorImageSrc}`} alt={`${blogItemData?.authorImageAlt}`} className="object-fit-cover" />
+                <img src={`${author?.authorImageSrc}`} alt={`${author?.authorImageAlt}`} className="object-fit-cover" />
               </div>
               <div className="info-intro">
-                <p className="intro-name text-base">{ blogItemData?.author }</p>
-                <div className="intro-verify flex items-center">
-                  <img src={`${images.verify_icon_filled}`} alt="icon" className="verify-icon" />
-                  <span className="verify-status text-sm text">Verified writer</span>
-                </div>
+                <p className="intro-name text-base">{ author?.userName }</p>
+
+                {author?.verified
+                  ? (
+                    <div className="intro-verify flex items-center">
+                      <img src={`${images.verify_icon_filled}`} alt="icon" className="verify-icon" />
+                      <span className="verify-status text-sm text">Verified writer</span>
+                    </div>
+                  )
+                  : (
+                    <div className="intro-verify flex items-center">
+                      <img src={`${images.verify_icon_light}`} alt="icon" className="verify-icon" />
+                      <span className="verify-status text-sm text">Not-Verified writer</span>
+                    </div>
+                  )}
+
               </div>
             </div>
-            <div className="date-info text text-base">{ blogItemData?.date}</div>
+            <div className="date-info text text-base text-white">{ slicedDate}</div>
           </div>
         </div>
       </div>

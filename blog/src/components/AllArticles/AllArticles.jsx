@@ -29,15 +29,15 @@ export default function AllArticles() {
           {/* --- binding top 5 posts on list- ---} */}
           <div className="card-list grid-cols grid-cols-2">
             {
-                allArticles?.slice(7, 9).map((blogItem) => (
-                  <Card blogItemData={blogItem} showContent key={blogItem.id} />
+                allArticles?.slice(0, 2).map((blogItem) => (
+                  <Card blogItemData={blogItem} data-testid="article" showContent key={blogItem.id} />
                 ))
               }
           </div>
           <div className="card-list grid-cols grid-cols-3">
             {
-                allArticles?.slice(9, 12).map((blogItem) => (
-                  <Card blogItemData={blogItem} isCardSm key={blogItem.id} />
+                allArticles?.slice(2, 5).map((blogItem) => (
+                  <Card blogItemData={blogItem} data-testid="article" isCardSm key={blogItem.id} />
                 ))
               }
           </div>

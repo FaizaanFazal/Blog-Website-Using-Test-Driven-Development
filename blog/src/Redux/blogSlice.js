@@ -4,7 +4,6 @@ import placeholderApi from '../utils/axios-instances';
 
 export const fetchBlogs = createAsyncThunk('blogs/all', async () => {
   const response = await placeholderApi.get('/blogs/all');
-  console.log(response.data);
   return response.data;
 });
 

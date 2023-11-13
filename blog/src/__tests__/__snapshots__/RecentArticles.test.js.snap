@@ -96,30 +96,26 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
                     >
                       <p
                         class="intro-name text-base"
-                      >
-                        Jonathan Baker
-                      </p>
+                      />
                       <div
                         class="intro-verify flex items-center"
                       >
                         <img
                           alt="icon"
                           class="verify-icon"
-                          src="verify_icon_filled.svg"
+                          src="verify_icon_light.svg"
                         />
                         <span
                           class="verify-status text-sm text"
                         >
-                          Verified writer
+                          Not-Verified writer
                         </span>
                       </div>
                     </div>
                   </div>
                   <div
-                    class="date-info text text-base"
-                  >
-                    18 August
-                  </div>
+                    class="date-info text text-base text-white"
+                  />
                 </div>
               </div>
             </div>
@@ -170,30 +166,26 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
                     >
                       <p
                         class="intro-name text-base"
-                      >
-                        Sophia Greene
-                      </p>
+                      />
                       <div
                         class="intro-verify flex items-center"
                       >
                         <img
                           alt="icon"
                           class="verify-icon"
-                          src="verify_icon_filled.svg"
+                          src="verify_icon_light.svg"
                         />
                         <span
                           class="verify-status text-sm text"
                         >
-                          Verified writer
+                          Not-Verified writer
                         </span>
                       </div>
                     </div>
                   </div>
                   <div
-                    class="date-info text text-base"
-                  >
-                    20 August
-                  </div>
+                    class="date-info text text-base text-white"
+                  />
                 </div>
               </div>
             </div>
@@ -244,30 +236,26 @@ exports[`Unit tests for RecentArticle Components Snapshot test for Recent Articl
                     >
                       <p
                         class="intro-name text-base"
-                      >
-                        Alexander West
-                      </p>
+                      />
                       <div
                         class="intro-verify flex items-center"
                       >
                         <img
                           alt="icon"
                           class="verify-icon"
-                          src="verify_icon_filled.svg"
+                          src="verify_icon_light.svg"
                         />
                         <span
                           class="verify-status text-sm text"
                         >
-                          Verified writer
+                          Not-Verified writer
                         </span>
                       </div>
                     </div>
                   </div>
                   <div
-                    class="date-info text text-base"
-                  >
-                    22 August
-                  </div>
+                    class="date-info text text-base text-white"
+                  />
                 </div>
               </div>
             </div>
