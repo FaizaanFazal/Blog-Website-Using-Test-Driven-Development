@@ -5,17 +5,30 @@ import images from '../../utils/images';
 import '../../styles/Card.scss';
 
 export default function BlogDetails() {
-  const location = useLocation();
-  // const id = new URLSearchParams(location.search).get('slug');
-  // const params = useParams();
-  // const { slug } = params;
-  const blogs = useSelector((state) => state.blog.blogs);
-
+  const [author, setAuthor] = useState();
   const [blogdetail, setBlogdetail] = useState({});
+  const [slicedDate, setSlicedDate] = useState('');
+
+  const location = useLocation();
+  const blogs = useSelector((state) => state.blog.blogs);
+  const users = useSelector((state) => state.user.allusers);
+
   useEffect(() => {
     const slug = location.pathname.split('/')[location.pathname.split('/').length - 1];
     const blog = blogs.filter((blog) => blog.slug === slug)[0];
+    if (blog) {
+      const dateString = blog?.createdAt;
+      setSlicedDate(dateString.substring(0, 10));
+    } else {
+      setSlicedDate('NA');
+    }
+
     setBlogdetail(blog);
+    if (blog) {
+      const { authorId } = blog;
+      const filtered = users.filter((user) => user.id === authorId);
+      setAuthor(filtered[0]);
+    }
   }, [location, blogs]);
 
   return (
@@ -25,11 +38,11 @@ export default function BlogDetails() {
         <div className="card-footer  flex justify-between items-center">
           <div className="writer-info grid">
             <div className="info-avatar">
-              <img src={blogdetail?.authorImage?.src} alt={blogdetail?.authorImage?.alt} className="object-fit-cover" />
+              <img src={author?.authorImageSrc} alt={author?.authorImageAlt} className="object-fit-cover" />
             </div>
             <div className="info-intro">
               <p className="intro-name text-base">{blogdetail?.author}</p>
-              {blogdetail?.verified
+              {author?.verified
                 ? (
                   <div className="intro-verify flex items-center">
                     <img src={`${images.verify_icon_filled}`} alt="icon" className="verify-icon" />
@@ -45,12 +58,12 @@ export default function BlogDetails() {
             </div>
           </div>
 
-          <div className="date-info text text-base" data-testid="detailsdate">{blogdetail?.date}</div>
+          <div className="date-info text text-base" data-testid="detailsdate">{slicedDate}</div>
         </div>
 
         <div className="cover-grid grid mt-3 mb-2 ">
           <div className="cover-grid-img">
-            <img data-testid="Image" src={blogdetail?.image?.src} alt={blogdetail?.image?.alt} className="object-fit-cover" />
+            <img data-testid="Image" src={blogdetail?.imageSrc} alt={blogdetail?.imageAlt} className="object-fit-cover" />
           </div>
         </div>
 
