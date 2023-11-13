@@ -6,7 +6,7 @@ import images from '../../utils/images';
 
 export default function Card({ blogItemData, showContent, isCardSm }) {
   // todo get id of author from blog and fetch his image url and name from users
-  const dateString = blogItemData.createdAt;
+  const dateString = blogItemData?.createdAt;
   const slicedDate = dateString?.substring(0, 10);
 
   const [author, setAuthor] = useState();
@@ -20,7 +20,7 @@ export default function Card({ blogItemData, showContent, isCardSm }) {
 
   return (
     <Link to={`/blogdetails/${blogItemData?.slug}`} data-testid="slugLink">
-      <div data-testid="artice" className={`card ${isCardSm ? 'card-sm' : ''}`}>
+      <div data-testid="article" className={`card ${isCardSm ? 'card-sm' : ''}`}>
         <img data-testid="Image" src={`${blogItemData?.imageSrc}`} alt={`${blogItemData?.imageAlt}`} className="card-overlay-img object-fit-cover" />
         <div className="card-content">
           <div className="card-body">

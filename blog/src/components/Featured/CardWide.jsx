@@ -9,7 +9,7 @@ const CardWide = ({ blogItemData }) => {
   return (
     <div className="card-grid grid">
       <div className="card-grid-img">
-        <img data-testid="FeaturedImg" src={`${blogItemData.image.src}`} alt={`${blogItemData.image.alt}`} className="object-fit-cover" />
+        <img data-testid="FeaturedImg" src={`${blogItemData.imageSrc}`} alt={`${blogItemData.imageAlt}`} className="object-fit-cover" />
       </div>
       <div className="card-grid-text">
         <div>

@@ -11,7 +11,7 @@ describe('Unit tests for RecentArticle Components', () => {
 
   it('Number of Articles should be 3', () => {
     renderWithProviders(<RecentArticles />);
-    const tagElements = screen.getAllByTestId('artice');
+    const tagElements = screen.findAllByTestId('article');
     expect(tagElements.length).toBe(3);
   });
 
