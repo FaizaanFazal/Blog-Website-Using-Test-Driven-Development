@@ -15,7 +15,6 @@ export default function Card({ blogItemData, showContent, isCardSm }) {
   const users = useSelector((state) => state.user.allusers);
   useEffect(() => {
     const filtered = users.filter((user) => user.id === authorId);
-    console.log(filtered[0]);
     setAuthor(filtered[0]);
   }, [users]);
 
