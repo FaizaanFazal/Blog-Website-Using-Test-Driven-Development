@@ -4,19 +4,15 @@ import Card from '../components/Card/Card';
 import { renderWithProviders } from '../utils/wrappertesting';
 import { small } from '../utils/helperfunctions';
 
-describe('Unit tests for RecentArticle Components', () => {
+describe('Unit tests for Cards Components', () => {
   it('Image renders in card component', () => {
-    renderWithProviders(<Card />);
+    renderWithProviders(<Card blogItemData={small[0]} isCardSm key={small.id} />,);
     const image = screen.getByTestId('Image');
     expect(image).toBeInTheDocument();
   });
 
   it('Card link has right slug', () => {
-    renderWithProviders(
-
-      <Card blogItemData={small[0]} isCardSm key={small.id} />
-      ,
-    );
+    renderWithProviders(<Card blogItemData={small[0]} isCardSm key={small.id} />,);
     const slugLink = screen.getByTestId('slugLink');
     expect(slugLink).toHaveAttribute('href', '/blogdetails/post1');
   });

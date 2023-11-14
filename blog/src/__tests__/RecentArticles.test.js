@@ -1,9 +1,10 @@
 import React from 'react';
-import { act, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import RecentArticles from '../components/RecentArticles/RecentArticles';
 import { renderWithProviders } from '../utils/wrappertesting';
+import { act } from 'react-dom/test-utils';
 
-describe('Unit tests for RecentArticle Components', () => {
+describe('Unit tests for RecentArticle Components -------', () => {
   it('Snapshot test for Recent Article component', () => {
     const { asFragment } = renderWithProviders(<RecentArticles />);
     expect(asFragment()).toMatchSnapshot();
@@ -11,10 +12,9 @@ describe('Unit tests for RecentArticle Components', () => {
 
   it('Number of Articles should be 3', async() => {
     renderWithProviders(<RecentArticles />);
-     act(() => {
       const tagElements = screen.findAllByTestId('article');
       expect(tagElements.length).toBe(3);
-    });
+ 
  
   });
 
