@@ -31,7 +31,7 @@ const CardWide = ({ blogItemData }) => {
       </div>
       <div className="card-grid-text">
         <div>
-          <div className="badge badge-primary">featured</div>
+          <div className="badge badge-primary" >featured</div>
           <h2 data-testid="headingfeatured" className="title-lg title featured-title">
             { blogItemData?.title }
           </h2>

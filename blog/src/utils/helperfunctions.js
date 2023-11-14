@@ -75,7 +75,7 @@ export const greater = [
     authorImage: { src: images.author1, alt: 'Elena Rodriguez' },
     date: '15 August',
     imageSrc: images.blogImg1,
-    imageAlt: '10 Tips for Budget-Friendly Travel Blog Header Image',
+    imageAlt: 'Elinore',
     verified: true,
     slug: 'post1',
     createdAt: '2023-11-10T11:40:54.577Z',

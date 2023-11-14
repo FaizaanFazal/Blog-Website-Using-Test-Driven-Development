@@ -17,7 +17,7 @@ describe('Unit tests for Featured component', () => {
   });
 
   it('Image renders and src is correct', () => {
-    renderWithProviders(<Featured />);
+    renderWithProviders(<CardWide blogItemData={greater[0]} />);
     const image = screen.getByTestId('FeaturedImg');
     expect(image).toBeInTheDocument();
     const imageSrc = image.src;
@@ -31,7 +31,7 @@ describe('Unit tests for Featured component', () => {
   });
 
   it('Heading is rendered', () => {
-    renderWithProviders(<Featured />);
+    renderWithProviders(<CardWide blogItemData={greater[0]} />);
     const heading = screen.getByTestId('headingfeatured');
     expect(heading).toBeInTheDocument();
   });
@@ -51,7 +51,7 @@ describe('Unit tests for Featured component', () => {
   });
 
   it('Date is rendered', () => {
-    renderWithProviders(<Featured />);
+    renderWithProviders(<CardWide blogItemData={greater[0]} />);
     const featureDate = screen.getByTestId('featureDate');
     expect(featureDate).toBeInTheDocument();
   });

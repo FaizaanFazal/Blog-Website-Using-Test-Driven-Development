@@ -1,9 +1,10 @@
 import React from 'react';
-import { screen } from '@testing-library/react';
+import { prettyDOM, screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 import { renderWithProviders } from '../utils/wrappertesting';
 import BlogDetails from '../pages/Blogdetails';
 import { greater } from '../utils/helperfunctions';
+import { act } from 'react-dom/test-utils';
 
 describe('Unit tests for BlogDetails Components', () => {
   it('Snapshot test for BlogDetails component', () => {
@@ -30,8 +31,11 @@ describe('Unit tests for BlogDetails Components', () => {
     // history.push('post1');
     renderWithProviders(<BlogDetails />, { route: '/blogdetails/post1' });
     // console.log(prettyDOM()); // Can be used to check what is being rendered
-    const img = screen.getByTestId('Image');
-    expect(img).toHaveAttribute('alt', greater[0].image.alt);
+    act(() => {
+      const img = screen.getByTestId('Image');
+      expect(img).toHaveAttribute('alt', greater[0].imageAlt);
+    });
+   
   });
 
   // it('Correct title is rendered as Heading', () => {
