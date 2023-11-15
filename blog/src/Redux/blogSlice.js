@@ -15,6 +15,14 @@ export const createBlogs = createAsyncThunk('blogs/add', async (blog) => {
   return request.data;
 });
 
+export const likeBlog = createAsyncThunk('likes/', async (ids) => {
+  const request = await placeholderApi.post('/likes/', ids);
+  if (request.status === '200') {
+    return request;
+  }
+  return request.data;
+});
+
 const blogSlice = createSlice({
   name: 'blog',
   initialState: {
@@ -51,7 +59,17 @@ const blogSlice = createSlice({
         } else {
           state.error = action.error.message;
         }
-      });
+      })
+      .addCase(likeBlog.fulfilled, (state, action) => {
+      state.error = null;
+    }).addCase(likeBlog.rejected, (state, action) => {
+      if (action.error.code === 'ERR_BAD_REQUEST') {
+        state.error = 'Something went wrong';
+        action.error.message = 'failed to like or unlike';
+      } else {
+        state.error = action.error.message;
+      }
+    });
   },
 
 });

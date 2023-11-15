@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import images from '../../utils/images';
-import heart from '../../utils/images';
 import '../../styles/Card.scss';
 
 export default function BlogDetails() {
@@ -43,9 +42,13 @@ export default function BlogDetails() {
       <div className="container">
       <div className='likebtncont'>
         <h4 data-testid="titleHeading" className="title title-lg">{blogdetail?.title}</h4>
-      { liked? <a href='/'>
-       <img className='iconlike' src={`${images.heart}`} alt='likebutton' /> 
-       </a>:null }
+      { liked? <button className='iconlike'>
+       <img  src={`${images.heart_filled}`} alt='likebutton' /> 
+       </button>
+       :
+       <button className='iconlike'>
+       <img  src={`${images.heart}`} alt='likebutton' /> 
+       </button>}
       </div>
         
         <div className="card-footer  flex justify-between items-center">
