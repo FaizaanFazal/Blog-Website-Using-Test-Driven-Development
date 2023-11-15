@@ -44,6 +44,7 @@ app.use((req:Request,res:Response,next:NextFunction)=>{
 //protected routes authenticate
 app.use(isProtectedRouteMiddleware)
 //middlewares 
+
 app.use("/users/",authRoute)
 app.use("/blogs/",blogRoute)
 app.use("/likes/",likeRoute)

@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import images from '../../utils/images';
 import '../../styles/Card.scss';
+import { likeBlog } from '../../Redux/blogSlice';
 
 export default function BlogDetails() {
   const [author, setAuthor] = useState();
@@ -14,6 +17,23 @@ export default function BlogDetails() {
   const blogs = useSelector((state) => state.blog.blogs);
   const users = useSelector((state) => state.user.allusers);
   const user = useSelector((state) => state.user.user);
+  const dispatch=useDispatch();
+
+  const handlelike=()=>{
+   
+    let ids={
+      userId:user.id,
+      blogId:blogdetail.id,
+    }
+    dispatch(likeBlog(ids)).then((result) => {
+      if (result.payload) {
+        toast.success('Done', { position: toast.POSITION.TOP_RIGHT, autoClose: 1000 });
+      } else {
+        console.log(result)
+        toast.error(result.error.message, { position: toast.POSITION.TOP_RIGHT, autoClose: 2000 });
+      }
+  })
+}
 
   useEffect(() => {
     const slug = location.pathname.split('/')[location.pathname.split('/').length - 1];
@@ -30,23 +50,30 @@ export default function BlogDetails() {
       const { authorId } = blog;
       const filtered = users.filter((user) => user.id === authorId);
       setAuthor(filtered[0]);
-      if(blog.likes.userId===user.id){
-        setLiked(true);
+      if(blog.likes){
+        const filteredlike = blog.likes.filter((like) => like.userId === user.id);
+        if(filteredlike){
+          setLiked(true);
+        }
+        else{
+          setLiked(false)
+        }
       }
     }
 
-  }, [location, blogs]);
+  }, [location, blogs,liked]);
 
   return (
     <section data-testid="details" className="mb-5">
+     <ToastContainer />
       <div className="container">
       <div className='likebtncont'>
         <h4 data-testid="titleHeading" className="title title-lg">{blogdetail?.title}</h4>
-      { liked? <button className='iconlike'>
+      { liked? <button type='button' className='iconlike' onClick={handlelike}>
        <img  src={`${images.heart_filled}`} alt='likebutton' /> 
        </button>
        :
-       <button className='iconlike'>
+       <button type='button' className='iconlike' onClick={handlelike}>
        <img  src={`${images.heart}`} alt='likebutton' /> 
        </button>}
       </div>
