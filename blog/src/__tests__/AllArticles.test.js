@@ -1,19 +1,16 @@
-import { screen,waitFor,waitForNextUpdate } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import AllArticles from '../components/AllArticles/AllArticles';
 import { renderWithProviders } from '../utils/wrappertesting';
 
 describe('Unit tests for AllArticles Components', () => {
-  it('Snapshot test for All Article component', ( ) => {
+  it('Snapshot test for All Article component', () => {
     const { asFragment } = renderWithProviders(<AllArticles />);
     expect(asFragment()).toMatchSnapshot();
   });
   it('Number of Articles should be 3', async () => {
     renderWithProviders(<AllArticles />);
-    await waitFor(() => {
-      const tagElements = screen.getAllByTestId('article');
-      expect(tagElements.length).toBeGreaterThan(0);
-    });
-   
+    const tagElements = screen.getAllByTestId('article');
+    expect(tagElements.length).toBeGreaterThan(0);
   });
 
   it('View All Button', () => {
