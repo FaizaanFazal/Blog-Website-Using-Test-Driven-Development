@@ -20,7 +20,7 @@ export default function Card({ blogItemData, showContent, isCardSm }) {
 
   return (
     <Link  to={`/blogdetails/${blogItemData?.slug}`} data-testid="slugLink">
-      <div className={`card ${isCardSm ? 'card-sm' : ''}`}>
+      <div data-testid="article" className={`card ${isCardSm ? 'card-sm' : ''}`}>
         <img data-testid="Image" src={`${blogItemData?.imageSrc}`} alt={`${blogItemData?.imageAlt}`} className="card-overlay-img object-fit-cover" />
         <div className="card-content">
           <div className="card-body">
