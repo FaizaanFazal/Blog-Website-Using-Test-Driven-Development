@@ -19,8 +19,22 @@ export default function BlogDetails() {
   const user = useSelector((state) => state.user.user);
   const dispatch=useDispatch();
 
-  const handlelike=()=>{
-   
+  const handleicon=()=>{
+    if(BlogDetails?.likes){
+      const filteredlike = BlogDetails.likes.filter((like) => like.userId === user.id);
+      console.log(filteredlike[0])
+      if(filteredlike[0]){
+        setLiked(true);
+        console.log("setted")
+      }
+      else{
+        setLiked(false)
+        console.log("un-setted")
+      }
+    }
+  }
+  const handlelike=(e)=>{
+    e.preventDefault();
     let ids={
       userId:user.id,
       blogId:blogdetail.id,
@@ -32,36 +46,43 @@ export default function BlogDetails() {
         console.log(result)
         toast.error(result.error.message, { position: toast.POSITION.TOP_RIGHT, autoClose: 2000 });
       }
+      handleicon();
   })
 }
 
   useEffect(() => {
     const slug = location.pathname.split('/')[location.pathname.split('/').length - 1];
     const blog = blogs.filter((blog) => blog.slug === slug)[0];
+    //date slicing
     if (blog) {
       const dateString = blog?.createdAt;
       setSlicedDate(dateString.substring(0, 10));
     } else {
       setSlicedDate('NA');
     }
-
+    //set extracted blog details
     setBlogdetail(blog);
+    //getting author by extracting authorid
     if (blog) {
       const { authorId } = blog;
       const filtered = users.filter((user) => user.id === authorId);
       setAuthor(filtered[0]);
-      if(blog.likes){
-        const filteredlike = blog.likes.filter((like) => like.userId === user.id);
-        if(filteredlike){
-          setLiked(true);
-        }
-        else{
-          setLiked(false)
-        }
+    }
+          
+    if(blog?.likes){
+      const filteredlike = blog.likes.filter((like) => like.userId === user.id);
+      console.log(filteredlike[0])
+      if(filteredlike[0]){
+        setLiked(true);
+        console.log("setted")
+      }
+      else{
+        setLiked(false)
+        console.log("un-setted")
       }
     }
 
-  }, [location, blogs,liked]);
+  }, [location, blogs,dispatch]);
 
   return (
     <section data-testid="details" className="mb-5">
