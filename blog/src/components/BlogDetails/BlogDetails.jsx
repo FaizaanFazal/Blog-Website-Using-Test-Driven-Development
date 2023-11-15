@@ -2,16 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import images from '../../utils/images';
+import heart from '../../utils/images';
 import '../../styles/Card.scss';
 
 export default function BlogDetails() {
   const [author, setAuthor] = useState();
   const [blogdetail, setBlogdetail] = useState({});
   const [slicedDate, setSlicedDate] = useState('');
+  const [liked, setLiked] = useState(false);
 
   const location = useLocation();
   const blogs = useSelector((state) => state.blog.blogs);
   const users = useSelector((state) => state.user.allusers);
+  const user = useSelector((state) => state.user.user);
 
   useEffect(() => {
     const slug = location.pathname.split('/')[location.pathname.split('/').length - 1];
@@ -28,13 +31,23 @@ export default function BlogDetails() {
       const { authorId } = blog;
       const filtered = users.filter((user) => user.id === authorId);
       setAuthor(filtered[0]);
+      if(blog.likes.userId===user.id){
+        setLiked(true);
+      }
     }
+
   }, [location, blogs]);
 
   return (
     <section data-testid="details" className="mb-5">
       <div className="container">
+      <div className='likebtncont'>
         <h4 data-testid="titleHeading" className="title title-lg">{blogdetail?.title}</h4>
+      { liked? <a href='/'>
+       <img className='iconlike' src={`${images.heart}`} alt='likebutton' /> 
+       </a>:null }
+      </div>
+        
         <div className="card-footer  flex justify-between items-center">
           <div className="writer-info grid">
             <div className="info-avatar">
@@ -57,7 +70,7 @@ export default function BlogDetails() {
                 )}
             </div>
           </div>
-
+          
           <div className="date-info text text-base" data-testid="detailsdate">{slicedDate}</div>
         </div>
 
