@@ -30,7 +30,6 @@ const blogSlice = createSlice({
     })
       .addCase(fetchBlogs.rejected, (state, action) => {
         state.blogs = {};
-        console.log(action.error.code);
         if (action.error.code === 'ERR_BAD_REQUEST') {
           state.error = 'Something went wrong';
           action.error.message = 'Something went wrong';
@@ -39,8 +38,6 @@ const blogSlice = createSlice({
         }
       })
       .addCase(createBlogs.fulfilled, (state, action) => {
-        console.log('heee');
-        console.log(action.payload);
         state.blogs.push(action.payload);
         state.error = null;
       })

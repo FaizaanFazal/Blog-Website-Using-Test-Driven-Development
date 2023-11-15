@@ -67,7 +67,6 @@ export const userSlice = createSlice({
       })
       .addCase(fetchAllUsers.rejected, (state, action) => {
         state.allusers = {};
-        console.log(action.error.code);
         if (action.error.code === 'ERR_BAD_REQUEST') {
           state.errror = 'Something went wrong';
           action.error.message = 'Something went wrong';
@@ -91,7 +90,6 @@ export const userSlice = createSlice({
         state.loading = false;
         state.user = null;
         state.isloggedin = false;
-        console.log(action.error.code);
         if (action.error.code === 'ERR_BAD_REQUEST') {
           state.errror = 'Access Denied! Invalid Credentials';
           action.error.message = 'Access Denied! Invalid Credentials';
@@ -109,7 +107,6 @@ export const userSlice = createSlice({
         state.loading = false;
         state.user = null;
         state.isloggedin = false;
-        console.log(action.error.message);
         if (action.error.message === 'Request failed with status code 401') {
           state.errror = 'Something went wrong';
         } else {
@@ -132,8 +129,6 @@ export const userSlice = createSlice({
         state.loading = false;
         state.user = null;
         state.isloggedin = false;
-        console.log(action.error);
-        console.log(action.error.message);
         if (action.error.code === 'ERR_BAD_REQUEST') {
           state.errror = 'Forbideen';
           action.error.message = 'Email Already exists!';

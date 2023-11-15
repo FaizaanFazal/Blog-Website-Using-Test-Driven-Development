@@ -49,6 +49,7 @@ exports[`Unit tests for AllArticles Components Snapshot test for All Article com
         </div>
         <div
           class="card-list grid-cols grid-cols-2"
+          data-testid="articles"
         />
         <div
           class="card-list grid-cols grid-cols-3"
