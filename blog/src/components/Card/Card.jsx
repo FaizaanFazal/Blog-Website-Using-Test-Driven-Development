@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import images from '../../utils/images';
-import heart from '../../utils/images';
 
 export default function Card({ blogItemData, showContent, isCardSm }) {
   // todo get id of author from blog and fetch his image url and name from users

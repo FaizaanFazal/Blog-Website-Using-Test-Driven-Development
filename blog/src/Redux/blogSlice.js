@@ -60,16 +60,17 @@ const blogSlice = createSlice({
           state.error = action.error.message;
         }
       })
-      .addCase(likeBlog.fulfilled, (state, action) => {
-      state.error = null;
-    }).addCase(likeBlog.rejected, (state, action) => {
-      if (action.error.code === 'ERR_BAD_REQUEST') {
-        state.error = 'Something went wrong';
-        action.error.message = 'failed to like or unlike';
-      } else {
-        state.error = action.error.message;
-      }
-    });
+      .addCase(likeBlog.fulfilled, (state) => {
+        state.error = null;
+      })
+      .addCase(likeBlog.rejected, (state, action) => {
+        if (action.error.code === 'ERR_BAD_REQUEST') {
+          state.error = 'Something went wrong';
+          action.error.message = 'failed to like or unlike';
+        } else {
+          state.error = action.error.message;
+        }
+      });
   },
 
 });

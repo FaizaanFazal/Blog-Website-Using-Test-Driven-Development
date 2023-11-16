@@ -44,7 +44,6 @@ import blogImg24 from '../assets/images/blogImg24.jpg';
 import heart_filled from '../assets/images/heart_filled.png';
 import heart from '../assets/images/heart.png';
 
-
 const images = {
   case_img,
   featured_img,
@@ -89,7 +88,7 @@ const images = {
   blogImg23,
   blogImg24,
   heart_filled,
-  heart
+  heart,
 };
 
 export default images;

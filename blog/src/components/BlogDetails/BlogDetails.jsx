@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import images from '../../utils/images';
 import '../../styles/Card.scss';
-import { likeBlog } from '../../Redux/blogSlice';
+import { fetchBlogs, likeBlog } from '../../Redux/blogSlice';
 
 export default function BlogDetails() {
   const [author, setAuthor] = useState();
@@ -17,89 +17,80 @@ export default function BlogDetails() {
   const blogs = useSelector((state) => state.blog.blogs);
   const users = useSelector((state) => state.user.allusers);
   const user = useSelector((state) => state.user.user);
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
 
-  const handleicon=()=>{
-    console.log(blogdetail)
-    if(blogdetail?.likes ){
-      const filteredlike = blogdetail.likes.filter((like) => like.userId === user.id);
-      console.log(filteredlike)
-      if(filteredlike){
-        setLiked(true);
-        console.log("setted")
-      }
-      else{
-        setLiked(false)
-        console.log("un-setted")
-      }
-    }
-  }
-  const handlelike=(e)=>{
+  const handleicon = () => {
+    console.log(blogdetail);
+    setLiked(!liked);
+  };
+  const handlelike = (e) => {
     e.preventDefault();
-    let ids={
-      userId:user.id,
-      blogId:blogdetail.id,
-    }
+    const ids = {
+      userId: user.id,
+      blogId: blogdetail.id,
+    };
     dispatch(likeBlog(ids)).then((result) => {
       if (result.payload) {
-        toast.success('Done', { position: toast.POSITION.TOP_RIGHT, autoClose: 1000 });
+        toast.success('Done', { position: toast.POSITION.TOP_RIGHT, autoClose: 400 });
+        dispatch(fetchBlogs());
       } else {
-        console.log(result)
+        console.log(result);
         toast.error(result.error.message, { position: toast.POSITION.TOP_RIGHT, autoClose: 2000 });
       }
       handleicon();
-  })
-}
+    });
+  };
 
   useEffect(() => {
     const slug = location.pathname.split('/')[location.pathname.split('/').length - 1];
     const blog = blogs.filter((blog) => blog.slug === slug)[0];
-    //date slicing
+    // date slicing
     if (blog) {
       const dateString = blog?.createdAt;
       setSlicedDate(dateString.substring(0, 10));
     } else {
       setSlicedDate('NA');
     }
-    //set extracted blog details
+    // set extracted blog details
     setBlogdetail(blog);
-    //getting author by extracting authorid
+    // getting author by extracting authorid
     if (blog) {
       const { authorId } = blog;
       const filtered = users.filter((user) => user.id === authorId);
       setAuthor(filtered[0]);
     }
-          
-    if(blog?.likes){
+
+    if (blog?.likes) {
       const filteredlike = blog.likes.filter((like) => like.userId === user.id);
-      console.log(filteredlike[0])
-      if(filteredlike[0]){
+      console.log(filteredlike[0]);
+      if (filteredlike[0]) {
         setLiked(true);
-        console.log("setted")
-      }
-      else{
-        setLiked(false)
-        console.log("un-setted")
+        console.log('setted');
+      } else {
+        setLiked(false);
+        console.log('un-setted');
       }
     }
-
-  }, [location, blogs,dispatch]);
+  }, [location, blogs]);
 
   return (
     <section data-testid="details" className="mb-5">
-     <ToastContainer />
+      <ToastContainer />
       <div className="container">
-      <div className='likebtncont'>
-        <h4 data-testid="titleHeading" className="title title-lg">{blogdetail?.title}</h4>
-      { liked? <button type='button' className='iconlike' onClick={handlelike}>
-       <img  src={`${images.heart_filled}`} alt='likebutton' /> 
-       </button>
-       :
-       <button type='button' className='iconlike' onClick={handlelike}>
-       <img  src={`${images.heart}`} alt='likebutton' /> 
-       </button>}
-      </div>
-        
+        <div className="likebtncont">
+          <h4 data-testid="titleHeading" className="title title-lg">{blogdetail?.title}</h4>
+          { liked ? (
+            <button type="button" className="iconlike" onClick={handlelike}>
+              <img src={`${images.heart_filled}`} alt="likebutton" />
+            </button>
+          )
+            : (
+              <button type="button" className="iconlike" onClick={handlelike}>
+                <img src={`${images.heart}`} alt="likebutton" />
+              </button>
+            )}
+        </div>
+
         <div className="card-footer  flex justify-between items-center">
           <div className="writer-info grid">
             <div className="info-avatar">
@@ -122,7 +113,7 @@ export default function BlogDetails() {
                 )}
             </div>
           </div>
-          
+
           <div className="date-info text text-base" data-testid="detailsdate">{slicedDate}</div>
         </div>
 
