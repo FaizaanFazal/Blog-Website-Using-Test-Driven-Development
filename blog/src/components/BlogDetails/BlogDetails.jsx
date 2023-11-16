@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import images from '../../utils/images';
@@ -18,6 +18,7 @@ export default function BlogDetails() {
   const users = useSelector((state) => state.user.allusers);
   const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleicon = () => {
     console.log(blogdetail);
@@ -25,20 +26,26 @@ export default function BlogDetails() {
   };
   const handlelike = (e) => {
     e.preventDefault();
-    const ids = {
-      userId: user.id,
-      blogId: blogdetail.id,
-    };
-    dispatch(likeBlog(ids)).then((result) => {
-      if (result.payload) {
-        toast.success('Done', { position: toast.POSITION.TOP_RIGHT, autoClose: 400 });
-        dispatch(fetchBlogs());
-      } else {
-        console.log(result);
-        toast.error(result.error.message, { position: toast.POSITION.TOP_RIGHT, autoClose: 2000 });
-      }
-      handleicon();
-    });
+    const userrlogged = localStorage.getItem('user');
+    if (userrlogged === null) {
+      toast.warning('Login First', { position: toast.POSITION.TOP_RIGHT, autoClose: 1000 });
+      navigate('/login');
+    } else {
+      const ids = {
+        userId: user?.id,
+        blogId: blogdetail?.id,
+      };
+      dispatch(likeBlog(ids)).then((result) => {
+        if (result.payload) {
+          toast.success('Done', { position: toast.POSITION.TOP_RIGHT, autoClose: 400 });
+          dispatch(fetchBlogs());
+        } else {
+          console.log(result);
+          toast.error(result.error.message, { position: toast.POSITION.TOP_RIGHT, autoClose: 2000 });
+        }
+        handleicon();
+      });
+    }
   };
 
   useEffect(() => {
@@ -79,7 +86,7 @@ export default function BlogDetails() {
       <div className="container">
         <div className="likebtncont">
           <h4 data-testid="titleHeading" className="title title-lg">{blogdetail?.title}</h4>
-          { liked ? (
+          {liked ? (
             <button type="button" className="iconlike" onClick={handlelike}>
               <img src={`${images.heart_filled}`} alt="likebutton" />
             </button>
