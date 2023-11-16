@@ -7,10 +7,7 @@ export const protectedRoutes = [
         method: "post",
         path: "/add"
     },
-    {
-        method: "",
-        path: ""
-    }];
+];
 
 
 //check protected routes to check authentication

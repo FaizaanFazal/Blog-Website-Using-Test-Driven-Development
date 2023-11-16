@@ -28,6 +28,6 @@ export const likeBlog = async (req: Request, res: Response, next: NextFunction) 
         await prisma.likes.create({ data: req.body });
         const accessToken = req.cookies.accesstoken
         const decodedToken = decode(accessToken) as JwtPayload;
-        res.json({status:true,userId:decodedToken.id});
+        res.json({status:true,userId:decodedToken?.id});
     }
 }

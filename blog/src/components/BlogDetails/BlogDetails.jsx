@@ -20,10 +20,11 @@ export default function BlogDetails() {
   const dispatch=useDispatch();
 
   const handleicon=()=>{
-    if(BlogDetails?.likes){
-      const filteredlike = BlogDetails.likes.filter((like) => like.userId === user.id);
-      console.log(filteredlike[0])
-      if(filteredlike[0]){
+    console.log(blogdetail)
+    if(blogdetail?.likes ){
+      const filteredlike = blogdetail.likes.filter((like) => like.userId === user.id);
+      console.log(filteredlike)
+      if(filteredlike){
         setLiked(true);
         console.log("setted")
       }

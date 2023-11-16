@@ -10,7 +10,7 @@ import logger from "./utils/logger";
 import swaggerDocs from './utils/swagger';
 import cookieParser from 'cookie-parser';
 import { isProtectedRouteMiddleware } from './utils/protectedRoutes';
-import { error } from 'console';
+
 
 export interface userRequest extends Request {
     user: any 
