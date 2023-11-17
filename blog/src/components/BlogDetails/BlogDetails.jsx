@@ -17,6 +17,7 @@ export default function BlogDetails() {
   const blogs = useSelector((state) => state.blog.blogs);
   const users = useSelector((state) => state.user.allusers);
   const user = useSelector((state) => state.user.user);
+  const isloggedin = useSelector((state)=>state.user.isloggedin)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -86,7 +87,7 @@ export default function BlogDetails() {
       <div className="container">
         <div className="likebtncont">
           <h4 data-testid="titleHeading" className="title title-lg">{blogdetail?.title}</h4>
-          {liked ? (
+         {isloggedin && (liked ? (
             <button type="button" className="iconlike" onClick={handlelike}>
               <img src={`${images.heart_filled}`} alt="likebutton" />
             </button>
@@ -95,7 +96,7 @@ export default function BlogDetails() {
               <button type="button" className="iconlike" onClick={handlelike}>
                 <img src={`${images.heart}`} alt="likebutton" />
               </button>
-            )}
+            ))}
         </div>
 
         <div className="card-footer  flex justify-between items-center">
