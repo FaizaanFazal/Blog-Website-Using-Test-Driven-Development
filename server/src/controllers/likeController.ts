@@ -14,20 +14,20 @@ export const likeBlog = async (req: Request, res: Response, next: NextFunction) 
             blogId:req.body.blogId 
         },
     });
-    console.log(user_Id)
+    console.log("found ->",user_Id)
     if (user_Id.length>0) {
-        const newlike = await prisma.likes.deleteMany({ 
+        await prisma.likes.deleteMany({ 
             where: {
                 userId: req.body.userId,
                 blogId:req.body.blogId
             },
         });
-        res.json({status:false});
+        res.json({status:true,message:"unliked"}); //changed to true on false client thinks request failed
     }
     else {
         await prisma.likes.create({ data: req.body });
         const accessToken = req.cookies.accesstoken
         const decodedToken = decode(accessToken) as JwtPayload;
-        res.json({status:true,userId:decodedToken.id});
+        res.json({status:true,userId:decodedToken?.id});
     }
 }

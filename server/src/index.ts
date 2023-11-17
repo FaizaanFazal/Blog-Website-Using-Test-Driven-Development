@@ -10,7 +10,7 @@ import logger from "./utils/logger";
 import swaggerDocs from './utils/swagger';
 import cookieParser from 'cookie-parser';
 import { isProtectedRouteMiddleware } from './utils/protectedRoutes';
-import { error } from 'console';
+
 
 export interface userRequest extends Request {
     user: any 
@@ -44,6 +44,7 @@ app.use((req:Request,res:Response,next:NextFunction)=>{
 //protected routes authenticate
 app.use(isProtectedRouteMiddleware)
 //middlewares 
+
 app.use("/users/",authRoute)
 app.use("/blogs/",blogRoute)
 app.use("/likes/",likeRoute)

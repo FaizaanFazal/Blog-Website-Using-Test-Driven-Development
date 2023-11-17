@@ -1,40 +1,104 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import images from '../../utils/images';
 import '../../styles/Card.scss';
+import { fetchBlogs, likeBlog } from '../../Redux/blogSlice';
 
 export default function BlogDetails() {
   const [author, setAuthor] = useState();
   const [blogdetail, setBlogdetail] = useState({});
   const [slicedDate, setSlicedDate] = useState('');
+  const [liked, setLiked] = useState(false);
 
   const location = useLocation();
   const blogs = useSelector((state) => state.blog.blogs);
   const users = useSelector((state) => state.user.allusers);
+  const user = useSelector((state) => state.user.user);
+  const isloggedin = useSelector((state) => state.user.isloggedin);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleicon = () => {
+    console.log(blogdetail);
+    setLiked(!liked);
+  };
+  const handlelike = (e) => {
+    e.preventDefault();
+    const userrlogged = localStorage.getItem('user');
+    if (userrlogged === null) {
+      toast.warning('Login First', { position: toast.POSITION.TOP_RIGHT, autoClose: 1000 });
+      navigate('/login');
+    } else {
+      const ids = {
+        userId: user?.id,
+        blogId: blogdetail?.id,
+      };
+      dispatch(likeBlog(ids)).then((result) => {
+        if (result.payload) {
+          toast.success('Done', { position: toast.POSITION.TOP_RIGHT, autoClose: 400 });
+          dispatch(fetchBlogs());
+        } else {
+          console.log(result);
+          toast.error(result.error.message, { position: toast.POSITION.TOP_RIGHT, autoClose: 2000 });
+        }
+        handleicon();
+      });
+    }
+  };
 
   useEffect(() => {
     const slug = location.pathname.split('/')[location.pathname.split('/').length - 1];
     const blog = blogs.filter((blog) => blog.slug === slug)[0];
+    // date slicing
     if (blog) {
       const dateString = blog?.createdAt;
       setSlicedDate(dateString.substring(0, 10));
     } else {
       setSlicedDate('NA');
     }
-
+    // set extracted blog details
     setBlogdetail(blog);
+    // getting author by extracting authorid
     if (blog) {
       const { authorId } = blog;
       const filtered = users.filter((user) => user.id === authorId);
       setAuthor(filtered[0]);
     }
+
+    if (blog?.likes) {
+      const filteredlike = blog.likes.filter((like) => like.userId === user.id);
+      console.log(filteredlike[0]);
+      if (filteredlike[0]) {
+        setLiked(true);
+        console.log('setted');
+      } else {
+        setLiked(false);
+        console.log('un-setted');
+      }
+    }
   }, [location, blogs]);
 
   return (
     <section data-testid="details" className="mb-5">
+      <ToastContainer />
       <div className="container">
-        <h4 data-testid="titleHeading" className="title title-lg">{blogdetail?.title}</h4>
+        <div className="likebtncont">
+          <h4 data-testid="titleHeading" className="title title-lg">{blogdetail?.title}</h4>
+          {isloggedin && (liked ? (
+            <button type="button" className="iconlike" onClick={handlelike}>
+              <img src={`${images.heart_filled}`} alt="likebutton" />
+            </button>
+          )
+            : (
+              <button type="button" className="iconlike" onClick={handlelike}>
+                <img src={`${images.heart}`} alt="likebutton" />
+              </button>
+            ))}
+        </div>
+
         <div className="card-footer  flex justify-between items-center">
           <div className="writer-info grid">
             <div className="info-avatar">
