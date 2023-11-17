@@ -7,12 +7,19 @@ exports[`Unit tests for BlogDetails Components Snapshot test for BlogDetails com
     data-testid="details"
   >
     <div
+      class="Toastify"
+    />
+    <div
       class="container"
     >
-      <h4
-        class="title title-lg"
-        data-testid="titleHeading"
-      />
+      <div
+        class="likebtncont"
+      >
+        <h4
+          class="title title-lg"
+          data-testid="titleHeading"
+        />
+      </div>
       <div
         class="card-footer  flex justify-between items-center"
       >

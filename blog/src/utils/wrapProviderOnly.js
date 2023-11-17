@@ -6,9 +6,9 @@ import '@testing-library/jest-dom';
 
 export * from '@testing-library/react';
 
-const AllTheProviders = ({ children}) => (
+const AllTheProviders = ({ children }) => (
   <Provider store={reduxStore}>
-{children}
+    {children}
   </Provider>
 );
 
