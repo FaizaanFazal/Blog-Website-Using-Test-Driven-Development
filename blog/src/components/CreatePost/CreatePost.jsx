@@ -6,7 +6,7 @@ import '../../styles/Card.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { isProperImageURL } from '../../utils/helperfunctions';
-import { createBlogs } from '../../Redux/blogSlice';
+import { createBlogs, fetchBlogs } from '../../Redux/blogSlice';
 
 export default function CreatePost() {
   const user = useSelector((state) => state.user);
@@ -30,25 +30,6 @@ export default function CreatePost() {
     const { value } = e.target;
     if (value.length < 8) { setErrorTitle('* Required at least 8 characters.'); } else { setErrorTitle(null); }
   };
-  // const fetchImage = async () => {
-  //   try {
-  //     const response = await fetch(imgUrl,{
-  //       headers: {
-  //         Accept: "image/*",
-  //       },
-  //     });
-  //     console.log(response.headers.get("Content-Type"))
-  //     console.log(response.status )
-  //     if (response.headers.get("Content-Type").startsWith("image/jpeg")) {
-  //       setImgdisplay(true)
-  //     } else {
-  //       setImgdisplay(false)
-  //     }
-  //   } catch (error) {
-  //     console.log(error)
-  //     setImgdisplay(false)
-  //   }
-  // };
 
   const imgurlValidation = (e) => {
     const { value } = e.target;
@@ -118,6 +99,7 @@ export default function CreatePost() {
     dispatch(createBlogs(blog)).then((result) => {
       if (result.payload) {
         toast.success('Blog added succesfully', { position: toast.POSITION.TOP_RIGHT, autoClose: 2000 });
+        dispatch(fetchBlogs());
         setTitle('');
         setImgUrl('');
         setImgAlt('');
