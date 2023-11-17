@@ -7,9 +7,9 @@ describe('Unit tests for AllArticles Components', () => {
     const { asFragment } = renderWithProviders(<AllArticles />);
     expect(asFragment()).toMatchSnapshot();
   });
-  it('Number of Articles should be 3', () => {
+  it('Number of Articles should be 3', async () => {
     renderWithProviders(<AllArticles />);
-    const tagElements = screen.getAllByTestId('artice');
+    const tagElements = screen.getAllByTestId('article');
     expect(tagElements.length).toBeGreaterThan(0);
   });
 

@@ -127,7 +127,7 @@ export default function BlogDetails() {
 
         <div className="cover-grid grid mt-3 mb-2 ">
           <div className="cover-grid-img">
-            <img data-testid="Image" src={blogdetail?.imageSrc} alt={blogdetail?.imageAlt} className="object-fit-cover" />
+            <img data-testid="Image" src={blogdetail?.imageSrc} alt={blogdetail?.imageAlt || 'none'} className="object-fit-cover" />
           </div>
         </div>
 

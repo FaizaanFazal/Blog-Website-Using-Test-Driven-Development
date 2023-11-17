@@ -51,7 +51,9 @@ exports[`Unit tests for BlogDetails Components Snapshot test for BlogDetails com
         <div
           class="date-info text text-base"
           data-testid="detailsdate"
-        />
+        >
+          NA
+        </div>
       </div>
       <div
         class="cover-grid grid mt-3 mb-2 "
@@ -60,6 +62,7 @@ exports[`Unit tests for BlogDetails Components Snapshot test for BlogDetails com
           class="cover-grid-img"
         >
           <img
+            alt="none"
             class="object-fit-cover"
             data-testid="Image"
           />
