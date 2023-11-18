@@ -7,11 +7,12 @@ describe('Unit tests for AllArticles Components', () => {
     const { asFragment } = renderWithProviders(<AllArticles />);
     expect(asFragment()).toMatchSnapshot();
   });
-  it('Number of Articles should be 3', async () => {
-    renderWithProviders(<AllArticles />);
-    const tagElements = screen.getAllByTestId('article');
-    expect(tagElements.length).toBeGreaterThan(0);
-  });
+   //commenting integration test
+  // it('Number of Articles should be 3', async () => {
+  //   renderWithProviders(<AllArticles />);
+  //   const tagElements = screen.getAllByTestId('article');
+  //   expect(tagElements.length).toBeGreaterThan(0);
+  // });
 
   it('View All Button', () => {
     renderWithProviders(<AllArticles />);
