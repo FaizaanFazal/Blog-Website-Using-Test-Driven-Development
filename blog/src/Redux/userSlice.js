@@ -25,13 +25,9 @@ export const signupUser = createAsyncThunk(
   'user/register',
   async (userCredentials) => {
     const request = await placeholderApi.post('/users/register', userCredentials);
-    if (request.status === '200') {
-      const { password, ...response } = await request.data;
-      localStorage.setItem('user', JSON.stringify(response));
-      return response;
-    }
-
-    return request.data;
+    const { password, ...response } = await request.data;
+    localStorage.setItem('user', JSON.stringify(response));
+    return response;
   },
 );
 
